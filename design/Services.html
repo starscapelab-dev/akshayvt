@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Web Development Services — Freelance Developer UAE &amp; India | Akshay V T</title>
+<meta name="description" content="30+ web development services — from custom websites and React/Next.js to AI integration, SEO, and ongoing maintenance. Serving UAE, Dubai, Kerala &amp; worldwide.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ── Services-page-specific ── */
+.page-hero .photo{
+  background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2400&q=80");
+  background-position: center 40%;
+  opacity:.42;
+}
+
+.cat{ padding: 64px 0; border-top: 1px solid var(--line-soft); }
+.cat:first-of-type{ border-top: 0; padding-top: 0; }
+.cat-head{
+  display:grid;
+  grid-template-columns: 280px 1fr;
+  gap:48px;
+  margin-bottom: 32px;
+  align-items: start;
+}
+@media (max-width: 820px){ .cat-head{ grid-template-columns: 1fr; gap: 12px; } }
+.cat-num{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-style:italic;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--accent);
+  opacity:.85;
+}
+.cat-meta .eyebrow{ margin-bottom: 8px; display:block; }
+.cat-meta h2{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-weight:400;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.0;
+  letter-spacing:-.02em;
+  margin: 0 0 12px;
+}
+.cat-meta p{ color: var(--ink-2); font-size: 15px; max-width: 56ch; line-height: 1.55; margin: 0; }
+
+.svc-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 980px){ .svc-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px){ .svc-grid{ grid-template-columns: 1fr; } }
+
+.svc{
+  padding: 24px 22px;
+  display:flex; flex-direction:column; gap:14px;
+  min-height: 180px;
+  transition: transform .35s ease, border-color .35s ease;
+}
+.svc:hover{ transform: translateY(-3px); border-color: rgba(255,255,255,.22); }
+.svc-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.svc-num{ font-family:"Geist Mono", monospace; font-size:11px; color: var(--muted); letter-spacing:.1em; }
+.svc-icon{
+  width:38px; height:38px; border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow: 0 1px 0 rgba(255,255,255,.18) inset;
+  display:grid; place-items:center;
+  color: var(--ink);
+}
+.svc-icon svg{ width:18px; height:18px; }
+.svc h3{
+  font-size: 17.5px;
+  font-weight:500;
+  letter-spacing:-.01em;
+  margin: 0;
+  text-wrap:balance;
+}
+.svc p{ font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+.svc-foot{
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(255,255,255,.10);
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:"Geist Mono", monospace;
+  font-size:11px; color: var(--muted);
+  text-transform:uppercase; letter-spacing: .1em;
+}
+.svc-foot .go{ display:inline-flex; align-items:center; gap:6px; color: var(--ink-2); transition: gap .2s ease, color .2s ease; }
+.svc:hover .svc-foot .go{ color: var(--accent); gap: 10px; }
+
+/* Final CTA over photo */
+.final-bg{
+  position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(180deg, var(--bg) 0%, rgba(6,7,10,.55) 25%, rgba(6,7,10,.6) 75%, var(--bg) 100%),
+    url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2400&q=80");
+  background-size: cover; background-position: center;
+}
+</style>
+</head>
+<body data-screen-label="Services Index">
+
+<!-- ── NAV ── -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="brand" href="Homepage.html">
+      <span class="brand-mark">A</span>
+      <span>Akshay V T <small>· Freelance Web Developer</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="Services.html" class="active">Services</a>
+      <a href="Homepage.html#projects">Portfolio</a>
+      <a href="Blog.html">Blog</a>
+      <a href="About.html">About</a>
+      <span class="nav-status"><span class="pulse"></span>Accepting clients</span>
+      <a class="btn btn-primary btn-sm cta" href="Contact.html">Get Free Quote</a>
+    </div>
+  </nav>
+</div>
+
+<!-- ── PAGE HEADER ── -->
+<header class="page-hero" data-screen-label="01 Page Header">
+  <div class="gradient"></div>
+  <div class="grid-bg"></div>
+  <div class="photo"></div>
+  <div class="container">
+    <nav class="crumbs">
+      <a href="Homepage.html">Home</a><span class="sep">/</span>
+      <span>Services</span>
+    </nav>
+
+    <div class="page-eyebrow"><span class="dot"></span>&nbsp;30+ services · pick what fits</div>
+
+    <h1 class="page-title">Web development services — <em>tailored to your business.</em></h1>
+    <p class="page-lede">From custom websites to complex web applications — every project is built with precision, speed and SEO in mind. Browse by category, or just tell me your problem and I'll point you to the right one.</p>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom: 56px;">
+      <a class="btn btn-primary" href="Contact.html">Get a Free Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#core">Browse all services</a>
+    </div>
+
+    <!-- Quick stats strip -->
+    <div class="glass" style="display:grid; grid-template-columns: repeat(4, 1fr); padding: 22px; gap: 20px;">
+      <div>
+        <div style="font-family:'Newsreader', serif; font-size:36px; line-height:1; letter-spacing:-.02em;">6+</div>
+        <div style="font-family:'Geist Mono', monospace; font-size:11px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-top:6px;">Years experience</div>
+      </div>
+      <div>
+        <div style="font-family:'Newsreader', serif; font-size:36px; line-height:1; letter-spacing:-.02em;">15<span style="font-size:24px;">+</span></div>
+        <div style="font-family:'Geist Mono', monospace; font-size:11px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-top:6px;">Clients shipped</div>
+      </div>
+      <div>
+        <div style="font-family:'Newsreader', serif; font-size:36px; line-height:1; letter-spacing:-.02em;">30<span style="font-size:24px;">+</span></div>
+        <div style="font-family:'Geist Mono', monospace; font-size:11px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-top:6px;">Services offered</div>
+      </div>
+      <div>
+        <div style="font-family:'Newsreader', serif; font-size:36px; line-height:1; letter-spacing:-.02em;">&lt;24<span style="font-size:22px;">h</span></div>
+        <div style="font-family:'Geist Mono', monospace; font-size:11px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-top:6px;">Avg reply time</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ── CATEGORIES ── -->
+<main class="container" id="core" style="padding-top: 80px; padding-bottom: 80px;">
+
+  <!-- 01 CORE DEVELOPMENT -->
+  <section class="cat" style="padding-top:0;">
+    <div class="cat-head">
+      <div class="cat-num">01.</div>
+      <div class="cat-meta">
+        <span class="eyebrow"><span class="dot"></span>&nbsp;Core development</span>
+        <h2>The foundation of <em style="font-style:italic; color:var(--accent);">every modern website.</em></h2>
+        <p>Custom builds in React, Next.js and PHP — including full-stack web applications with database, auth, and admin baked in.</p>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <span class="svc-num">001</span>
+        </div>
+        <h3>Custom Website Development</h3>
+        <p>Tailor-made websites built for speed, SEO and conversion. No templates.</p>
+        <div class="svc-foot"><span>Web · Custom</span><span class="go">View →</span></div>
+      </a>
+
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l16 16M4 4v16h16"/></svg></div>
+          <span class="svc-num">002</span>
+        </div>
+        <h3>Next.js Development</h3>
+        <p>SEO-first, server-rendered apps with blazing fast performance.</p>
+        <div class="svc-foot"><span>Next.js · SSR</span><span class="go">View →</span></div>
+      </a>
+
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="2.2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></div>
+          <span class="svc-num">003</span>
+        </div>
+        <h3>React Development</h3>
+        <p>Scalable component-driven UIs with React best practices.</p>
+        <div class="svc-foot"><span>React · SPA</span><span class="go">View →</span></div>
+      </a>
+
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9 5 9-5"/><path d="M3 7v10l9 5 9-5V7"/><path d="M12 12v10"/></svg></div>
+          <span class="svc-num">004</span>
+        </div>
+        <h3>Full-Stack Web Apps</h3>
+        <p>End-to-end web apps with database, auth and admin — built to scale.</p>
+        <div class="svc-foot"><span>Full-stack</span><span class="go">View →</span></div>
+      </a>
+
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 8l-6 4 6 4M15 8l6 4-6 4M14 4l-4 16"/></svg></div>
+          <span class="svc-num">005</span>
+        </div>
+        <h3>Custom PHP Development</h3>
+        <p>Robust, maintainable PHP — custom-built for your exact requirements.</p>
+        <div class="svc-foot"><span>PHP · Custom</span><span class="go">View →</span></div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- 02 E-COMMERCE & CMS -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-num" style="color:var(--accent-2);">02.</div>
+      <div class="cat-meta">
+        <span class="eyebrow"><span class="dot" style="background:var(--accent-2); box-shadow:0 0 10px var(--accent-2);"></span>&nbsp;E-Commerce &amp; CMS</span>
+        <h2>Online stores and <em style="font-style:italic; color:var(--accent-2);">content engines that sell.</em></h2>
+        <p>From Shopify themes to headless commerce on Next.js — and WordPress when it's the right call. Fast, secure, and built to convert.</p>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18l-2 12H5L3 7z"/><path d="M8 7V5a4 4 0 1 1 8 0v2"/></svg></div><span class="svc-num">006</span></div>
+        <h3>E-Commerce Development</h3>
+        <p>Sell online with a store that looks great and turns visitors into buyers.</p>
+        <div class="svc-foot"><span>Commerce</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 4l-5 16-5-16"/><path d="M6 4h10l-3 6"/></svg></div><span class="svc-num">007</span></div>
+        <h3>Shopify Development</h3>
+        <p>Custom Shopify themes and apps that sell — without the bloat.</p>
+        <div class="svc-foot"><span>Shopify · Liquid</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13.5 13.5 0 0 1 0 18M12 3a13.5 13.5 0 0 0 0 18"/></svg></div><span class="svc-num">008</span></div>
+        <h3>WordPress Development</h3>
+        <p>Clean, fast WordPress builds — no overcomplicated page builders.</p>
+        <div class="svc-foot"><span>WordPress · ACF</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg></div><span class="svc-num">009</span></div>
+        <h3>Headless CMS Development</h3>
+        <p>Content managed your way, delivered at the edge — Sanity, Contentful, Strapi.</p>
+        <div class="svc-foot"><span>Headless</span><span class="go">View →</span></div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- 03 SPECIALIZED -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-num" style="color:var(--warm);">03.</div>
+      <div class="cat-meta">
+        <span class="eyebrow"><span class="dot" style="background:var(--warm); box-shadow:0 0 10px var(--warm);"></span>&nbsp;Specialized services</span>
+        <h2>Sites with a <em style="font-style:italic; color:var(--warm);">specific job to do.</em></h2>
+        <p>SaaS marketing sites, landing pages for ads, founder portfolios — each one built around the goal it's there to achieve.</p>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9"/><path d="M3 12h6l3-3 3 3 3-3"/></svg></div><span class="svc-num">010</span></div>
+        <h3>SaaS Website Development</h3>
+        <p>Marketing site that sells your product before users even sign up.</p>
+        <div class="svc-foot"><span>SaaS</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 9v12"/></svg></div><span class="svc-num">011</span></div>
+        <h3>Landing Page Development</h3>
+        <p>One page. One goal. Maximum conversions for your ad spend.</p>
+        <div class="svc-foot"><span>Landing</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-8h6v8"/></svg></div><span class="svc-num">012</span></div>
+        <h3>Business Website Development</h3>
+        <p>A website that works as hard as you do — generating leads 24/7.</p>
+        <div class="svc-foot"><span>Business</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span class="svc-num">013</span></div>
+        <h3>Startup Website Development</h3>
+        <p>Launch fast. Look funded. Attract users and investors.</p>
+        <div class="svc-foot"><span>Startup</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M3 17l4-4 5 5 4-4 5 5"/></svg></div><span class="svc-num">014</span></div>
+        <h3>Portfolio Website Development</h3>
+        <p>Showcase your work with a site as polished as your projects.</p>
+        <div class="svc-foot"><span>Portfolio</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></div><span class="svc-num">015</span></div>
+        <h3>Personal Brand Website</h3>
+        <p>Your online home — built to attract the right clients, employers, audience.</p>
+        <div class="svc-foot"><span>Personal</span><span class="go">View →</span></div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- 04 DESIGN & UI -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-num" style="color:var(--green);">04.</div>
+      <div class="cat-meta">
+        <span class="eyebrow"><span class="dot" style="background:var(--green); box-shadow:0 0 10px var(--green);"></span>&nbsp;Design &amp; UI</span>
+        <h2>Interfaces that feel <em style="font-style:italic; color:var(--green);">as good as they look.</em></h2>
+        <p>Frontend development that respects design systems, accessibility, and the user's time. Pixel-perfect where it counts, fluid where it should.</p>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div><span class="svc-num">016</span></div>
+        <h3>UI/UX Frontend Development</h3>
+        <p>Pixel-perfect, accessible interfaces that match design intent exactly.</p>
+        <div class="svc-foot"><span>UI · UX</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h6l2-7 4 14 2-7h4"/></svg></div><span class="svc-num">017</span></div>
+        <h3>Conversion-Focused Web Design</h3>
+        <p>Design decisions driven by data, psychology and your business goals.</p>
+        <div class="svc-foot"><span>CRO</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="6" width="14" height="12" rx="2"/><rect x="14" y="9" width="8" height="9" rx="1"/><rect x="19" y="11" width="3" height="5" rx="1"/></svg></div><span class="svc-num">018</span></div>
+        <h3>Responsive Website Development</h3>
+        <p>Flawless on every screen — mobile, tablet, desktop, foldable.</p>
+        <div class="svc-foot"><span>Responsive</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 4L4 20M8 4l-4 4M20 16l-4 4M14 4l-4 4M20 10l-4 4M4 14l4-4"/></svg></div><span class="svc-num">019</span></div>
+        <h3>Web Animation &amp; Interactive UI</h3>
+        <p>Motion that adds meaning, not noise. Micro-interactions that delight.</p>
+        <div class="svc-foot"><span>Motion</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 4v5M11 13h6M11 16h4"/></svg></div><span class="svc-num">020</span></div>
+        <h3>Web Application UI</h3>
+        <p>Complex app interfaces made simple, fast and accessible.</p>
+        <div class="svc-foot"><span>App UI</span><span class="go">View →</span></div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- 05 SEO & PERFORMANCE -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-num">05.</div>
+      <div class="cat-meta">
+        <span class="eyebrow"><span class="dot"></span>&nbsp;SEO &amp; performance</span>
+        <h2>Sites that <em style="font-style:italic; color:var(--accent);">load fast and rank high.</em></h2>
+        <p>Technical SEO, Core Web Vitals, and the boring infrastructure work that makes Google actually trust your site.</p>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-5-5"/></svg></div><span class="svc-num">021</span></div>
+        <h3>SEO-Focused Development</h3>
+        <p>Your website, built to rank from line one of code.</p>
+        <div class="svc-foot"><span>SEO</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></div><span class="svc-num">022</span></div>
+        <h3>Technical SEO Optimization</h3>
+        <p>Fix the foundation. Let Google find, crawl, and rank your site.</p>
+        <div class="svc-foot"><span>Tech SEO</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span class="svc-num">023</span></div>
+        <h3>Performance Optimization</h3>
+        <p>Cut load times. Improve UX. Rank higher. It's all connected.</p>
+        <div class="svc-foot"><span>Perf</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><span class="svc-num">024</span></div>
+        <h3>Speed Optimization &amp; CWV</h3>
+        <p>Score 90+ on Lighthouse. Delight users. Rank higher.</p>
+        <div class="svc-foot"><span>Core Web Vitals</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3l-9 9"/><path d="M16 3h5v5"/></svg></div><span class="svc-num">025</span></div>
+        <h3>Website Redesign</h3>
+        <p>Modern design. Better performance. Same URL — better rankings.</p>
+        <div class="svc-foot"><span>Redesign</span><span class="go">View →</span></div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- 06 INTEGRATION & MAINTENANCE -->
+  <section class="cat">
+    <div class="cat-head">
+      <div class="cat-num" style="color:var(--accent-2);">06.</div>
+      <div class="cat-meta">
+        <span class="eyebrow"><span class="dot" style="background:var(--accent-2); box-shadow:0 0 10px var(--accent-2);"></span>&nbsp;Integration &amp; maintenance</span>
+        <h2>Wired up to <em style="font-style:italic; color:var(--accent-2);">everything else you use.</em></h2>
+        <p>APIs, AI features, ongoing maintenance, dashboards, admin panels — the connective tissue that turns a website into a tool.</p>
+      </div>
+    </div>
+
+    <div class="svc-grid">
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8M14 4l-4 16"/></svg></div><span class="svc-num">026</span></div>
+        <h3>API Integration Services</h3>
+        <p>Connect your platform to any third-party API — cleanly, reliably.</p>
+        <div class="svc-foot"><span>APIs</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="9" cy="13" r="1.4"/><circle cx="15" cy="13" r="1.4"/><path d="M12 3v3"/></svg></div><span class="svc-num">027</span></div>
+        <h3>AI Integration for Websites</h3>
+        <p>Chatbots, recommendations, generation — wired into your product.</p>
+        <div class="svc-foot"><span>AI · LLM</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 7l3 3-8 8-3 .5.5-3 7.5-8.5z"/><path d="M5 21h14"/></svg></div><span class="svc-num">028</span></div>
+        <h3>Maintenance &amp; Support</h3>
+        <p>I keep your site updated, secure, and online — long after launch.</p>
+        <div class="svc-foot"><span>Retainer</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="5" rx="1"/><rect x="13" y="10" width="8" height="11" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/></svg></div><span class="svc-num">029</span></div>
+        <h3>Custom Dashboard Development</h3>
+        <p>Data-rich, beautifully designed dashboards for your product or business.</p>
+        <div class="svc-foot"><span>Dashboards</span><span class="go">View →</span></div>
+      </a>
+      <a class="glass svc" href="Service.html">
+        <div class="svc-top"><div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 12h10M7 16h6"/></svg></div><span class="svc-num">030</span></div>
+        <h3>Admin Panel Development</h3>
+        <p>Intuitive admin interfaces that make managing your platform effortless.</p>
+        <div class="svc-foot"><span>Admin</span><span class="go">View →</span></div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ── FINAL CTA ── -->
+<section style="padding: 0 0 var(--section-pad);">
+  <div class="container">
+    <div class="glass cta-block" style="position:relative; overflow:hidden;">
+      <div class="final-bg" style="border-radius:32px;"></div>
+      <div style="position:relative; z-index:2;">
+        <div class="page-eyebrow" style="margin-bottom:14px;"><span class="dot"></span>&nbsp;Not sure which one?</div>
+        <h2>Tell me your problem, <em>I'll tell you the service.</em></h2>
+        <p>Free consultation. No commitment. WhatsApp me a few sentences and I'll point you at the right service — even if it's not one of mine.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="Contact.html">Get a Free Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-whatsapp" href="https://wa.me/919746220043">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4 0-.4.2-.6l.4-.5.3-.5c0-.2 0-.4-.1-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-.9 2.4s1 2.8 1.2 3a8.4 8.4 0 0 0 3.6 3.1c1.3.5 1.9.5 2.5.4.4-.1 1.4-.6 1.5-1.1.2-.6.2-1 .1-1.1z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Akshay&nbsp;<em>V&nbsp;T</em></div>
+        <p style="color:var(--ink-2); font-size:14.5px; line-height:1.6; max-width:36ch;">A freelance web developer with 6+ years building React &amp; Next.js sites for clients in UAE, India and worldwide.</p>
+        <div class="footer-tag" style="margin-top:18px;">"Reliable. Fast. Always available."</div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="Service.html">Custom Websites</a></li>
+          <li><a href="Service.html">Next.js</a></li>
+          <li><a href="Service.html">React</a></li>
+          <li><a href="Service.html">E-Commerce</a></li>
+          <li><a href="Service.html">SEO</a></li>
+          <li><a href="Service.html">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li><a href="#">Dubai, UAE 🇦🇪</a></li>
+          <li><a href="#">Abu Dhabi 🇦🇪</a></li>
+          <li><a href="#">Kerala, India 🇮🇳</a></li>
+          <li><a href="#">India 🇮🇳</a></li>
+          <li><a href="#">Worldwide 🌍</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Homepage.html#projects">Portfolio</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/919746220043">💬 WhatsApp</a></li>
+          <li><a href="mailto:info@akshayvt.com">✉ info@akshayvt.com</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 Akshay V T · Freelance Web Developer · UAE &amp; India</div>
+      <div>Built with Next.js · Tailwind · ☕ from Kerala</div>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/919746220043?text=Hi+Akshay%2C+I+saw+your+services+page+and+I%27d+like+to+discuss+a+project." target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4 0-.4.2-.6l.4-.5.3-.5c0-.2 0-.4-.1-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-.9 2.4s1 2.8 1.2 3a8.4 8.4 0 0 0 3.6 3.1c1.3.5 1.9.5 2.5.4.4-.1 1.4-.6 1.5-1.1.2-.6.2-1 .1-1.1z"/></svg>
+  Chat on WhatsApp
+</a>
+
+</body>
+</html>

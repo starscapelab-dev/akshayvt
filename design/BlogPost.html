@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How to choose a freelance web developer in the UAE — 2025 guide | Akshay V T</title>
+<meta name="description" content="The UAE freelance web developer market is full of cheap quotes and disappearing acts. Here's how to spot the right person in 30 minutes — and the red flags to walk from.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ── Article hero ── */
+.article-hero{
+  position:relative;
+  padding-top: 168px;
+  padding-bottom: 60px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.article-hero .gradient{
+  position:absolute; inset:0; z-index:-2;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(111,168,255,.20), transparent 60%),
+    linear-gradient(180deg, #06070A 0%, #0A0F1C 60%, #06070A 100%);
+}
+.article-hero .grid-bg{
+  position:absolute; inset:0; z-index:-1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 80%);
+  opacity:.4;
+}
+.article-meta{
+  display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+  font-family:"Geist Mono", monospace;
+  font-size: 11.5px; color: var(--muted);
+  letter-spacing:.08em; text-transform:uppercase;
+  margin-bottom: 28px;
+}
+.article-meta a{ color: var(--accent); }
+.article-meta .sep{ color: var(--muted-2); }
+
+h1.article-title{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-weight: 400;
+  font-size: clamp(38px, 5.4vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -.022em;
+  margin: 0 0 28px;
+  text-wrap: balance;
+  max-width: 22ch;
+}
+h1.article-title em{
+  font-style:italic;
+  background: linear-gradient(120deg, #B69BFF 0%, #6FA8FF 50%, #F4C58C 100%);
+  -webkit-background-clip:text; background-clip:text; color: transparent;
+}
+.article-deck{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-size: clamp(19px, 1.9vw, 24px);
+  font-style: italic;
+  color: var(--ink-2);
+  line-height: 1.45;
+  letter-spacing: -.005em;
+  max-width: 58ch;
+  margin: 0 0 36px;
+  text-wrap: pretty;
+}
+.byline{
+  display:flex; align-items:center; gap: 14px;
+  padding: 14px 20px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  width: fit-content;
+}
+.byline .av{
+  width:36px; height:36px; border-radius:50%;
+  background:linear-gradient(135deg,#2B3046,#0F121C);
+  border:1px solid rgba(255,255,255,.15);
+  display:grid; place-items:center;
+  font-family:"Newsreader", serif; font-style:italic; font-size:18px; color: var(--ink);
+}
+.byline .who b{ font-weight: 500; font-size: 14px; color: var(--ink); display:block; letter-spacing:-.005em; }
+.byline .who span{ font-family:"Geist Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: .06em; }
+
+/* Cover image */
+.cover{
+  margin: 36px 0 0;
+  border-radius: 32px;
+  overflow:hidden;
+  position:relative;
+  aspect-ratio: 16 / 8;
+  background-image: url("https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2400&q=80");
+  background-size:cover; background-position:center 40%;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,.55);
+}
+.cover::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(180deg, transparent 60%, rgba(6,7,10,.4) 100%);
+}
+.cover .caption{
+  position:absolute; bottom: 20px; left: 22px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(6,7,10,.5);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.10);
+  font-family:"Geist Mono", monospace;
+  font-size: 11px; color: var(--ink-2);
+  letter-spacing:.06em;
+}
+
+/* ── Article layout ── */
+.article-shell{
+  display: grid;
+  grid-template-columns: 200px minmax(0, 720px) 240px;
+  gap: 56px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px var(--pad);
+  align-items: start;
+}
+@media (max-width: 1100px){
+  .article-shell{ grid-template-columns: minmax(0,1fr) 240px; }
+  .article-shell .toc-aside{ display:none; }
+}
+@media (max-width: 820px){
+  .article-shell{ grid-template-columns: 1fr; }
+  .article-shell .share-aside{ display:none; }
+}
+
+.toc-aside{ position:sticky; top: 110px; }
+.share-aside{ position:sticky; top: 110px; }
+
+.toc{
+  padding: 20px 22px;
+}
+.toc h4{
+  font-family:"Geist Mono", monospace;
+  font-size: 10.5px; font-weight: 500;
+  text-transform:uppercase; letter-spacing:.14em;
+  color: var(--muted); margin: 0 0 14px;
+}
+.toc ol{
+  list-style: none;
+  padding: 0; margin: 0;
+  counter-reset: toc;
+  display:flex; flex-direction:column; gap: 8px;
+}
+.toc li{
+  counter-increment: toc;
+  display:flex; gap: 10px;
+  font-size: 13px; line-height: 1.4;
+  color: var(--ink-2);
+}
+.toc li::before{
+  content: counter(toc, decimal-leading-zero);
+  font-family:"Geist Mono", monospace;
+  font-size: 10.5px;
+  color: var(--muted-2);
+  letter-spacing: .04em;
+  flex: 0 0 auto;
+}
+.toc li a{ color: inherit; transition: color .2s ease; }
+.toc li a:hover{ color: var(--accent); }
+.toc li.active a{ color: var(--ink); }
+
+.share{
+  padding: 20px 22px;
+  display:flex; flex-direction:column; gap: 12px;
+}
+.share h4{
+  font-family:"Geist Mono", monospace;
+  font-size: 10.5px; font-weight: 500;
+  text-transform:uppercase; letter-spacing:.14em;
+  color: var(--muted); margin: 0;
+}
+.share-row{ display:flex; gap: 8px; }
+.share-btn{
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  display:grid; place-items:center;
+  color: var(--ink-2);
+  transition: background .2s, color .2s;
+}
+.share-btn:hover{ background: rgba(255,255,255,.10); color: var(--ink); }
+.share-btn svg{ width: 16px; height: 16px; }
+.share-stats{
+  display:flex; flex-direction:column; gap: 10px;
+  padding-top: 14px; margin-top: 6px;
+  border-top: 1px dashed rgba(255,255,255,.10);
+}
+.share-stat{
+  display:flex; align-items:center; justify-content:space-between;
+  font-family:"Geist Mono", monospace;
+  font-size: 11px; color: var(--muted);
+  letter-spacing: .04em;
+}
+.share-stat b{ color: var(--ink); font-weight: 500; font-family:"Newsreader", serif; font-size: 18px; letter-spacing: -.01em; }
+
+/* ── Prose ── */
+.prose{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-size: 18.5px;
+  line-height: 1.65;
+  color: #E2E5EE;
+  letter-spacing: -.003em;
+}
+.prose > * + *{ margin-top: 1.2em; }
+.prose p{ margin: 0; }
+.prose p.lede{
+  font-size: 22px;
+  color: var(--ink);
+  font-style: italic;
+  border-left: 2px solid var(--accent);
+  padding-left: 20px;
+  margin-bottom: 1.6em;
+}
+.prose h2{
+  font-family:"Newsreader", serif;
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  margin-top: 2em;
+  margin-bottom: .6em;
+  text-wrap: balance;
+}
+.prose h2::before{
+  content: "§";
+  color: var(--accent);
+  font-style: italic;
+  margin-right: 14px;
+  opacity: .65;
+}
+.prose h3{
+  font-family:"Geist", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+  margin-top: 1.8em; margin-bottom: .5em;
+  color: var(--ink);
+}
+.prose a{
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(111,168,255,.4);
+  text-underline-offset: 3px;
+}
+.prose a:hover{ text-decoration-color: var(--accent); }
+.prose strong{ color: var(--ink); font-weight: 600; }
+.prose em{ font-style: italic; }
+.prose ul, .prose ol{
+  margin: 0; padding: 0 0 0 22px;
+  display:flex; flex-direction:column; gap: 10px;
+}
+.prose ul li::marker{ color: var(--accent); }
+.prose ol li::marker{ color: var(--muted); font-family:"Geist Mono", monospace; font-size: 14px; }
+.prose blockquote{
+  border-radius: 18px;
+  padding: 24px 28px;
+  margin: 1.6em 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  font-style: italic;
+  color: var(--ink);
+  position: relative;
+}
+.prose blockquote::before{
+  content: "“";
+  position: absolute;
+  top: -10px; left: 16px;
+  font-family:"Newsreader", serif;
+  font-size: 64px;
+  color: var(--accent);
+  line-height: 1;
+}
+.prose code{
+  font-family:"Geist Mono", monospace;
+  font-size: .85em;
+  background: rgba(111,168,255,.10);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--accent-2);
+  border: 1px solid rgba(111,168,255,.18);
+}
+
+/* Callout cards inside prose */
+.callout{
+  display:grid;
+  grid-template-columns: 28px 1fr;
+  gap: 16px;
+  padding: 22px 26px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(244,197,140,.10), rgba(244,197,140,.02));
+  border: 1px solid rgba(244,197,140,.22);
+  margin: 1.8em 0;
+  font-family:"Geist", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+  letter-spacing: -.005em;
+}
+.callout.warn{ background: linear-gradient(180deg, rgba(255,123,111,.08), rgba(255,123,111,.02)); border-color: rgba(255,123,111,.25); }
+.callout.tip{ background: linear-gradient(180deg, rgba(66,228,122,.08), rgba(66,228,122,.02)); border-color: rgba(66,228,122,.25); }
+.callout .ico{
+  width:28px; height:28px; border-radius:50%;
+  display:grid; place-items:center;
+  background: rgba(244,197,140,.20);
+  color: var(--warm);
+  flex-shrink: 0;
+}
+.callout.warn .ico{ background: rgba(255,123,111,.18); color: #FFB1A8; }
+.callout.tip .ico{ background: rgba(66,228,122,.18); color: var(--green); }
+.callout strong{ color: var(--ink); font-weight: 600; }
+.callout .label{
+  font-family:"Geist Mono", monospace;
+  font-size: 11px;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--warm);
+  display:block; margin-bottom: 4px;
+}
+.callout.warn .label{ color: #FFB1A8; }
+.callout.tip .label{ color: var(--green); }
+
+/* Inline figure */
+.figure{
+  margin: 2em 0;
+  border-radius: 22px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,.08);
+}
+.figure .img{
+  aspect-ratio: 16 / 9;
+  background-size:cover; background-position:center;
+}
+.figure figcaption{
+  font-family:"Geist Mono", monospace;
+  font-size: 11.5px;
+  color: var(--muted);
+  letter-spacing: .04em;
+  padding: 14px 20px;
+  background: rgba(6,7,10,.4);
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* Article footer (tags, author) */
+.article-foot{
+  margin-top: 60px;
+  padding-top: 36px;
+  border-top: 1px dashed rgba(255,255,255,.10);
+}
+.tags{
+  display:flex; gap: 8px; flex-wrap:wrap;
+  margin-bottom: 36px;
+}
+.tag{
+  font-family:"Geist Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .04em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  color: var(--ink-2);
+}
+.author-card{
+  padding: 26px;
+  display:flex; gap: 18px; align-items:flex-start;
+}
+.author-card .av{
+  width:64px; height:64px; border-radius:50%;
+  background:linear-gradient(135deg,#2B3046,#0F121C);
+  border:1px solid rgba(255,255,255,.15);
+  display:grid; place-items:center;
+  font-family:"Newsreader", serif; font-style:italic; font-size:28px; color: var(--ink);
+  flex: 0 0 auto;
+}
+.author-card h4{ margin: 0; font-size: 16px; font-weight: 500; }
+.author-card .role{ font-family:"Geist Mono", monospace; font-size: 11px; color: var(--muted); letter-spacing: .08em; margin: 4px 0 12px; }
+.author-card p{ font-size: 14.5px; color: var(--ink-2); line-height: 1.55; margin: 0 0 14px; }
+.author-card .lks{ display:flex; gap: 10px; }
+
+/* Related posts */
+.related-section{ padding: 0 0 var(--section-pad); }
+.related-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media (max-width: 980px){ .related-grid{ grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px){ .related-grid{ grid-template-columns: 1fr; } }
+.related{
+  position:relative;
+  display:flex; flex-direction:column;
+  overflow:hidden;
+  padding: 0;
+  min-height: 320px;
+}
+.related .img{
+  height: 180px;
+  background-size: cover; background-position: center;
+  transition: transform 1.2s ease;
+}
+.related:hover .img{ transform: scale(1.06); }
+.r1 .img{ background-image: url("https://images.unsplash.com/photo-1605514449459-5d68cdcb6e35?auto=format&fit=crop&w=1200&q=80"); }
+.r2 .img{ background-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"); }
+.r3 .img{ background-image: url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80"); }
+.related-body{ padding: 20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.related .cat{ font-family:"Geist Mono", monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.related h4{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-weight:400;
+  font-size: 19px;
+  line-height: 1.2;
+  letter-spacing:-.015em;
+  margin: 0;
+  text-wrap:balance;
+}
+.related .read{ margin-top: auto; padding-top: 12px; border-top: 1px dashed rgba(255,255,255,.10); font-family:"Geist Mono", monospace; font-size: 11px; color: var(--muted); display:flex; justify-content: space-between; }
+
+/* Final bg */
+.final-bg{
+  position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(180deg, var(--bg) 0%, rgba(6,7,10,.55) 25%, rgba(6,7,10,.6) 75%, var(--bg) 100%),
+    url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2400&q=80");
+  background-size: cover; background-position: center;
+}
+</style>
+</head>
+<body data-screen-label="Blog Post">
+
+<!-- ── NAV ── -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="brand" href="Homepage.html">
+      <span class="brand-mark">A</span>
+      <span>Akshay V T <small>· Freelance Web Developer</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="Services.html">Services</a>
+      <a href="Homepage.html#projects">Portfolio</a>
+      <a href="Blog.html" class="active">Blog</a>
+      <a href="About.html">About</a>
+      <span class="nav-status"><span class="pulse"></span>Accepting clients</span>
+      <a class="btn btn-primary btn-sm cta" href="Contact.html">Get Free Quote</a>
+    </div>
+  </nav>
+</div>
+
+
+<!-- ── ARTICLE HEADER ── -->
+<header class="article-hero" data-screen-label="01 Article Header">
+  <div class="gradient"></div>
+  <div class="grid-bg"></div>
+
+  <div class="container">
+    <nav class="crumbs">
+      <a href="Homepage.html">Home</a><span class="sep">/</span>
+      <a href="Blog.html">Blog</a><span class="sep">/</span>
+      <span>UAE Market</span>
+    </nav>
+
+    <div class="article-meta">
+      <a href="Blog.html">UAE Market</a>
+      <span class="sep">·</span>
+      <span>March 4, 2025</span>
+      <span class="sep">·</span>
+      <span>14 min read</span>
+      <span class="sep">·</span>
+      <span>2,184 words</span>
+    </div>
+
+    <h1 class="article-title">How to choose a freelance web developer in the <em>UAE</em> — a 2025 guide.</h1>
+
+    <p class="article-deck">The market is full of cheap quotes, agencies in disguise, and developers who disappear after launch. Here's how to spot the right freelancer in 30 minutes — and the red flags that should make you walk away.</p>
+
+    <div class="byline">
+      <span class="av">A</span>
+      <div class="who">
+        <b>Akshay V T</b>
+        <span>Freelance Developer · Kerala 🇮🇳</span>
+      </div>
+    </div>
+
+    <!-- Cover image -->
+    <figure class="cover">
+      <span class="caption">Cover — Dubai skyline at dusk</span>
+    </figure>
+  </div>
+</header>
+
+
+<!-- ── ARTICLE ── -->
+<main class="article-shell" data-screen-label="02 Article Body">
+
+  <!-- TOC -->
+  <aside class="toc-aside">
+    <div class="glass toc">
+      <h4>On this page</h4>
+      <ol>
+        <li class="active"><a href="#why">Why this market is messy</a></li>
+        <li><a href="#five">The five questions to ask</a></li>
+        <li><a href="#red">Red flags to walk from</a></li>
+        <li><a href="#price">What pricing should look like</a></li>
+        <li><a href="#whatsapp">The WhatsApp test</a></li>
+        <li><a href="#close">Closing the conversation</a></li>
+      </ol>
+    </div>
+  </aside>
+
+  <!-- PROSE -->
+  <article class="prose">
+
+    <p class="lede">If you're a small business owner in Dubai, Abu Dhabi or Sharjah, the search for a web developer probably looks the same: a flood of WhatsApp messages, quotes ranging from AED 800 to AED 80,000, and no clear way to tell who's any good. This guide is the conversation I wish every prospective client had with themselves before getting in touch with anyone.</p>
+
+    <h2 id="why">Why this market is messy</h2>
+    <p>The UAE web development market is unusual. You have Gulf-based agencies charging European prices for Asian work, freelancers in Asia and Europe charging less than your monthly Salik balance, and a growing layer of "developer-agency hybrids" who sit in the middle and rarely communicate well from either side.</p>
+    <p>For a business owner, the only thing that matters is: <em>did you get a site that does what you needed it to do?</em> Everything else — stack choices, pricing models, project management software — is plumbing.</p>
+
+    <div class="callout tip">
+      <div class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c1 .9 2 1.6 2 3.3h4c0-1.7 1-2.4 2-3.3A7 7 0 0 0 12 2z"/></svg>
+      </div>
+      <div>
+        <span class="label">Quick note</span>
+        Almost every problem in this article reduces to one thing: <strong>can you actually talk to the person doing the work?</strong> Everything I recommend below is just different ways of testing that.
+      </div>
+    </div>
+
+    <h2 id="five">The five questions to ask in the first call</h2>
+    <p>Skip the portfolio review for ten minutes. Have a 30-minute call instead. Ask these five things and listen for the texture of the answers, not the answers themselves.</p>
+
+    <ol>
+      <li><strong>Who actually writes the code?</strong> If the person on the call won't be writing it, you're hiring an agency. That isn't bad — but it changes who you should be evaluating.</li>
+      <li><strong>What does support look like on day 91?</strong> Anyone can promise the moon for the first 90 days. The question is what happens after that.</li>
+      <li><strong>What's the worst-case scenario you've handled?</strong> A developer who can't tell you about a real disaster has either never shipped anything important or is lying.</li>
+      <li><strong>Who owns the code at the end?</strong> If the answer is "we host it on our infrastructure" — read the contract carefully. Some agencies effectively rent you a site.</li>
+      <li><strong>Can I see a project from 12+ months ago that's still live?</strong> Half of all freelancer portfolios are dead links. Recency isn't the test — survival is.</li>
+    </ol>
+
+    <h2 id="red">Red flags to walk from</h2>
+    <p>Each of these alone isn't disqualifying. Two or more, and you should probably keep looking.</p>
+
+    <ul>
+      <li>A quote within an hour of describing the project. Real scoping takes a day or two of thinking.</li>
+      <li>No staging URL during development. You should be able to see the site take shape, not get a single "ta-da" demo at the end.</li>
+      <li>Heavy upfront payment (more than 40%) with no clear milestones tied to it.</li>
+      <li>Vague answers about ongoing support — "we'll figure it out after launch" is code for "we won't be there".</li>
+      <li>Templates passed off as custom work. Look for &lt;meta&gt; tags or footer credits in their portfolio.</li>
+    </ul>
+
+    <blockquote>
+      I've taken over maybe a dozen sites in the last two years that were built by someone who vanished. Every single one had at least three of the red flags above visible during the first sales conversation. The clients just didn't know what to look for.
+    </blockquote>
+
+    <h2 id="price">What pricing should look like</h2>
+    <p>I won't share specific numbers — every project is different and I don't want to set false anchors. But the <em>shape</em> of a healthy quote always looks the same:</p>
+    <ul>
+      <li><strong>One clear scope</strong> — not a tiered "good / better / best" upsell ladder.</li>
+      <li><strong>Itemised line items</strong> — design, build, content, deployment, post-launch support — each with a price you could question.</li>
+      <li><strong>A fixed timeline</strong> with a kick-off date and a launch date, not "approximately 6–10 weeks".</li>
+      <li><strong>An explicit change-request process</strong> — because requirements will change, and you want to know how that gets priced.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+      </div>
+      <div>
+        <span class="label">Rule of thumb</span>
+        If a developer's proposal is shorter than your last lease agreement, that's actually a good sign. Long proposals from freelancers are usually sales theatre — short ones come from people who plan to do the work, not pitch it.
+      </div>
+    </div>
+
+    <figure class="figure">
+      <div class="img" style="background-image:url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=80');"></div>
+      <figcaption>Figure 1 — A typical kanban board from a real client project. Three columns; daily updates; no Jira labyrinth.</figcaption>
+    </figure>
+
+    <h2 id="whatsapp">The WhatsApp test</h2>
+    <p>This one is specific to the Gulf market. In the UAE, WhatsApp is the primary business communication channel. A developer who insists on Slack-only, email-only, or "we'll send weekly reports via PDF" is either inexperienced in this market or doesn't want you to be able to reach them.</p>
+    <p>Send a WhatsApp message at 7pm on a weekday with a quick technical question. Don't expect an instant answer — but do expect an answer the next morning. If a developer can't manage that during the sales process, they certainly won't manage it after you've paid.</p>
+
+    <div class="callout warn">
+      <div class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.3 3.86l-8.4 14a2 2 0 0 0 1.7 3h16.8a2 2 0 0 0 1.7-3l-8.4-14a2 2 0 0 0-3.4 0z"/></svg>
+      </div>
+      <div>
+        <span class="label">Avoid</span>
+        Developers who route all communication through a sales rep or "client success manager". You're paying for the developer's attention. If their organisation is structured to prevent you from getting it, that's the signal.
+      </div>
+    </div>
+
+    <h2 id="close">Closing the conversation</h2>
+    <p>The right freelance developer for you isn't the cheapest, the most expensive, or the one with the best portfolio. It's the one whose communication style and risk profile match yours. Some businesses want a hand-holding senior who explains every choice — others want a heads-down operator who delivers and disappears. Both can be the right call.</p>
+    <p>The test I recommend at the end of the first call: <strong>can you imagine sending this person a panicked WhatsApp at 11pm three months from now, and feeling confident they'll handle it?</strong> If yes, you're probably in the right place. If you hesitate, keep looking.</p>
+
+    <p style="margin-top:2em; color:var(--ink-2); font-style: italic; font-size: 17px;">— A.</p>
+
+    <!-- Article footer: tags + author -->
+    <div class="article-foot">
+      <div class="tags">
+        <span class="tag">#freelancing</span>
+        <span class="tag">#uae</span>
+        <span class="tag">#web-development</span>
+        <span class="tag">#hiring</span>
+        <span class="tag">#dubai</span>
+      </div>
+
+      <div class="glass author-card">
+        <span class="av">A</span>
+        <div>
+          <h4>Akshay V T</h4>
+          <div class="role">Freelance Web Developer · Kerala, India</div>
+          <p>I've spent the last six years building React and Next.js sites for businesses in the UAE, India, and Australia. I write about freelancing and the web — usually between projects, occasionally during.</p>
+          <div class="lks">
+            <a class="chip" href="About.html">About me →</a>
+            <a class="chip" href="Contact.html">Work with me →</a>
+            <a class="chip" href="https://wa.me/919746220043">WhatsApp →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Share / stats -->
+  <aside class="share-aside">
+    <div class="glass share">
+      <h4>Share</h4>
+      <div class="share-row">
+        <a class="share-btn" href="#" aria-label="Share on Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.8a8.5 8.5 0 0 1-2.36.64 4.13 4.13 0 0 0 1.8-2.27 8.2 8.2 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.74A11.65 11.65 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.27 5.48 4.1 4.1 0 0 1-1.86-.5v.04a4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.85.07 4.1 4.1 0 0 0 3.83 2.85A8.23 8.23 0 0 1 2 18.28a11.6 11.6 0 0 0 6.3 1.85c7.55 0 11.68-6.26 11.68-11.68v-.53A8.4 8.4 0 0 0 22 5.8z"/></svg></a>
+        <a class="share-btn" href="#" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V10H5.67v8.34h2.67zM7 8.84a1.57 1.57 0 1 0 0-3.14 1.57 1.57 0 0 0 0 3.14zM18.34 18.34v-4.67c0-2.42-1.3-3.55-3.04-3.55a2.62 2.62 0 0 0-2.38 1.3V10h-2.67v8.34h2.67v-4.65c0-1.23.23-2.42 1.75-2.42 1.5 0 1.52 1.4 1.52 2.5v4.57h2.15z"/></svg></a>
+        <a class="share-btn" href="#" aria-label="Copy link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.7-1.7"/></svg></a>
+        <a class="share-btn" href="https://wa.me/?text=" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20z"/></svg></a>
+      </div>
+      <div class="share-stats">
+        <div class="share-stat"><span>Views</span><b>4.2k</b></div>
+        <div class="share-stat"><span>Shares</span><b>148</b></div>
+        <div class="share-stat"><span>Reading time</span><b>14m</b></div>
+      </div>
+    </div>
+  </aside>
+
+</main>
+
+
+<!-- ── RELATED ── -->
+<section class="related-section" data-screen-label="03 Related" style="background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); padding-top: var(--section-pad);">
+  <div class="container">
+    <div class="sec-head">
+      <div class="left">
+        <span class="eyebrow"><span class="dot"></span>&nbsp;Keep reading</span>
+        <h2>Related <em>articles.</em></h2>
+      </div>
+      <div class="right">More on freelancing and building for the UAE/India market.</div>
+    </div>
+
+    <div class="related-grid">
+      <a class="glass related r1" href="BlogPost.html">
+        <div class="img"></div>
+        <div class="related-body">
+          <span class="cat">SEO</span>
+          <h4>10 signs your business website needs a redesign</h4>
+          <div class="read"><span>Feb 21 · 9 min</span><span style="color:var(--accent);">→</span></div>
+        </div>
+      </a>
+      <a class="glass related r2" href="BlogPost.html">
+        <div class="img"></div>
+        <div class="related-body">
+          <span class="cat">UAE Market</span>
+          <h4>Why WhatsApp should be a first-class citizen on UAE websites</h4>
+          <div class="read"><span>Jan 24 · 6 min</span><span style="color:var(--accent);">→</span></div>
+        </div>
+      </a>
+      <a class="glass related r3" href="BlogPost.html">
+        <div class="img"></div>
+        <div class="related-body">
+          <span class="cat">Freelancing</span>
+          <h4>What "website maintenance" actually includes (when done right)</h4>
+          <div class="read"><span>Feb 14 · 7 min</span><span style="color:var(--accent);">→</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FINAL CTA ── -->
+<section style="padding: var(--section-pad) 0;">
+  <div class="container">
+    <div class="glass cta-block" style="position:relative; overflow:hidden;">
+      <div class="final-bg" style="border-radius:32px;"></div>
+      <div style="position:relative; z-index:2;">
+        <div class="page-eyebrow" style="margin-bottom:14px;"><span class="dot"></span>&nbsp;Apply the framework</div>
+        <h2>Try the WhatsApp test <em>on me.</em></h2>
+        <p>Send a message about your project. See how I respond. If it feels right, we'll talk. If not, no hard feelings.</p>
+        <div class="cta-row">
+          <a class="btn btn-whatsapp" href="https://wa.me/919746220043">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20z"/></svg>
+            WhatsApp me
+          </a>
+          <a class="btn btn-ghost" href="Contact.html">Send a message instead</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Akshay&nbsp;<em>V&nbsp;T</em></div>
+        <p style="color:var(--ink-2); font-size:14.5px; line-height:1.6; max-width:36ch;">A freelance web developer with 6+ years building React &amp; Next.js sites for clients in UAE, India and worldwide.</p>
+        <div class="footer-tag" style="margin-top:18px;">"Reliable. Fast. Always available."</div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="Service.html">Custom Websites</a></li>
+          <li><a href="Service.html">Next.js</a></li>
+          <li><a href="Service.html">React</a></li>
+          <li><a href="Service.html">E-Commerce</a></li>
+          <li><a href="Service.html">SEO</a></li>
+          <li><a href="Service.html">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li><a href="#">Dubai, UAE 🇦🇪</a></li>
+          <li><a href="#">Abu Dhabi 🇦🇪</a></li>
+          <li><a href="#">Kerala, India 🇮🇳</a></li>
+          <li><a href="#">India 🇮🇳</a></li>
+          <li><a href="#">Worldwide 🌍</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Homepage.html#projects">Portfolio</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/919746220043">💬 WhatsApp</a></li>
+          <li><a href="mailto:info@akshayvt.com">✉ info@akshayvt.com</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 Akshay V T · Freelance Web Developer · UAE &amp; India</div>
+      <div>Built with Next.js · Tailwind · ☕ from Kerala</div>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/919746220043?text=Hi+Akshay%2C+I+read+your+UAE+guide+and+I%27d+like+to+chat." target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4 0-.4.2-.6l.4-.5.3-.5c0-.2 0-.4-.1-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-.9 2.4s1 2.8 1.2 3a8.4 8.4 0 0 0 3.6 3.1c1.3.5 1.9.5 2.5.4.4-.1 1.4-.6 1.5-1.1.2-.6.2-1 .1-1.1z"/></svg>
+  Chat on WhatsApp
+</a>
+
+<script>
+// Highlight TOC entry for the section in view
+const headings = document.querySelectorAll('.prose h2[id]');
+const tocLinks = document.querySelectorAll('.toc li');
+const map = new Map();
+headings.forEach((h, i) => map.set(h.id, tocLinks[i]));
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(li => li.classList.remove('active'));
+      const li = map.get(e.target.id);
+      if (li) li.classList.add('active');
+    }
+  });
+}, { rootMargin: '-30% 0px -60% 0px' });
+headings.forEach(h => obs.observe(h));
+</script>
+
+</body>
+</html>

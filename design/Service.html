@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Next.js Development Services — Freelance Next.js Developer | Akshay V T</title>
+<meta name="description" content="Freelance Next.js development — SEO-first, server-rendered apps with Core Web Vitals tuned in. Serving UAE, Dubai, India &amp; worldwide.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ── Single service: hero ── */
+.page-hero{ padding-bottom: 60px; }
+.page-hero .photo{
+  background-image: url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=2400&q=80");
+  background-position: center 30%;
+  opacity:.42;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items:end;
+}
+@media (max-width: 980px){ .hero-grid{ grid-template-columns: 1fr; } }
+
+.tech-stack{ padding: 24px; }
+.tech-stack h4{
+  font-family:"Geist Mono", monospace;
+  font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: .14em;
+  color: var(--muted); margin: 0 0 16px;
+}
+.stack-row{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+.stack-divider{ border-top:1px dashed rgba(255,255,255,.10); padding-top: 16px; margin-top: 16px; }
+
+/* Trust bar */
+.trust-bar{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  padding: 0;
+  margin-top: 32px;
+  border-radius: var(--radius);
+  overflow:hidden;
+}
+.trust-bar > div{
+  padding: 22px 24px;
+  border-right: 1px solid rgba(255,255,255,.06);
+}
+.trust-bar > div:last-child{ border-right: 0; }
+@media (max-width: 720px){
+  .trust-bar{ grid-template-columns: repeat(2, 1fr); }
+  .trust-bar > div:nth-child(2){ border-right: 0; }
+}
+.trust-bar .v{ font-family:"Newsreader", serif; font-size:28px; line-height:1; letter-spacing:-.02em; }
+.trust-bar .k{ font-family:"Geist Mono", monospace; font-size:11px; color: var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-top:6px; }
+
+/* ── Two-col content section ── */
+.two-col{
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 980px){ .two-col{ grid-template-columns: 1fr; gap: 32px; } }
+.two-col aside{ position:sticky; top: 110px; }
+.two-col aside .eyebrow{ display:block; margin-bottom: 12px; }
+.two-col aside h2{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.0; letter-spacing:-.02em;
+  margin: 0;
+}
+.two-col aside h2 em{ font-style: italic; color: var(--accent); }
+
+/* What's Included list */
+.included{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 720px){ .included{ grid-template-columns: 1fr; } }
+.inc-item{
+  padding: 20px 22px;
+  display:flex; gap:14px;
+  align-items: flex-start;
+}
+.inc-check{
+  flex: 0 0 auto;
+  width:26px; height:26px; border-radius: 50%;
+  display:grid; place-items:center;
+  background: rgba(66,228,122,.15);
+  color: var(--green);
+  border:1px solid rgba(66,228,122,.30);
+}
+.inc-check svg{ width:14px; height:14px; }
+.inc-item h4{ font-size: 15px; font-weight: 500; letter-spacing:-.005em; margin:0 0 4px; }
+.inc-item p{ font-size: 13px; color: var(--ink-2); line-height: 1.5; margin: 0; }
+
+/* Audience cards */
+.audience-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (max-width: 720px){ .audience-grid{ grid-template-columns: 1fr; } }
+.aud{
+  padding: 24px;
+}
+.aud-num{ font-family:"Newsreader", serif; font-style:italic; font-size: 32px; color: var(--warm); line-height:1; }
+.aud h4{ font-size: 17px; font-weight: 500; letter-spacing:-.01em; margin: 14px 0 8px; }
+.aud p{ font-size: 14px; color: var(--ink-2); line-height: 1.55; margin: 0; }
+
+/* Process steps (vertical) */
+.proc-list{ display:flex; flex-direction:column; gap: 12px; }
+.proc-step{
+  padding: 26px 28px;
+  display:grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+@media (max-width: 720px){ .proc-step{ grid-template-columns: 60px 1fr; } .proc-step .when{ grid-column: 1 / -1; padding-top: 8px; border-top: 1px dashed rgba(255,255,255,.10); margin-top: 4px; } }
+.proc-step .n{
+  font-family:"Newsreader", serif; font-style:italic;
+  font-size: 56px; line-height: 1; letter-spacing:-.03em;
+  color: var(--accent);
+  opacity:.9;
+}
+.proc-step h4{ font-size: 19px; font-weight:500; letter-spacing:-.01em; margin: 0 0 6px; }
+.proc-step p{ font-size: 14px; color: var(--ink-2); margin: 0; line-height: 1.5; }
+.proc-step .when{ font-family:"Geist Mono", monospace; font-size:11px; color: var(--muted); letter-spacing:.1em; text-transform:uppercase; }
+.proc-step .when b{ color: var(--ink); font-weight: 500; display:block; font-size:12px; margin-top:2px; }
+
+/* Why me cards */
+.why-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 900px){ .why-grid{ grid-template-columns: 1fr; } }
+.why{
+  padding: 26px 24px;
+}
+.why .badge{
+  font-family:"Geist Mono", monospace; font-size: 10px;
+  letter-spacing: .14em; text-transform:uppercase;
+  color: var(--accent);
+  padding: 4px 8px; border-radius: 4px;
+  background: rgba(111,168,255,.10);
+  border: 1px solid rgba(111,168,255,.20);
+  display: inline-block; margin-bottom: 16px;
+}
+.why h4{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-weight:400;
+  font-size: 24px; line-height: 1.15;
+  letter-spacing:-.015em;
+  margin: 0 0 12px;
+}
+.why p{ font-size: 14px; color: var(--ink-2); line-height: 1.55; margin: 0; }
+
+/* Related projects */
+.rel-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 720px){ .rel-grid{ grid-template-columns: 1fr; } }
+.rel-proj{
+  position:relative;
+  border-radius: var(--radius-lg);
+  overflow:hidden;
+  min-height: 320px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,.08);
+  isolation:isolate;
+}
+.rel-proj::before{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background-size: cover; background-position: center;
+  transition: transform 1.2s ease;
+}
+.rel-proj::after{
+  content:""; position:absolute; inset:0; z-index:-1;
+  background: linear-gradient(180deg, rgba(6,7,10,.1) 0%, rgba(6,7,10,.6) 60%, rgba(6,7,10,.92) 100%);
+}
+.rel-proj:hover::before{ transform: scale(1.05); }
+.rel-1::before{ background-image: url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80"); }
+.rel-2::before{ background-image: url("https://images.unsplash.com/photo-1605514449459-5d68cdcb6e35?auto=format&fit=crop&w=1600&q=80"); }
+.rel-proj .tag{ font-family:"Geist Mono", monospace; font-size: 10.5px; letter-spacing:.12em; text-transform:uppercase; color: var(--ink-2); margin-bottom: 10px; }
+.rel-proj h4{
+  font-family:"Newsreader", serif; font-optical-sizing:auto;
+  font-weight:400; font-size: 28px; line-height: 1.08;
+  letter-spacing:-.015em;
+  margin: 0 0 8px;
+}
+.rel-proj p{ font-size: 14px; color: var(--ink-2); margin: 0; }
+
+/* FAQ */
+.faq-list{ display:flex; flex-direction:column; gap:10px; }
+.faq-item{ padding: 22px 26px; cursor: pointer; }
+.faq-item summary{
+  list-style: none;
+  display:flex; align-items:center; justify-content: space-between; gap:24px;
+  font-size: 17px; font-weight: 450; letter-spacing: -.005em;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item .q-toggle{
+  width:30px; height:30px; border-radius:50%;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  display:grid; place-items:center;
+  flex: 0 0 auto;
+  position: relative;
+  transition: transform .3s ease, background .3s ease;
+}
+.faq-item .q-toggle::before, .faq-item .q-toggle::after{
+  content:""; position: absolute; background: var(--ink); border-radius: 2px;
+}
+.faq-item .q-toggle::before{ width: 12px; height: 1.5px; }
+.faq-item .q-toggle::after{ width: 1.5px; height: 12px; transition: transform .3s ease; }
+.faq-item[open] .q-toggle{ background: var(--accent); border-color: transparent; }
+.faq-item[open] .q-toggle::before{ background: #06070A; }
+.faq-item[open] .q-toggle::after{ transform: rotate(90deg); background: #06070A; }
+.faq-item .a{ margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--ink-2); max-width: 64ch; }
+
+/* Final CTA bg */
+.final-bg{
+  position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(180deg, var(--bg) 0%, rgba(6,7,10,.55) 25%, rgba(6,7,10,.6) 75%, var(--bg) 100%),
+    url("https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2400&q=80");
+  background-size: cover; background-position: center;
+}
+
+/* Section pad tightening for service */
+section.tight{ padding-top: clamp(56px, 6.5vw, 96px); padding-bottom: clamp(56px, 6.5vw, 96px); }
+</style>
+</head>
+<body data-screen-label="Single Service">
+
+<!-- ── NAV ── -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a class="brand" href="Homepage.html">
+      <span class="brand-mark">A</span>
+      <span>Akshay V T <small>· Freelance Web Developer</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="Services.html" class="active">Services</a>
+      <a href="Homepage.html#projects">Portfolio</a>
+      <a href="Blog.html">Blog</a>
+      <a href="About.html">About</a>
+      <span class="nav-status"><span class="pulse"></span>Accepting clients</span>
+      <a class="btn btn-primary btn-sm cta" href="Contact.html">Get Free Quote</a>
+    </div>
+  </nav>
+</div>
+
+<!-- ── HERO ── -->
+<header class="page-hero" data-screen-label="01 Service Hero">
+  <div class="gradient"></div>
+  <div class="grid-bg"></div>
+  <div class="photo"></div>
+
+  <div class="container">
+    <nav class="crumbs">
+      <a href="Homepage.html">Home</a><span class="sep">/</span>
+      <a href="Services.html">Services</a><span class="sep">/</span>
+      <span>Next.js Development</span>
+    </nav>
+
+    <div class="hero-grid">
+      <div>
+        <div class="page-eyebrow"><span class="dot"></span>&nbsp;Service · 002 of 030</div>
+        <h1 class="page-title">Next.js development — <em>SEO-first, fast by default.</em></h1>
+        <p class="page-lede">The framework that makes your site fast, SEO-friendly, and future-proof. I build production Next.js apps for clients who care about Core Web Vitals as much as the design — and want both done right.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="Contact.html">Get a Free Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="Homepage.html#projects">View related projects</a>
+        </div>
+      </div>
+
+      <div class="glass tech-stack">
+        <h4>What I use</h4>
+        <div class="stack-row">
+          <span class="chip accent">Next.js 14+</span>
+          <span class="chip accent">App Router</span>
+          <span class="chip">React 18</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span>
+        </div>
+        <div class="stack-divider">
+          <h4>Hosting &amp; tools</h4>
+          <div class="stack-row" style="margin-bottom:0;">
+            <span class="chip">Vercel</span>
+            <span class="chip">Cloudflare</span>
+            <span class="chip">Sanity CMS</span>
+            <span class="chip">Stripe</span>
+            <span class="chip">Resend</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust bar -->
+    <div class="glass trust-bar">
+      <div>
+        <div class="v">6+</div>
+        <div class="k">Years building Next.js</div>
+      </div>
+      <div>
+        <div class="v">15<span style="font-size:18px;">+</span></div>
+        <div class="k">Production deploys</div>
+      </div>
+      <div>
+        <div class="v">96<span style="font-size:18px;">avg</span></div>
+        <div class="k">Lighthouse score</div>
+      </div>
+      <div>
+        <div class="v">5–10<span style="font-size:18px;">d</span></div>
+        <div class="k">Standard delivery</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- ── WHAT'S INCLUDED ── -->
+<section class="tight" data-screen-label="02 What's Included">
+  <div class="container">
+    <div class="two-col">
+      <aside>
+        <span class="eyebrow"><span class="dot"></span>&nbsp;What you get</span>
+        <h2>Everything you'd expect — <em>and a few things you wouldn't.</em></h2>
+        <p style="font-size:14.5px; color:var(--ink-2); margin: 20px 0 0; line-height: 1.55;">Every deliverable below is included in the base scope. No surprise add-ons, no "that's extra" conversations after sign-off.</p>
+      </aside>
+
+      <div class="included">
+        <div class="glass inc-item">
+          <span class="inc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg></span>
+          <div><h4>SSR &amp; SSG configured</h4><p>Server-rendered or statically generated — whichever each route should be. No flash of loading skeleton.</p></div>
+        </div>
+        <div class="glass inc-item">
+          <span class="inc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg></span>
+          <div><h4>App or Pages router</h4><p>Whichever fits the project. I'll explain the trade-offs honestly — neither is automatically better.</p></div>
+        </div>
+        <div class="glass inc-item">
+          <span class="inc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg></span>
+          <div><h4>SEO metadata baked in</h4><p>Title, description, Open Graph, Twitter cards, JSON-LD schema. Per-page, not site-wide defaults.</p></div>
+        </div>
+        <div class="glass inc-item">
+          <span class="inc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg></span>
+          <div><h4>Image optimisation</h4><p>next/image with the right sizes, formats, and loader for your CDN — not the lazy defaults.</p></div>
+        </div>
+        <div class="glass inc-item">
+          <span class="inc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg></span>
+          <div><h4>API routes &amp; middleware</h4><p>Backend endpoints, auth middleware, edge functions where they make sense.</p></div>
+        </div>
+        <div class="glass inc-item">
+          <span class="inc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg></span>
+          <div><h4>TypeScript everywhere</h4><p>Strict mode, proper types — not <code style="font-family:'Geist Mono',monospace; font-size:.85em; color:var(--accent-2);">any</code>s sprinkled to silence errors.</p></div>
+        </div>
+        <div class="glass inc-item">
+          <span class="inc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg></span>
+          <div><h4>Vercel / custom hosting</h4><p>Deployed to Vercel by default, or any provider you prefer. Configured, not just dropped in.</p></div>
+        </div>
+        <div class="glass inc-item">
+          <span class="inc-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l4 4L19 6"/></svg></span>
+          <div><h4>Core Web Vitals tuned</h4><p>LCP, INP, CLS measured and tuned before launch — not "we'll look at it later".</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── WHO IT'S FOR ── -->
+<section class="tight" data-screen-label="03 Who It's For" style="background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
+  <div class="container">
+    <div class="sec-head">
+      <div class="left">
+        <span class="eyebrow"><span class="dot"></span>&nbsp;Right fit?</span>
+        <h2>Is Next.js <em>the right choice for you?</em></h2>
+      </div>
+      <div class="right">Next.js isn't always the answer. Here's when it usually is — and when I'll recommend something else instead.</div>
+    </div>
+
+    <div class="audience-grid">
+      <div class="glass aud">
+        <div class="aud-num">i.</div>
+        <h4>You need to rank on Google</h4>
+        <p>Marketing sites, SaaS landing pages, blogs. SSR + clean HTML means Google sees content instantly — not after a 3-second JS hydration.</p>
+      </div>
+      <div class="glass aud">
+        <div class="aud-num">ii.</div>
+        <h4>You're building a product UI</h4>
+        <p>Dashboards, admin panels, full-stack apps with auth, billing, and real data. Next.js handles the whole stack — no separate backend repo to manage.</p>
+      </div>
+      <div class="glass aud">
+        <div class="aud-num">iii.</div>
+        <h4>You care about performance</h4>
+        <p>Edge functions, image optimisation, route-level code splitting. If "loads in under a second" is on your wishlist, Next.js makes it easy.</p>
+      </div>
+      <div class="glass aud">
+        <div class="aud-num">iv.</div>
+        <h4>You're migrating from WordPress</h4>
+        <p>Keep the URLs, the rankings, the content — drop the plugin chaos. Headless WordPress + Next.js is a common path I've walked many times.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── PROCESS ── -->
+<section class="tight" data-screen-label="04 Process">
+  <div class="container">
+    <div class="sec-head">
+      <div class="left">
+        <span class="eyebrow"><span class="dot"></span>&nbsp;How I work</span>
+        <h2>From kick-off <em>to live deploy.</em></h2>
+      </div>
+      <div class="right">Same process whether it's a one-page marketing site or a multi-tenant SaaS. The duration and depth scale — the principles don't.</div>
+    </div>
+
+    <div class="proc-list">
+      <div class="glass proc-step">
+        <span class="n">01</span>
+        <div>
+          <h4>Discovery</h4>
+          <p>30-minute call (free). We talk goals, target audience, must-haves, must-avoids, and existing tech. I leave with a clear picture; you leave with an honest opinion.</p>
+        </div>
+        <div class="when">Length<b>15–30 min</b></div>
+      </div>
+      <div class="glass proc-step">
+        <span class="n">02</span>
+        <div>
+          <h4>Design &amp; planning</h4>
+          <p>Wireframes or design direction agreed before a single line of code. If you have Figma already, I'll work to it. If not, we explore directions together.</p>
+        </div>
+        <div class="when">Length<b>2–5 days</b></div>
+      </div>
+      <div class="glass proc-step">
+        <span class="n">03</span>
+        <div>
+          <h4>Development</h4>
+          <p>Daily updates, staging URL from day one. You see progress, comment in real time, and never wonder what I'm doing or when it's coming.</p>
+        </div>
+        <div class="when">Length<b>1–4 weeks</b></div>
+      </div>
+      <div class="glass proc-step">
+        <span class="n">04</span>
+        <div>
+          <h4>Delivery &amp; support</h4>
+          <p>You get the code, the site goes live, and I stay available. Most of my projects continue as monthly maintenance retainers — but no pressure either way.</p>
+        </div>
+        <div class="when">Length<b>Day of launch +</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── WHY ME FOR THIS SERVICE ── -->
+<section class="tight" data-screen-label="05 Why Me" style="background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
+  <div class="container">
+    <div class="sec-head">
+      <div class="left">
+        <span class="eyebrow"><span class="dot"></span>&nbsp;Specifically for Next.js</span>
+        <h2>Three reasons clients keep <em>coming back for Next.js work.</em></h2>
+      </div>
+      <div class="right">There are a lot of "Next.js developers" online. Here's what's different about hiring me specifically.</div>
+    </div>
+
+    <div class="why-grid">
+      <div class="glass why">
+        <span class="badge">SEO</span>
+        <h4>Next.js + SEO is what I actually do</h4>
+        <p>I don't add SEO as an afterthought — it's baked into every architectural decision. Metadata strategy, structured data, sitemaps, all from day one.</p>
+      </div>
+      <div class="glass why">
+        <span class="badge">Performance</span>
+        <h4>I understand how Google crawls Next.js</h4>
+        <p>SSR vs ISR vs SSG isn't a buzzword salad to me. I pick the right rendering mode per route, not "everything ISR because the tutorial said so".</p>
+      </div>
+      <div class="glass why">
+        <span class="badge">Outcomes</span>
+        <h4>Page-1 rankings, not just clean code</h4>
+        <p>I've helped clients go from invisible to page-1 by fixing technical SEO alone. Working code is the floor — measurable business outcomes are the ceiling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── RELATED PROJECTS ── -->
+<section class="tight" data-screen-label="06 Related Projects">
+  <div class="container">
+    <div class="sec-head">
+      <div class="left">
+        <span class="eyebrow"><span class="dot"></span>&nbsp;Selected work · Next.js</span>
+        <h2>Recent <em>Next.js builds.</em></h2>
+      </div>
+      <div class="right">A few examples of Next.js work shipped over the last 18 months. Full case studies on request.</div>
+    </div>
+
+    <div class="rel-grid">
+      <a class="rel-proj rel-1" href="Homepage.html#projects">
+        <span class="tag">🇶🇦 Doha · E-Commerce</span>
+        <h4>Athletes Gym Qatar</h4>
+        <p>Headless commerce on Next.js — Lighthouse 96, page-1 ranking, WhatsApp checkout for the Gulf market.</p>
+      </a>
+      <a class="rel-proj rel-2" href="Homepage.html#projects">
+        <span class="tag">🇦🇪 Dubai · SaaS</span>
+        <h4>Loops Marketing</h4>
+        <p>A SaaS marketing site that looks Series-A funded. Sign-ups +184% in three months.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FAQ ── -->
+<section class="tight" data-screen-label="07 FAQ" style="background: var(--bg-2); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);">
+  <div class="container">
+    <div class="two-col">
+      <aside>
+        <span class="eyebrow"><span class="dot"></span>&nbsp;Questions</span>
+        <h2>Common questions <em>about Next.js work.</em></h2>
+        <p style="font-size:14.5px; color:var(--ink-2); margin: 20px 0 24px; line-height: 1.55;">Yours not here? WhatsApp me — I read every message myself.</p>
+        <a class="btn btn-ghost btn-sm" href="Contact.html">Ask a question →</a>
+      </aside>
+
+      <div class="faq-list">
+        <details class="glass faq-item" open>
+          <summary>How long does a Next.js project take?<span class="q-toggle"></span></summary>
+          <div class="a">Marketing sites: 5–10 days. SaaS apps with auth and dashboards: 3–6 weeks. I commit to a fixed timeline in the proposal and stick to it.</div>
+        </details>
+        <details class="glass faq-item">
+          <summary>Do you work on existing Next.js codebases?<span class="q-toggle"></span></summary>
+          <div class="a">Yes — adding features, fixing bugs, migrating from Pages Router to App Router, or untangling someone else's hot mess. Share the repo and I'll give an honest assessment.</div>
+        </details>
+        <details class="glass faq-item">
+          <summary>Should I use Next.js or just React?<span class="q-toggle"></span></summary>
+          <div class="a">If users need to see content quickly and Google needs to crawl it — Next.js. If it's a logged-in dashboard where SEO doesn't matter — plain React (Vite + React Router) is often simpler. I'll tell you honestly which fits.</div>
+        </details>
+        <details class="glass faq-item">
+          <summary>Do you deploy to Vercel only?<span class="q-toggle"></span></summary>
+          <div class="a">Vercel is my default — it's where Next.js shines. But I've also deployed to Cloudflare Pages, AWS Amplify, and self-hosted Docker. Tell me your constraints.</div>
+        </details>
+        <details class="glass faq-item">
+          <summary>Can you integrate a CMS like Sanity or Contentful?<span class="q-toggle"></span></summary>
+          <div class="a">Yes — Sanity, Contentful, Strapi, Payload, and headless WordPress. The CMS choice is one of the first conversations we'll have; it dictates a lot of architecture.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FINAL CTA ── -->
+<section style="padding: 0 0 var(--section-pad);">
+  <div class="container">
+    <div class="glass cta-block" style="position:relative; overflow:hidden;">
+      <div class="final-bg" style="border-radius:32px;"></div>
+      <div style="position:relative; z-index:2;">
+        <div class="page-eyebrow" style="margin-bottom:14px;"><span class="dot"></span>&nbsp;Ready to start?</div>
+        <h2>Let's build your <em>Next.js project.</em></h2>
+        <p>Free consultation. No commitment. Tell me about your project and I'll come back within 24 hours with a clear scope and timeline.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="Contact.html">Start your project
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-whatsapp" href="https://wa.me/919746220043">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4 0-.4.2-.6l.4-.5.3-.5c0-.2 0-.4-.1-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-.9 2.4s1 2.8 1.2 3a8.4 8.4 0 0 0 3.6 3.1c1.3.5 1.9.5 2.5.4.4-.1 1.4-.6 1.5-1.1.2-.6.2-1 .1-1.1z"/></svg>
+            WhatsApp me
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Akshay&nbsp;<em>V&nbsp;T</em></div>
+        <p style="color:var(--ink-2); font-size:14.5px; line-height:1.6; max-width:36ch;">A freelance web developer with 6+ years building React &amp; Next.js sites for clients in UAE, India and worldwide.</p>
+        <div class="footer-tag" style="margin-top:18px;">"Reliable. Fast. Always available."</div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="Service.html">Custom Websites</a></li>
+          <li><a href="Service.html">Next.js</a></li>
+          <li><a href="Service.html">React</a></li>
+          <li><a href="Service.html">E-Commerce</a></li>
+          <li><a href="Service.html">SEO</a></li>
+          <li><a href="Service.html">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <ul>
+          <li><a href="#">Dubai, UAE 🇦🇪</a></li>
+          <li><a href="#">Abu Dhabi 🇦🇪</a></li>
+          <li><a href="#">Kerala, India 🇮🇳</a></li>
+          <li><a href="#">India 🇮🇳</a></li>
+          <li><a href="#">Worldwide 🌍</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Homepage.html#projects">Portfolio</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/919746220043">💬 WhatsApp</a></li>
+          <li><a href="mailto:info@akshayvt.com">✉ info@akshayvt.com</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 Akshay V T · Freelance Web Developer · UAE &amp; India</div>
+      <div>Built with Next.js · Tailwind · ☕ from Kerala</div>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/919746220043?text=Hi+Akshay%2C+I%27m+interested+in+Next.js+development+for+a+project." target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4 0-.4.2-.6l.4-.5.3-.5c0-.2 0-.4-.1-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-.9 2.4s1 2.8 1.2 3a8.4 8.4 0 0 0 3.6 3.1c1.3.5 1.9.5 2.5.4.4-.1 1.4-.6 1.5-1.1.2-.6.2-1 .1-1.1z"/></svg>
+  Chat on WhatsApp
+</a>
+
+<script>
+document.querySelectorAll('.faq-list details').forEach(d=>{
+  d.addEventListener('toggle', ()=>{
+    if(d.open){
+      document.querySelectorAll('.faq-list details').forEach(o=>{ if(o!==d) o.open=false; });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
