@@ -6,12 +6,15 @@ export const metadata: Metadata = {
     template: "%s | Blog | Akshay V T",
   },
   description:
-    "Web development insights, SEO tips, and freelancing advice from a developer with 6+ years of experience. Practical guides for small business owners and fellow developers.",
+    "Web dev tips, SEO guides & freelancing insights. Practical advice from 6+ years building websites for businesses.",
   openGraph: {
     title: "Blog | Akshay V T | Web Development Insights",
     description:
-      "Web development insights, SEO tips, and freelancing advice. Practical guides for small business owners.",
+      "Web dev tips, SEO guides & freelancing insights from 6+ years of experience.",
     url: "https://akshayvt.com/blog",
+  },
+  alternates: {
+    canonical: "/blog",
   },
 };
 

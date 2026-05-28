@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Glass } from "./Glass";
 
 interface QuotePopupProps {
   isOpen: boolean;
@@ -133,13 +132,13 @@ export function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm animate-fadeIn"
+        className="absolute inset-0 bg-black/85 backdrop-blur-md animate-fadeIn"
         onClick={onClose}
       />
 
       {/* Modal */}
       <div className="relative w-full max-w-[560px] animate-slideUp">
-        <Glass className="relative overflow-hidden">
+        <div className="relative overflow-hidden rounded-[22px] bg-[#0c0e16] border border-white/15 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.05)_inset]">
           {/* Close button */}
           <button
             onClick={onClose}
@@ -385,7 +384,7 @@ export function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
               </>
             )}
           </div>
-        </Glass>
+        </div>
       </div>
     </div>
   );

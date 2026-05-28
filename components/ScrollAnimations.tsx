@@ -14,22 +14,126 @@ export function ScrollAnimations() {
         });
       },
       {
-        threshold: 0.15,
-        rootMargin: "0px 0px -80px 0px",
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
       }
     );
 
-    // Observe all elements with data-animate attribute
-    const animatedElements = document.querySelectorAll("[data-animate]");
-    animatedElements.forEach((el) => observer.observe(el));
+    // Auto-animate common elements for subtle fade-in effect
+    const autoAnimateSelectors = [
+      "section",
+      "header",
+      "main > div",
+      ".container > div",
+      "article",
+      "[data-animate]",
+      ".reveal",
+    ];
 
-    // Also observe elements with reveal class
-    const revealElements = document.querySelectorAll(".reveal");
-    revealElements.forEach((el) => observer.observe(el));
+    // Add slight delay to allow initial render
+    setTimeout(() => {
+      autoAnimateSelectors.forEach((selector) => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((el, index) => {
+          // Don't re-animate already animated elements
+          if (!el.hasAttribute("data-auto-animated")) {
+            el.setAttribute("data-auto-animated", "true");
+
+            // Add staggered animation delay based on position
+            const staggerDelay = Math.min(index * 50, 300);
+            (el as HTMLElement).style.setProperty("--stagger-delay", `${staggerDelay}ms`);
+
+            observer.observe(el);
+          }
+        });
+      });
+    }, 100);
+
+    // Create global mouse gradient background element
+    const gradientBg = document.createElement("div");
+    gradientBg.className = "mouse-gradient-bg";
+    document.body.appendChild(gradientBg);
+
+    let hideTimeout: NodeJS.Timeout;
+
+    // Mouse tracking for gradient hover effects on background
+    const handleMouseMove = (e: MouseEvent) => {
+      // Update global background gradient position
+      gradientBg.style.setProperty("--mouse-x", `${e.clientX}px`);
+      gradientBg.style.setProperty("--mouse-y", `${e.clientY}px`);
+      gradientBg.classList.add("active");
+
+      // Hide gradient after mouse stops moving
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(() => {
+        gradientBg.classList.remove("active");
+      }, 2000);
+    };
+
+    const handleMouseLeave = () => {
+      gradientBg.classList.remove("active");
+    };
+
+    document.addEventListener("mousemove", handleMouseMove, { passive: true });
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    // Parallax effect for section background images
+    const parallaxElements = document.querySelectorAll("[data-parallax], .parallax-bg");
+
+    const handleParallax = () => {
+      parallaxElements.forEach((el) => {
+        const element = el as HTMLElement;
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Check if element is in viewport
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          // Calculate parallax offset based on element position
+          const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+          const parallaxSpeed = parseFloat(element.dataset.parallaxSpeed || "0.3");
+          const offset = (scrollProgress - 0.5) * 100 * parallaxSpeed;
+
+          element.style.setProperty("--parallax-y", `${offset}px`);
+        }
+      });
+    };
+
+    // Also apply parallax to elements with background images in sections
+    const sectionBgElements = document.querySelectorAll("section [style*='background-image'], section .bg-cover");
+
+    const handleSectionParallax = () => {
+      sectionBgElements.forEach((el) => {
+        const element = el as HTMLElement;
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const scrollProgress = (windowHeight - rect.top) / (windowHeight + rect.height);
+          const offset = (scrollProgress - 0.5) * 40; // Subtle parallax
+
+          // Apply parallax via background-position or transform
+          if (element.style.backgroundImage) {
+            element.style.backgroundPositionY = `calc(50% + ${offset}px)`;
+          }
+        }
+      });
+    };
+
+    const combinedScrollHandler = () => {
+      handleParallax();
+      handleSectionParallax();
+    };
+
+    window.addEventListener("scroll", combinedScrollHandler, { passive: true });
+    combinedScrollHandler(); // Initial call
 
     return () => {
-      animatedElements.forEach((el) => observer.unobserve(el));
-      revealElements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+      window.removeEventListener("scroll", combinedScrollHandler);
+      clearTimeout(hideTimeout);
+      gradientBg.remove();
     };
   }, []);
 

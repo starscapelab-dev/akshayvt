@@ -14,7 +14,7 @@
   body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    letter-spacing: -0.005em;
+    letter-spacing: 0.01em;
   }
 
   img {
@@ -28,6 +28,28 @@
   button {
     font-family: inherit;
     cursor: pointer;
+  }
+
+  /* Dark theme for native select dropdowns */
+  select {
+    background-color: transparent;
+    color: inherit;
+  }
+
+  select option {
+    background-color: #0c0e16;
+    color: #f0f2f5;
+    padding: 12px 16px;
+  }
+
+  select option:hover,
+  select option:focus {
+    background-color: #1a1d28;
+  }
+
+  select option:checked {
+    background: linear-gradient(90deg, #6FA8FF 0%, #6FA8FF 100%);
+    color: #0c0e16;
   }
 }
 
@@ -69,8 +91,8 @@
   }
 
   .glass-blur {
-    backdrop-filter: saturate(160%) blur(22px);
-    -webkit-backdrop-filter: saturate(160%) blur(22px);
+    backdrop-filter: saturate(180%) blur(40px);
+    -webkit-backdrop-filter: saturate(180%) blur(40px);
   }
 
   .line {
@@ -600,6 +622,21 @@
    INTERSECTION OBSERVER BASED ANIMATIONS
    ═══════════════════════════════════════════════════════════ */
 
+/* Global smooth fade-in for auto-animated elements */
+[data-auto-animated] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease-out-expo),
+              transform 0.8s var(--ease-out-expo);
+  transition-delay: var(--stagger-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-auto-animated].in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Initial hidden state for scroll animations - SMOOTHER */
 [data-animate] {
   opacity: 0;
@@ -717,4 +754,160 @@ button, .btn {
 
 .link-underline:hover::after {
   width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FORM INPUT ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Smooth input/textarea focus animations */
+input,
+textarea,
+select {
+  transition: border-color 0.4s var(--ease-out-expo),
+              background-color 0.4s var(--ease-out-expo),
+              box-shadow 0.4s var(--ease-out-expo),
+              transform 0.3s var(--ease-out-expo);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 0 0 3px rgba(111, 168, 255, 0.15),
+              0 4px 12px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Form field container hover/focus effects */
+.form-field {
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.form-field:hover {
+  transform: translateY(-1px);
+}
+
+.form-field:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -8px rgba(111, 168, 255, 0.2);
+}
+
+/* Button/chip selection animations */
+button,
+[role="button"] {
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+button:active:not(:disabled),
+[role="button"]:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* Chip/tag selection pop effect */
+.chip-select {
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+.chip-select:hover {
+  transform: translateY(-2px);
+}
+
+.chip-select.selected {
+  animation: chipPop 0.4s var(--ease-out-expo);
+}
+
+@keyframes chipPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FAQ ACCORDION ANIMATIONS (for native details/summary)
+   ═══════════════════════════════════════════════════════════ */
+
+details {
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+details summary {
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+details summary:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+details[open] summary {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Smooth content reveal for details */
+details > div,
+details > p {
+  animation: faqSlideDown 0.5s var(--ease-out-expo);
+}
+
+@keyframes faqSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BACKGROUND GRADIENT MOUSEOVER EFFECT
+   ═══════════════════════════════════════════════════════════ */
+
+/* Global gradient glow that follows mouse on page background */
+.mouse-gradient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out-expo);
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh),
+    rgba(111, 168, 255, 0.06),
+    transparent 50%
+  );
+}
+
+.mouse-gradient-bg.active {
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PARALLAX SCROLL EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+
+/* Parallax background images */
+[data-parallax],
+.parallax-bg {
+  will-change: transform;
+  transform: translateY(var(--parallax-y, 0));
+  transition: transform 0.1s linear;
+}
+
+/* Section background images with parallax */
+section [style*="background-image"],
+section .bg-cover {
+  transition: background-position 0.1s linear;
+}
+
+/* Label float animation for inputs */
+.label-float {
+  transition: all 0.3s var(--ease-out-expo);
+}
+
+input:focus ~ .label-float,
+input:not(:placeholder-shown) ~ .label-float,
+textarea:focus ~ .label-float,
+textarea:not(:placeholder-shown) ~ .label-float {
+  transform: translateY(-100%) scale(0.85);
+  color: var(--accent);
 }

@@ -8,13 +8,16 @@ import { locations } from "@/data/locations";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Locations | Freelance Web Developer | Akshay V T",
+  title: "Locations",
   description:
-    "I work with clients in Dubai, Kerala, Sydney, Doha, Riyadh, Jeddah and worldwide. Wherever you are, I deliver professional web development with direct communication.",
+    "Web developer serving Dubai, Kerala, Sydney, Doha, Riyadh & worldwide. Direct communication, professional delivery.",
   openGraph: {
     title: "Locations | Freelance Web Developer | Akshay V T",
     description:
-      "Web development services for businesses in UAE, India, Australia, Qatar, Saudi Arabia and worldwide.",
+      "Web development for businesses in UAE, India, Australia, Qatar, Saudi Arabia & worldwide.",
+  },
+  alternates: {
+    canonical: "/locations",
   },
 };
 

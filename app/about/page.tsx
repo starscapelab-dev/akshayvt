@@ -6,14 +6,17 @@ import { aboutContent } from "@/data/about";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Me",
+  title: "About",
   description:
-    "6+ years of experience building React & Next.js websites for businesses in UAE, India, and worldwide. Based in Kerala, serving clients globally. Learn about my journey, skills, and approach to web development.",
+    "6+ years building React & Next.js websites. Based in Kerala, serving clients in Dubai, Sydney & worldwide. My journey & skills.",
   openGraph: {
     title: "About Akshay V T | Freelance Web Developer",
     description:
-      "6+ years of experience building websites that work. Based in Kerala, serving clients in Dubai, Sydney, and worldwide.",
+      "6+ years building websites. Based in Kerala, serving Dubai, Sydney & worldwide.",
     url: "https://akshayvt.com/about",
+  },
+  alternates: {
+    canonical: "/about",
   },
 };
 
@@ -170,15 +173,14 @@ export default function AboutPage() {
               as="div"
               className="relative p-0 rounded-[28px] aspect-[4/5] min-h-[460px] overflow-hidden"
             >
-              {/* Placeholder visual */}
-              <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_30%_30%,rgba(255,255,255,.08),transparent_60%),linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01)_60%)] rounded-[inherit]" />
-              <div
-                className="absolute inset-0 opacity-50"
-                style={{
-                  background:
-                    "repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 2px, transparent 2px 18px)",
-                }}
+              {/* Profile Image */}
+              <img
+                src="https://haziex.com/wp-content/uploads/2024/09/akshay-haziex.png"
+                alt="Akshay V T - Freelance Web Developer"
+                className="absolute inset-0 w-full h-full object-cover object-top"
               />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,7,10,.7)] via-transparent to-[rgba(6,7,10,.2)]" />
 
               {/* Floating stats */}
               <Glass
@@ -202,14 +204,8 @@ export default function AboutPage() {
               </Glass>
 
               {/* Signature */}
-              <div className="absolute bottom-20 left-[22px] serif italic text-[28px] text-ink tracking-[-.01em] opacity-85">
+              <div className="absolute bottom-6 left-[22px] serif italic text-[28px] text-white tracking-[-.01em] drop-shadow-lg">
                 Akshay V T
-              </div>
-
-              {/* Label */}
-              <div className="absolute left-0 right-0 bottom-0 px-[22px] py-4 bg-[linear-gradient(180deg,rgba(6,7,10,0),rgba(6,7,10,.55))] mono text-[11px] tracking-[.12em] uppercase text-ink-2 flex justify-between">
-                <span>PHOTO · DROP HEADSHOT HERE</span>
-                <span>4 : 5</span>
               </div>
             </Glass>
           </div>
@@ -481,11 +477,16 @@ export default function AboutPage() {
       </section>
 
       {/* Technology Logo Carousel */}
-      <section className="py-16 border-b border-line-soft overflow-hidden">
-        <div className="container mb-8">
+      <section className="py-16 overflow-hidden">
+        <div className="container mb-10">
           <div className="text-center">
-            <div className="mono text-[11px] text-muted uppercase tracking-[.14em] mb-2">Trusted Technologies</div>
-            <h3 className="serif text-[24px] tracking-tight m-0">Built with industry-standard tools</h3>
+            <div className="eyebrow mb-[18px] justify-center">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_12px_#6FA8FF]" />
+              &nbsp;&nbsp;Trusted Technologies
+            </div>
+            <h2 className="serif font-normal text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-.02em] m-0">
+              Built with <em className="italic text-ink-2">industry-standard tools</em>
+            </h2>
           </div>
         </div>
         <div className="relative">
@@ -496,32 +497,32 @@ export default function AboutPage() {
           {/* Scrolling track */}
           <div className="flex animate-scroll">
             {/* First set */}
-            <div className="flex gap-16 px-8">
+            <div className="flex gap-12 px-6">
               {techLogos.map((logo, i) => (
-                <div key={i} className="flex flex-col items-center gap-3 min-w-[80px]">
-                  <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 p-2 flex items-center justify-center">
+                <div key={i} className="flex flex-col items-center gap-3 min-w-[90px]">
+                  <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 p-3 flex items-center justify-center">
                     <img
                       src={logo.src}
                       alt={logo.name}
-                      className="w-8 h-8 object-contain opacity-70 hover:opacity-100 transition-opacity"
+                      className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity"
                     />
                   </div>
-                  <span className="mono text-[10px] text-muted tracking-wide">{logo.name}</span>
+                  <span className="mono text-[11px] text-muted tracking-wide">{logo.name}</span>
                 </div>
               ))}
             </div>
             {/* Duplicate for seamless loop */}
-            <div className="flex gap-16 px-8">
+            <div className="flex gap-12 px-6">
               {techLogos.map((logo, i) => (
-                <div key={`dup-${i}`} className="flex flex-col items-center gap-3 min-w-[80px]">
-                  <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/10 p-2 flex items-center justify-center">
+                <div key={`dup-${i}`} className="flex flex-col items-center gap-3 min-w-[90px]">
+                  <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 p-3 flex items-center justify-center">
                     <img
                       src={logo.src}
                       alt={logo.name}
-                      className="w-8 h-8 object-contain opacity-70 hover:opacity-100 transition-opacity"
+                      className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity"
                     />
                   </div>
-                  <span className="mono text-[10px] text-muted tracking-wide">{logo.name}</span>
+                  <span className="mono text-[11px] text-muted tracking-wide">{logo.name}</span>
                 </div>
               ))}
             </div>

@@ -109,7 +109,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
               </div>
             </div>
             <div className="px-6 py-[22px] border-r border-white/[.06] max-[720px]:border-r-0">
-              <div className="serif text-[28px] leading-none tracking-[-.02em]">15+</div>
+              <div className="serif text-[28px] leading-none tracking-[-.02em]">50+</div>
               <div className="mono text-[11px] text-muted uppercase tracking-[.08em] mt-1.5">
                 Projects
               </div>

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Akshay V T",
   },
   description:
-    "A freelancer you can trust. All your web needs. One developer. Direct communication. Specializing in React, Next.js, and modern web development for businesses in UAE, India, Australia, and worldwide.",
+    "Freelance web developer specializing in React & Next.js. 6+ years experience. Serving clients in Dubai, Kerala, Sydney & worldwide.",
   keywords: [
     "freelance web developer",
     "web developer dubai",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Akshay V T - Freelance Web Developer",
     title: "Akshay V T | Freelance Web Developer | React & Next.js Expert",
     description:
-      "A freelancer you can trust. All your web needs. One developer. Direct communication. 6+ years building React & Next.js sites for clients worldwide.",
+      "Freelance web developer with 6+ years experience. React, Next.js, e-commerce & SEO for businesses worldwide.",
     images: [
       {
         url: "/og-image.jpg",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Akshay V T | Freelance Web Developer",
     description:
-      "A freelancer you can trust. All your web needs. One developer. Direct communication.",
+      "Freelance web developer. React & Next.js expert. 6+ years experience.",
     images: ["/og-image.jpg"],
     creator: "@akshayvt",
   },
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://akshayvt.com",
+    canonical: "/",
   },
 };
 

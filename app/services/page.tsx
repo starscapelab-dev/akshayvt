@@ -9,12 +9,15 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "36+ web development services including custom websites, Next.js & React development, e-commerce, SEO optimization, email setup, and troubleshooting. Fixed pricing, no surprises. Serving businesses in Dubai, Kerala, Saudi Arabia, Sydney and worldwide.",
+    "36+ web development services. Custom sites, React, Next.js, e-commerce, SEO & email setup. Fixed pricing, no surprises.",
   openGraph: {
     title: "Web Development Services | Akshay V T",
     description:
-      "36+ web development services including custom websites, e-commerce, SEO, email setup, and troubleshooting. Fixed pricing, no surprises.",
+      "36+ web development services. Custom sites, e-commerce, SEO & more. Fixed pricing.",
     url: "https://akshayvt.com/services",
+  },
+  alternates: {
+    canonical: "/services",
   },
 };
 
@@ -558,7 +561,7 @@ export default function ServicesPage() {
         secondaryCta={{ label: "Browse all services", href: "#core" }}
         stats={[
           { value: "6+", label: "Years experience" },
-          { value: "15+", label: "Clients shipped" },
+          { value: "50+", label: "Clients shipped" },
           { value: "36+", label: "Services offered" },
           { value: "<24h", label: "Avg reply time" },
         ]}

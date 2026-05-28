@@ -135,7 +135,7 @@ export const aboutContent = {
         "Athletes Gym Qatar, ADL99 Sydney, Sydney Removalist, and a dozen smaller builds. First year working with referrals only.",
     },
     {
-      year: "2025",
+      year: "2026",
       subtitle: "Now",
       title: "Currently accepting two new projects this quarter",
       description:

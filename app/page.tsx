@@ -5,21 +5,42 @@ import { Button } from "@/components/Button";
 import { Glass } from "@/components/Glass";
 import { Chip } from "@/components/Chip";
 import { ServiceCard } from "@/components/ServiceCard";
+import { FAQAccordion } from "@/components/FAQAccordion";
+import { HeroBackground } from "@/components/HeroBackground";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { testimonials } from "@/data/testimonials";
 import { faqs } from "@/data/faq";
 import type { Metadata } from "next";
 
+// Technology logos for the carousel
+const techLogos = [
+  { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Next.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { name: "TypeScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "Tailwind CSS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Node.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "PostgreSQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+  { name: "MongoDB", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+  { name: "Redis", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+  { name: "Docker", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+  { name: "AWS", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" },
+  { name: "Vercel", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" },
+  { name: "Figma", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+];
+
 export const metadata: Metadata = {
   title: "Akshay V T | Freelance Web Developer | React & Next.js Expert",
   description:
-    "A freelancer you can trust. All your web needs. One developer. Direct communication. Specializing in React, Next.js, e-commerce, and SEO for businesses in Dubai, Kerala, Sydney, and worldwide. 6+ years experience, 40+ projects delivered.",
+    "Freelance web developer with 6+ years experience. React, Next.js, e-commerce & SEO. Serving Dubai, Kerala, Sydney & worldwide.",
   openGraph: {
     title: "Akshay V T | Freelance Web Developer | React & Next.js Expert",
     description:
-      "A freelancer you can trust. All your web needs. One developer. Direct communication. 6+ years experience, 40+ projects delivered.",
+      "Freelance web developer with 6+ years experience. React, Next.js, e-commerce & SEO.",
     url: "https://akshayvt.com",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -33,38 +54,8 @@ export default function HomePage() {
         id="top"
         className="relative min-h-[920px] pt-[140px] pb-24 overflow-hidden isolate"
       >
-        {/* Background layers */}
-        <div
-          className="absolute inset-0 z-[-2]"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(111,168,255,.25), transparent 60%), radial-gradient(ellipse 60% 50% at 90% 20%, rgba(182,155,255,.18), transparent 60%), linear-gradient(180deg, #06070A 0%, #0A0F1C 60%, #06070A 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 z-[-1] bg-cover bg-center opacity-45"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2400&q=80')",
-            backgroundPosition: "center 70%",
-            maskImage:
-              "linear-gradient(180deg, transparent 0%, #000 25%, #000 70%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(180deg, transparent 0%, #000 25%, #000 70%, transparent 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0 z-[-1] opacity-60"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
-            maskImage:
-              "radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 80%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 80%)",
-          }}
-        />
+        {/* Sticky parallax background with scroll-based scale effect */}
+        <HeroBackground imageUrl="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2400&q=80" />
 
         <div className="container">
           <div className="relative grid grid-cols-[1.15fr_.85fr] gap-10 items-end max-[1000px]:grid-cols-1">
@@ -109,7 +100,7 @@ export default function HomePage() {
               </div>
 
               {/* Trust stats */}
-              <div className="flex gap-6 flex-wrap p-5 px-[26px] rounded-DEFAULT bg-gradient-to-b from-white/6 to-white/2 backdrop-blur-[14px] backdrop-saturate-[160%] border border-white/8">
+              <Glass className="flex gap-6 flex-wrap p-5 px-[26px]">
                 <div className="flex items-center gap-[10px]">
                   <span className="serif text-[30px] leading-none tracking-tight">6+</span>
                   <span className="text-xs text-muted leading-[1.3] max-w-[14ch]">
@@ -119,7 +110,7 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="flex items-center gap-[10px]">
-                  <span className="serif text-[30px] leading-none tracking-tight">15+</span>
+                  <span className="serif text-[30px] leading-none tracking-tight">50+</span>
                   <span className="text-xs text-muted leading-[1.3] max-w-[14ch]">
                     Happy clients
                     <br />
@@ -142,7 +133,7 @@ export default function HomePage() {
                     time
                   </span>
                 </div>
-              </div>
+              </Glass>
             </div>
 
             {/* Right column - Card cluster */}
@@ -663,6 +654,60 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Technology Logo Carousel */}
+      <section className="py-16 overflow-hidden bg-bg-2">
+        <div className="container mb-10">
+          <div className="text-center">
+            <div className="eyebrow mb-[18px] justify-center">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_12px_#6FA8FF]" />
+              &nbsp;&nbsp;Trusted Technologies
+            </div>
+            <h2 className="serif font-normal text-[clamp(32px,4vw,48px)] leading-[1.1] tracking-[-.02em] m-0">
+              Built with <em className="italic text-ink-2">industry-standard tools</em>
+            </h2>
+          </div>
+        </div>
+        <div className="relative">
+          {/* Gradient masks */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-bg-2 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-bg-2 to-transparent z-10 pointer-events-none" />
+
+          {/* Scrolling track */}
+          <div className="flex animate-scroll">
+            {/* First set */}
+            <div className="flex gap-12 px-6">
+              {techLogos.map((logo, i) => (
+                <div key={i} className="flex flex-col items-center gap-3 min-w-[90px]">
+                  <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 p-3 flex items-center justify-center">
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                  <span className="mono text-[11px] text-muted tracking-wide">{logo.name}</span>
+                </div>
+              ))}
+            </div>
+            {/* Duplicate for seamless loop */}
+            <div className="flex gap-12 px-6">
+              {techLogos.map((logo, i) => (
+                <div key={`dup-${i}`} className="flex flex-col items-center gap-3 min-w-[90px]">
+                  <div className="w-16 h-16 rounded-xl bg-white/5 border border-white/10 p-3 flex items-center justify-center">
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="w-10 h-10 object-contain opacity-80 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                  <span className="mono text-[11px] text-muted tracking-wide">{logo.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section id="faq" className="relative pt-[clamp(72px,8.5vw,128px)] pb-[clamp(72px,8.5vw,128px)] bg-bg-2">
         {/* Background gradient */}
@@ -695,24 +740,7 @@ export default function HomePage() {
             </div>
 
             {/* FAQ list */}
-            <div className="flex flex-col gap-3">
-              {faqs.map((faq, index) => (
-                <details key={faq.id} className="group" open={index === 0}>
-                  <Glass
-                    as="summary"
-                    className="px-6 py-5 cursor-pointer list-none flex items-center justify-between gap-4 transition-all duration-200 group-open:pb-0"
-                  >
-                    <span className="text-[15px] font-medium">{faq.question}</span>
-                    <span className="w-6 h-6 rounded-full bg-white/8 border border-white/10 grid place-items-center text-muted text-xl transition-all duration-200 group-open:bg-accent group-open:border-accent group-open:text-bg group-open:rotate-45 flex-none">
-                      +
-                    </span>
-                  </Glass>
-                  <div className="px-6 pb-5 pt-3 text-[14.5px] text-ink-2 leading-[1.6]">
-                    {faq.answer}
-                  </div>
-                </details>
-              ))}
-            </div>
+            <FAQAccordion faqs={faqs} defaultOpen={0} />
           </div>
         </div>
       </section>
