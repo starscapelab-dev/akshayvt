@@ -1,14 +1,33 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "./Button";
 import { useQuote } from "./QuoteContext";
+import { services } from "@/data/services";
+import { locations } from "@/data/locations";
 
 export function Nav() {
   const { openQuote } = useQuote();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const hoverCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearMegaMenuTimer = () => {
+    if (hoverCloseTimer.current) {
+      clearTimeout(hoverCloseTimer.current);
+      hoverCloseTimer.current = null;
+    }
+  };
+
+  const scheduleMegaMenuClose = () => {
+    clearMegaMenuTimer();
+    hoverCloseTimer.current = setTimeout(() => {
+      setActiveMegaMenu(null);
+      hoverCloseTimer.current = null;
+    }, 180);
+  };
 
   // Fade in animation on mount
   useEffect(() => {
@@ -48,6 +67,12 @@ export function Nav() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    return () => {
+      clearMegaMenuTimer();
+    };
+  }, []);
+
   const navLinks = [
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
@@ -56,31 +81,204 @@ export function Nav() {
     { href: "/about", label: "About" },
   ];
 
+  const desktopNavLinks = navLinks.filter((link) => !["/services", "/locations"].includes(link.href));
+  const serviceMenuItems = services.slice(0, 6);
+  const locationMenuItems = locations.slice(0, 8);
+
   return (
     <>
       <div
-        className={`fixed inset-x-0 top-[18px] z-[80] flex justify-center pointer-events-none px-4 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed inset-x-0 top-[18px] z-[80] flex justify-center pointer-events-none  transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
         }`}
       >
-        <nav className={`pointer-events-auto inline-flex items-center gap-1 px-3 py-[10px] pr-3 rounded-full backdrop-blur-[22px] backdrop-saturate-[180%] border shadow-nav transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] max-[900px]:w-full max-[900px]:max-w-[calc(100%-32px)] max-[900px]:justify-between max-[900px]:rounded-2xl ${
-          isScrolled
-            ? "bg-[rgba(12,14,22,.92)] border-white/15 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]"
-            : "bg-gradient-to-b from-[rgba(20,22,30,.75)] to-[rgba(20,22,30,.55)] border-white/10"
-        }`}>
+        <div className="w-full mx-auto  max-w-6xl ">
+          <nav className={`pointer-events-auto justify-between inline-flex items-center gap-1 px-3 py-[10px] pr-3 rounded-full backdrop-blur-[22px] backdrop-saturate-[180%] border shadow-nav transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full max-w-none max-[900px]:w-full max-[900px]:max-w-[calc(100%-32px)] max-[900px]:justify-between max-[900px]:rounded-2xl ${
+            isScrolled
+              ? "bg-[rgba(12,14,22,.92)] border-white/15 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]"
+              : "bg-gradient-to-b from-[rgba(20,22,30,.75)] to-[rgba(20,22,30,.55)] border-white/10"
+          }`}>
           {/* Logo */}
           <a href="/" className="flex items-center gap-[10px] px-2 text-[15px] font-medium tracking-tight">
             <div className="w-7 h-7 rounded-lg bg-[radial-gradient(120%_80%_at_30%_20%,#ffffff_0%,rgba(255,255,255,.55)_30%,transparent_60%),linear-gradient(135deg,#6FA8FF,#B69BFF)] shadow-brand-mark grid place-items-center text-[#0A0E18] mono font-bold text-[13px] tracking-tight flex-none">
               A
             </div>
             <span className="max-[680px]:hidden">
-              Akshay V T <small className="text-muted font-normal text-xs">· Freelance Web Developer</small>
+              Akshay V T <small className="text-muted font-mono text-xs">· Freelance Web Developer</small>
             </span>
           </a>
 
           {/* Desktop Navigation */}
           <div className="flex items-center gap-0.5 ml-2 max-[900px]:hidden">
-            {navLinks.map((link) => (
+            <div
+              className="relative"
+              onMouseEnter={() => {
+                clearMegaMenuTimer();
+                setActiveMegaMenu("services");
+              }}
+              onMouseLeave={() => scheduleMegaMenuClose()}
+            >
+              <button
+                type="button"
+                onClick={() => setActiveMegaMenu((current) => (current === "services" ? null : "services"))}
+                aria-expanded={activeMegaMenu === "services"}
+                className="px-[14px] py-2 rounded-pill text-[13.5px] text-ink-2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5 hover:text-ink"
+              >
+                Services
+              </button>
+
+              <div
+                onMouseEnter={() => clearMegaMenuTimer()}
+                onMouseLeave={() => scheduleMegaMenuClose()}
+                className={`absolute left-0 top-full mt-3 w-[760px] rounded-[28px] bg-[rgba(11,13,21,0.96)] backdrop-blur-[26px] backdrop-saturate-[180%] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.8)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  activeMegaMenu === "services"
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
+                }`}
+              >
+                <div className="relative overflow-hidden rounded-[28px] p-4 before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_top_left,rgba(111,168,255,0.24),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(182,155,255,0.18),transparent_30%)] before:pointer-events-none">
+                  <div className="relative z-[1] grid grid-cols-[1.25fr_0.75fr] gap-4">
+                    <div className="rounded-3xl bg-white/5 p-3">
+                      <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-2">
+                        <div>
+                          <p className="mono text-[10px] uppercase tracking-[0.24em] text-warm">Popular services</p>
+                          <p className="mt-1 text-xs text-muted">From strategy to launch, built for growth.</p>
+                        </div>
+                        <a href="/services" className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-ink hover:bg-white/15">
+                          View all
+                        </a>
+                      </div>
+
+                      <div className="grid gap-2">
+                        {serviceMenuItems.map((service) => (
+                          <a
+                            key={service.id}
+                            href={service.href}
+                            className="group rounded-2xl bg-[rgba(255,255,255,0.04)] p-3 transition-all duration-300 hover:-translate-y-[1px] hover:bg-white/10"
+                          >
+                            <div className="flex items-start gap-3">
+                              <div className="mt-0.5 grid h-9 w-9 place-items-center rounded-xl bg-white/10 text-[15px] text-ink">
+                                {service.icon}
+                              </div>
+                              <div className="min-w-0">
+                                <div className="flex items-center justify-between gap-3">
+                                  <p className="text-[13.5px] font-medium text-ink">{service.title}</p>
+                                  <span className="text-[10px] uppercase tracking-[0.2em] text-muted">{service.id}</span>
+                                </div>
+                                <p className="mt-1 text-xs text-muted">{service.description}</p>
+                              </div>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-3 rounded-3xl bg-[rgba(255,255,255,0.10)] p-3">
+                      <div className="rounded-2xl bg-gradient-to-br from-[#6FA8FF]/20 to-[#B69BFF]/20 p-3">
+                        <p className="mono text-[10px] uppercase tracking-[0.24em] text-warm">Launch ready</p>
+                        <p className="mt-2 text-[15px] font-medium text-ink">High-performing websites for ambitious founders.</p>
+                        <p className="mt-1 text-xs text-muted">Fast build timelines, direct communication, and SEO-first execution.</p>
+                      </div>
+
+                      <div className="rounded-2xl bg-[rgba(255,255,255,0.08)] p-3">
+                        <p className="text-xs font-medium text-ink">What clients get</p>
+                        <ul className="mt-2 space-y-2 text-xs text-muted">
+                          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-warm" /> Conversion-first layouts</li>
+                          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-warm" /> Clean, fast code</li>
+                          <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-warm" /> Clear pricing, no surprises</li>
+                        </ul>
+                      </div>
+
+                      <a href="/contact" className="mt-auto rounded-full bg-ink px-3 py-2 text-center text-[11px] font-semibold text-bg">
+                        Book a discovery call
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="relative"
+              onMouseEnter={() => {
+                clearMegaMenuTimer();
+                setActiveMegaMenu("locations");
+              }}
+              onMouseLeave={() => scheduleMegaMenuClose()}
+            >
+              <button
+                type="button"
+                onClick={() => setActiveMegaMenu((current) => (current === "locations" ? null : "locations"))}
+                aria-expanded={activeMegaMenu === "locations"}
+                className="px-[14px] py-2 rounded-pill text-[13.5px] text-ink-2 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-gradient-to-r hover:from-white/10 hover:to-white/5 hover:text-ink"
+              >
+                Locations
+              </button>
+
+              <div
+                onMouseEnter={() => clearMegaMenuTimer()}
+                onMouseLeave={() => scheduleMegaMenuClose()}
+                className={`absolute left-0 top-full mt-3 w-[720px] rounded-[28px] bg-[rgba(11,13,21,0.96)] backdrop-blur-[26px] backdrop-saturate-[180%] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.8)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  activeMegaMenu === "locations"
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
+                }`}
+              >
+                <div className="relative overflow-hidden rounded-[28px] p-4 before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_top_left,rgba(244,197,140,0.22),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(111,168,255,0.16),transparent_30%)] before:pointer-events-none">
+                  <div className="relative z-[1] grid grid-cols-[0.8fr_0.4fr] gap-4">
+                    <div className="rounded-3xl bg-white/5 p-3">
+                      <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-2">
+                        <div>
+                          <p className="mono text-[10px] uppercase tracking-[0.24em] text-warm">Global service regions</p>
+                          <p className="mt-1 text-xs text-muted">Built for founders across business hubs and fast-moving markets.</p>
+                        </div>
+                      
+                      </div>
+
+                      <div className="grid grid-cols-3 gap-2">
+                        {locationMenuItems.map((location) => (
+                          <a
+                            key={location.slug}
+                            href={`/locations/${location.slug}`}
+                            className="rounded-2xl bg-[rgba(255,255,255,0.04)] p-3 transition-all duration-300 hover:-translate-y-[1px] hover:bg-white/10"
+                          >
+                            <div className="flex items-start justify-between gap-2">
+                              <div>
+                                <p className="text-[13.5px] font-medium text-ink">{location.city}</p>
+                                <p className="mt-1 text-[11px] text-muted">{location.country}</p>
+                              </div>
+                              <span className="text-base">{location.flag}</span>
+                            </div>
+                           
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-3 rounded-3xl bg-[rgba(255,255,255,0.10)] p-3">
+                      <div className="rounded-2xl bg-[rgba(255,255,255,0.10)] p-3">
+                        <p className="mono text-[10px] uppercase tracking-[0.24em] text-warm">Popular hubs</p>
+                        <div className="mt-2 grid gap-2">
+                          {locationMenuItems.slice(0, 4).map((location) => (
+                            <div key={location.slug} className="flex items-center justify-between rounded-xl bg-white/5 px-2.5 py-2 text-xs text-muted">
+                              <span className="font-medium text-ink">{location.city}</span>
+                              <span>{location.flag}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="rounded-2xl bg-gradient-to-br from-[#B69BFF]/18 to-[#6FA8FF]/20 p-3">
+                        <p className="text-[13px] font-medium text-ink">Local presence, global standards</p>
+                        <p className="mt-1 text-xs text-muted">Remote-friendly delivery with region-specific strategy, timezone alignment, and multilingual communication.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {desktopNavLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -127,7 +325,8 @@ export function Nav() {
               </div>
             </button>
           </div>
-        </nav>
+          </nav>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}

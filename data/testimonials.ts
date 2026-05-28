@@ -1,4 +1,13 @@
-export const testimonials = [
+export type Testimonial = {
+  id: number;
+  name: string;
+  role: string;
+  avatar: string;
+  quote: string;
+  large?: boolean;
+};
+
+export const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Fahad A.",
@@ -6,6 +15,7 @@ export const testimonials = [
     avatar: "F",
     quote:
       "Akshay rebuilt our gym's site from the ground up. Three months later we're top of Google for 'gym near me' in Doha.",
+    large: true,
   },
   {
     id: 2,

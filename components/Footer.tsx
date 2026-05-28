@@ -190,7 +190,9 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/akshay-v-t-8b84ab109/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-ink-2 text-sm transition-colors duration-200 hover:text-ink inline-flex items-center gap-2"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#0A66C2]">
@@ -201,7 +203,9 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/akshay-v-t"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-ink-2 text-sm transition-colors duration-200 hover:text-ink inline-flex items-center gap-2"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">

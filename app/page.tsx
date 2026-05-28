@@ -7,9 +7,9 @@ import { Chip } from "@/components/Chip";
 import { ServiceCard } from "@/components/ServiceCard";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { HeroBackground } from "@/components/HeroBackground";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
-import { testimonials } from "@/data/testimonials";
 import { faqs } from "@/data/faq";
 import type { Metadata } from "next";
 
@@ -625,32 +625,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Testimonials grid */}
-          <div className="grid grid-cols-[1.2fr_1fr_1fr] gap-[14px] items-stretch max-[980px]:grid-cols-1 stagger-children">
-            {testimonials.map((testimonial) => (
-              <Glass key={testimonial.id} className="p-8 px-[30px] flex flex-col">
-                <div className="text-warm mono text-sm tracking-[.2em] mb-[22px]">★★★★★</div>
-                <blockquote
-                  className={`m-0 mb-7 serif font-normal ${
-                    testimonial.large
-                      ? "text-[clamp(24px,2.4vw,34px)]"
-                      : "text-[clamp(21px,2.0vw,28px)]"
-                  } leading-[1.3] tracking-tight text-ink pretty`}
-                >
-                  "{testimonial.quote}"
-                </blockquote>
-                <cite className="mt-auto flex items-center gap-[14px] pt-[22px] border-t border-dashed border-white/12 not-italic">
-                  <span className="w-11 h-11 rounded-full bg-gradient-to-br from-white/14 to-white/4 border border-white/14 grid place-items-center text-ink font-medium">
-                    {testimonial.avatar}
-                  </span>
-                  <span className="flex flex-col gap-1">
-                    <strong className="text-[15px] font-medium">{testimonial.name}</strong>
-                    <small className="text-xs text-muted">{testimonial.role}</small>
-                  </span>
-                </cite>
-              </Glass>
-            ))}
-          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
 
