@@ -88,7 +88,7 @@ export default function PortfolioPage() {
 
       {/* Projects Grid */}
       <main className="container py-16">
-        <div className="grid grid-cols-2 gap-6 max-[900px]:grid-cols-1">
+        <div className="grid grid-cols-2 gap-6 max-[600px]:gap-4 max-[900px]:grid-cols-1">
           {filteredProjects.map((project) => (
             <a
               key={project.slug}
@@ -129,7 +129,7 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 max-[600px]:p-5">
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <h3 className="text-[20px] font-medium tracking-tight m-0 group-hover:text-accent transition-colors">
                       {project.title}

@@ -64,7 +64,7 @@ export default function BlogPage() {
           <a href={`/blog/${featuredPost.slug}`} className="block group">
             <Glass
               as="div"
-              className="grid grid-cols-[1.1fr_1fr] gap-0 rounded-[32px] overflow-hidden min-h-[460px] max-[900px]:grid-cols-1"
+              className="grid grid-cols-[1.1fr_1fr] gap-0 rounded-[32px] max-[600px]:rounded-[20px] overflow-hidden min-h-[460px] max-[600px]:min-h-[auto] max-[900px]:grid-cols-1"
             >
               {/* Visual */}
               <div
@@ -88,7 +88,7 @@ export default function BlogPage() {
               </div>
 
               {/* Content */}
-              <div className="flex flex-col justify-center p-10 max-[900px]:p-8">
+              <div className="flex flex-col justify-center p-10 max-[900px]:p-8 max-[600px]:p-6">
                 <div className="mono text-[11px] uppercase tracking-[.14em] text-muted mb-3">
                   {featuredPost.date} · {featuredPost.readTime} read
                 </div>
@@ -121,7 +121,7 @@ export default function BlogPage() {
 
       {/* Blog Grid */}
       <section className="container pb-20">
-        <div className="grid grid-cols-3 gap-[14px] max-[980px]:grid-cols-2 max-[640px]:grid-cols-1">
+        <div className="grid grid-cols-3 gap-[14px] max-[600px]:gap-3 max-[980px]:grid-cols-2 max-[640px]:grid-cols-1">
           {regularPosts.map((post) => (
             <a key={post.id} href={`/blog/${post.slug}`} className="block group">
               <Glass className="p-0 overflow-hidden flex flex-col h-full hover:-translate-y-1 transition-transform duration-300">

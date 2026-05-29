@@ -578,7 +578,7 @@ export default function ServicesPage() {
               className={`py-16 border-t border-white/[.06] ${index === 0 ? "pt-0 border-t-0" : ""}`}
             >
               {/* Category Header */}
-              <div className="grid grid-cols-[280px_1fr] gap-12 mb-8 items-start max-[820px]:grid-cols-1 max-[820px]:gap-3">
+              <div className="grid grid-cols-[280px_1fr] gap-12 max-[600px]:gap-8 mb-8 items-start max-[820px]:grid-cols-1 max-[820px]:gap-3">
                 <div className={`serif italic text-[56px] leading-none tracking-tight ${colors.text} opacity-85`}>
                   {category.number}
                 </div>
@@ -609,14 +609,14 @@ export default function ServicesPage() {
               </div>
 
               {/* Services Grid */}
-              <div className="grid grid-cols-3 gap-[14px] max-[980px]:grid-cols-2 max-[560px]:grid-cols-1">
+              <div className="grid grid-cols-3 gap-[14px] max-[600px]:gap-3 max-[980px]:grid-cols-2 max-[560px]:grid-cols-1">
                 {category.services.map((service) => (
                   <a
                     key={service.id}
                     href={`/services/${service.id}`}
                     className="group block"
                   >
-                    <Glass className="px-[22px] py-6 flex flex-col gap-[14px] min-h-[180px] transition-all duration-[350ms] hover:-translate-y-[3px] hover:border-white/[.22] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,.4)]">
+                    <Glass className="px-[22px] max-[600px]:px-5 py-6 max-[600px]:py-5 flex flex-col gap-[14px] max-[600px]:gap-3 min-h-[180px] max-[600px]:min-h-[160px] transition-all duration-[350ms] hover:-translate-y-[3px] hover:border-white/[.22] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,.4)]">
                       <div className="flex items-center justify-between gap-3">
                         <div className="w-[38px] h-[38px] rounded-xl bg-gradient-to-b from-white/14 to-white/4 border border-white/14 shadow-[0_1px_0_rgba(255,255,255,.18)_inset] grid place-items-center text-ink transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(111,168,255,.2)]">
                           <div className="w-[18px] h-[18px]">{service.icon}</div>

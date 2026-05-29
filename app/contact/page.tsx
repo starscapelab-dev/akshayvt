@@ -87,7 +87,7 @@ export default function ContactPage() {
 
       {/* Contact Grid */}
       <section className="container pb-20 -mt-8 relative z-10">
-        <div className="grid grid-cols-[1.05fr_.95fr] gap-8 items-start max-[980px]:grid-cols-1">
+        <div className="grid grid-cols-[1.05fr_.95fr] gap-8 max-[600px]:gap-5 items-start max-[980px]:grid-cols-1">
           {/* LEFT: Form Card */}
           <Glass className="p-[clamp(32px,4vw,48px)]">
             <h2 className="serif text-[clamp(28px,3.4vw,38px)] leading-[1.05] tracking-tight m-0 mb-[14px] balance">
@@ -438,9 +438,9 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-[14px] max-[820px]:grid-cols-1">
+          <div className="grid grid-cols-2 gap-[14px] max-[600px]:gap-3 max-[820px]:grid-cols-1">
             {inlineFaqs.map((faq, i) => (
-              <Glass key={i} className="px-7 py-[26px]">
+              <Glass key={i} className="px-7 max-[600px]:px-5 py-[26px] max-[600px]:py-5">
                 <h4 className="serif text-[22px] leading-[1.15] tracking-tight m-0 mb-[10px] balance">
                   {faq.q}
                 </h4>
@@ -460,9 +460,9 @@ export default function ContactPage() {
           }}
         />
         <div className="container relative z-[1]">
-          <div className="grid grid-cols-4 gap-8 items-center max-[820px]:grid-cols-2">
+          <div className="grid grid-cols-4 gap-8 max-[600px]:gap-5 items-center max-[820px]:grid-cols-2">
             <div className="text-center">
-              <div className="serif text-[44px] leading-none tracking-tight text-ink">
+              <div className="serif text-[44px] max-[600px]:text-[32px] leading-none tracking-tight text-ink">
                 <em className="italic text-accent">6+</em>
               </div>
               <div className="mono text-[11px] uppercase tracking-[.14em] text-muted mt-[10px]">
@@ -470,7 +470,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="text-center">
-              <div className="serif text-[44px] leading-none tracking-tight text-ink">
+              <div className="serif text-[44px] max-[600px]:text-[32px] leading-none tracking-tight text-ink">
                 50<em className="italic text-accent">+</em>
               </div>
               <div className="mono text-[11px] uppercase tracking-[.14em] text-muted mt-[10px]">
@@ -478,7 +478,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="text-center">
-              <div className="serif text-[44px] leading-none tracking-tight text-ink">
+              <div className="serif text-[44px] max-[600px]:text-[32px] leading-none tracking-tight text-ink">
                 &lt;24<em className="italic text-accent">h</em>
               </div>
               <div className="mono text-[11px] uppercase tracking-[.14em] text-muted mt-[10px]">
@@ -486,7 +486,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="text-center">
-              <div className="serif text-[44px] leading-none tracking-tight text-ink">
+              <div className="serif text-[44px] max-[600px]:text-[32px] leading-none tracking-tight text-ink">
                 4<em className="italic text-accent">.9</em>
               </div>
               <div className="mono text-[11px] uppercase tracking-[.14em] text-muted mt-[10px]">

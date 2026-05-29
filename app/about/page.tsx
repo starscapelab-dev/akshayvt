@@ -171,7 +171,7 @@ export default function AboutPage() {
             {/* Right: Portrait Card */}
             <Glass
               as="div"
-              className="relative p-0 rounded-[28px] aspect-[4/5] min-h-[460px] overflow-hidden"
+              className="relative p-0 rounded-[28px] max-[600px]:rounded-[20px] aspect-[4/5] min-h-[460px] max-[600px]:min-h-[380px] overflow-hidden"
             >
               {/* Profile Image */}
               <img
@@ -235,7 +235,7 @@ export default function AboutPage() {
       {/* Story / Manifesto Section */}
       <section className="bg-bg-2 border-t border-b border-line-soft py-[clamp(80px,9vw,140px)]">
         <div className="container">
-          <div className="grid grid-cols-[280px_1fr] gap-16 items-start max-[900px]:grid-cols-1 max-[900px]:gap-8">
+          <div className="grid grid-cols-[280px_1fr] gap-16 max-[600px]:gap-10 items-start max-[900px]:grid-cols-1 max-[900px]:gap-8">
             {/* Aside */}
             <div className="sticky top-[110px]">
               <div className="serif italic text-[96px] leading-[.9] tracking-[-.03em] text-accent m-0 mb-[14px]">
@@ -282,9 +282,9 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-[14px] max-[900px]:grid-cols-1">
+          <div className="grid grid-cols-3 gap-[14px] max-[600px]:gap-3 max-[900px]:grid-cols-1">
             {principles.map((principle, i) => (
-              <Glass key={i} className="px-7 py-[30px] flex flex-col">
+              <Glass key={i} className="px-7 max-[600px]:px-5 py-[30px] max-[600px]:py-6 flex flex-col">
                 <div className="mono text-[11px] text-muted tracking-[.14em] uppercase mb-7">
                   Principle {principle.number}
                 </div>
@@ -372,11 +372,11 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-[14px]">
+          <div className="flex flex-col gap-[14px] max-[600px]:gap-3">
             {timeline.map((item, i) => (
               <Glass
                 key={i}
-                className="grid grid-cols-[220px_1fr] gap-8 px-7 py-[26px] items-center max-[720px]:grid-cols-1 max-[720px]:gap-[10px]"
+                className="grid grid-cols-[220px_1fr] gap-8 px-7 max-[600px]:px-5 py-[26px] max-[600px]:py-5 items-center max-[720px]:grid-cols-1 max-[720px]:gap-[10px]"
               >
                 <div>
                   <div className="serif italic text-[38px] leading-none tracking-[-.02em] text-accent">

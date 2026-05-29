@@ -40,19 +40,19 @@ export default function LocationsPage() {
 
       {/* Locations Grid */}
       <section className="container py-20">
-        <div className="grid grid-cols-2 gap-[14px] max-[820px]:grid-cols-1">
+        <div className="grid grid-cols-2 gap-[14px] max-[600px]:gap-3 max-[820px]:grid-cols-1">
           {locations.map((location) => (
             <a
               key={location.slug}
               href={`/locations/${location.slug}`}
               className="group block"
             >
-              <Glass className="p-0 overflow-hidden flex flex-col md:flex-row min-h-[320px]">
+              <Glass className="p-0 overflow-hidden flex flex-col md:flex-row min-h-[320px] max-[600px]:min-h-[auto]">
                 <div
                   className="w-full md:w-[45%] min-h-[200px] md:min-h-full bg-cover bg-center transition-transform duration-[1.2s] group-hover:scale-[1.04]"
                   style={{ backgroundImage: `url('${location.heroImage}')` }}
                 />
-                <div className="flex-1 p-7 flex flex-col">
+                <div className="flex-1 p-7 max-[600px]:p-5 flex flex-col">
                   <span className="mono text-[10.5px] uppercase tracking-[.12em] text-accent mb-2">
                     {location.flag} {location.country}
                   </span>
@@ -109,7 +109,7 @@ export default function LocationsPage() {
       {/* Global Coverage Section */}
       <section className="py-20 bg-bg-2 border-t border-b border-line-soft">
         <div className="container">
-          <div className="grid grid-cols-[1fr_1.2fr] gap-16 items-center max-[900px]:grid-cols-1">
+          <div className="grid grid-cols-[1fr_1.2fr] gap-16 max-[600px]:gap-10 items-center max-[900px]:grid-cols-1">
             <div>
               <div className="eyebrow mb-4 inline-block">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-warm shadow-[0_0_12px_#F4C58C]" />
@@ -130,13 +130,13 @@ export default function LocationsPage() {
             </div>
 
             {/* Timezone overlap visual */}
-            <Glass className="p-8">
+            <Glass className="p-8 max-[600px]:p-6">
               <h3 className="serif text-[24px] leading-[1.1] tracking-tight m-0 mb-6">
                 Timezone <em className="italic text-accent">compatibility.</em>
               </h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-24 mono text-[11px] text-muted tracking-[.04em]">
+              <div className="space-y-4 max-[600px]:space-y-3">
+                <div className="flex items-center gap-4 max-[480px]:flex-col max-[480px]:items-start max-[480px]:gap-2">
+                  <div className="w-24 max-[480px]:w-auto mono text-[11px] text-muted tracking-[.04em]">
                     Best overlap
                   </div>
                   <div className="flex-1 flex gap-2 flex-wrap">
@@ -157,8 +157,8 @@ export default function LocationsPage() {
                     </span>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-24 mono text-[11px] text-muted tracking-[.04em]">
+                <div className="flex items-center gap-4 max-[480px]:flex-col max-[480px]:items-start max-[480px]:gap-2">
+                  <div className="w-24 max-[480px]:w-auto mono text-[11px] text-muted tracking-[.04em]">
                     Good overlap
                   </div>
                   <div className="flex-1 flex gap-2 flex-wrap">
@@ -176,8 +176,8 @@ export default function LocationsPage() {
                     </span>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-24 mono text-[11px] text-muted tracking-[.04em]">
+                <div className="flex items-center gap-4 max-[480px]:flex-col max-[480px]:items-start max-[480px]:gap-2">
+                  <div className="w-24 max-[480px]:w-auto mono text-[11px] text-muted tracking-[.04em]">
                     Some overlap
                   </div>
                   <div className="flex-1 flex gap-2 flex-wrap">

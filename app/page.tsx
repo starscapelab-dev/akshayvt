@@ -513,11 +513,11 @@ export default function HomePage() {
           </div>
 
           {/* Projects grid */}
-          <div className="grid grid-cols-12 gap-[14px] max-[600px]:gap-3">
+          <div className="grid grid-cols-12 max-[900px]:flex max-[900px]:flex-col gap-[14px] max-[600px]:gap-3">
             {projects.map((project) => (
               <article
                 key={project.id}
-                className={`relative rounded-lg max-[600px]:rounded-xl overflow-hidden isolate min-h-[460px] max-[900px]:min-h-[380px] max-[600px]:min-h-[320px] flex flex-col justify-end p-7 max-[600px]:p-5 border border-white/[.08] col-span-${project.span} max-[900px]:col-span-12 group`}
+                className="relative rounded-lg max-[600px]:rounded-xl overflow-hidden isolate min-h-[460px] max-[900px]:min-h-[380px] max-[600px]:min-h-[320px] flex flex-col justify-end p-7 max-[600px]:p-5 border border-white/[.08] group"
                 style={{
                   gridColumn: `span ${project.span}`,
                 }}

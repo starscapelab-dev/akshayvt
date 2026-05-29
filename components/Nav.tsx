@@ -88,12 +88,12 @@ export function Nav() {
   return (
     <>
       <div
-        className={`fixed inset-x-0 top-[18px] z-[80] flex justify-center pointer-events-none  transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed inset-x-0 top-[18px] max-[480px]:top-3 z-[80] flex justify-center pointer-events-none transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"
         }`}
       >
-        <div className="w-full mx-auto  max-w-6xl ">
-          <nav className={`pointer-events-auto justify-between inline-flex items-center gap-1 px-3 py-[10px] pr-3 rounded-full backdrop-blur-[22px] backdrop-saturate-[180%] border shadow-nav transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full max-w-none max-[900px]:w-full max-[900px]:max-w-[calc(100%-32px)] max-[900px]:justify-between max-[900px]:rounded-2xl ${
+        <div className="w-full mx-auto max-w-6xl px-4 max-[900px]:px-4 max-[480px]:px-3 flex justify-center">
+          <nav className={`pointer-events-auto justify-between inline-flex items-center gap-1 px-3 py-[10px] pr-3 rounded-full backdrop-blur-[22px] backdrop-saturate-[180%] border shadow-nav transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full max-w-none max-[900px]:w-full max-[900px]:justify-between max-[900px]:rounded-2xl max-[480px]:rounded-xl max-[480px]:py-2 max-[480px]:px-2 max-[480px]:pr-2 ${
             isScrolled
               ? "bg-[rgba(12,14,22,.92)] border-white/15 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]"
               : "bg-gradient-to-b from-[rgba(20,22,30,.75)] to-[rgba(20,22,30,.55)] border-white/10"
