@@ -18,8 +18,8 @@ export function Chip({ children, variant = "default", className, href }: ChipPro
 
   const baseClasses = cn(
     "mono inline-flex items-center gap-1.5",
-    "px-[10px] py-[5px] rounded-pill",
-    "text-[11px] tracking-wide",
+    "px-[10px] max-[480px]:px-2 py-[5px] max-[480px]:py-1 rounded-pill",
+    "text-[11px] max-[480px]:text-[10px] tracking-wide",
     "border transition-colors duration-200",
     variantStyles[variant],
     className

@@ -19,11 +19,13 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles = cn(
-    "inline-flex items-center gap-[10px] rounded-pill border border-transparent",
+    "inline-flex items-center gap-[10px] max-[480px]:gap-2 rounded-pill border border-transparent",
     "font-medium tracking-tight whitespace-nowrap",
     "transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-    "relative overflow-hidden",
-    size === "default" ? "px-[22px] py-[14px] text-[15px]" : "px-4 py-[10px] text-[13.5px]",
+    "relative overflow-hidden active:scale-[0.97]",
+    size === "default"
+      ? "px-[22px] max-[480px]:px-5 py-[14px] max-[480px]:py-3 text-[15px] max-[480px]:text-[14px]"
+      : "px-4 max-[480px]:px-3 py-[10px] max-[480px]:py-2 text-[13.5px] max-[480px]:text-[12px]",
     className
   );
 

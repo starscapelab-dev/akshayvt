@@ -14,7 +14,7 @@
   body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    letter-spacing: 1.4em;
+    letter-spacing: -0.01em;
   }
 
   img {
@@ -910,4 +910,132 @@ textarea:focus ~ .label-float,
 textarea:not(:placeholder-shown) ~ .label-float {
   transform: translateY(-100%) scale(0.85);
   color: var(--accent);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE RESPONSIVENESS - PREMIUM FEEL
+   ═══════════════════════════════════════════════════════════ */
+
+/* Touch-friendly tap targets */
+@media (max-width: 900px) {
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Disable hover effects on touch devices for cleaner interaction */
+  @media (hover: none) {
+    .hover-lift:hover,
+    .hover-glow:hover,
+    .glass-hover-gradient:hover {
+      transform: none;
+      box-shadow: inherit;
+    }
+  }
+}
+
+/* Mobile-specific smooth scrolling */
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 100px;
+  }
+
+  /* Improve text readability on small screens */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Prevent horizontal overflow */
+  .container,
+  .container-narrow {
+    overflow-x: hidden;
+  }
+}
+
+/* Premium mobile typography adjustments */
+@media (max-width: 480px) {
+  /* Tighter letter-spacing on mobile for better readability */
+  .serif {
+    letter-spacing: -0.015em;
+  }
+
+  /* Ensure inputs don't zoom on iOS */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Safe area handling for notched devices */
+@supports (padding: max(0px)) {
+  .container,
+  .container-narrow {
+    padding-left: max(clamp(20px, 4vw, 56px), env(safe-area-inset-left));
+    padding-right: max(clamp(20px, 4vw, 56px), env(safe-area-inset-right));
+  }
+}
+
+/* Mobile animation performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glass-bg,
+  .glass-bg-2 {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .glass-border {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Mobile card interaction feedback */
+@media (max-width: 900px) {
+  .hover-lift:active,
+  .glass-hover-gradient:active {
+    transform: scale(0.98);
+    transition-duration: 0.1s;
+  }
+}
+
+/* Prevent text selection on interactive elements for cleaner mobile UX */
+button,
+[role="button"],
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile-optimized focus states */
+@media (max-width: 900px) {
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid rgba(111, 168, 255, 0.6);
+    outline-offset: 2px;
+  }
+}
+
+/* Premium scroll behavior */
+@media (max-width: 600px) {
+  /* Smoother momentum scrolling on iOS */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
 }

@@ -339,25 +339,25 @@ export function Nav() {
 
       {/* Mobile Menu Panel */}
       <div
-        className={`fixed top-[80px] left-4 right-4 z-[76] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        className={`fixed top-[80px] max-[480px]:top-[70px] left-4 right-4 max-[480px]:left-3 max-[480px]:right-3 z-[76] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           mobileMenuOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"
         }`}
       >
-        <div className="bg-gradient-to-b from-[rgba(20,22,30,.95)] to-[rgba(15,18,28,.98)] backdrop-blur-[22px] border border-white/10 rounded-2xl p-5 shadow-2xl">
+        <div className="bg-gradient-to-b from-[rgba(20,22,30,.95)] to-[rgba(15,18,28,.98)] backdrop-blur-[22px] border border-white/10 rounded-2xl max-[480px]:rounded-xl p-5 max-[480px]:p-4 shadow-2xl max-h-[calc(100vh-100px)] overflow-y-auto">
           {/* Navigation Links */}
-          <div className="flex flex-col gap-1 mb-4">
+          <div className="flex flex-col gap-1 max-[480px]:gap-0.5 mb-4 max-[480px]:mb-3">
             {navLinks.map((link, index) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between px-4 py-3.5 rounded-xl text-[16px] text-ink-2 transition-all duration-300 hover:bg-white/10 hover:text-ink"
+                className="flex items-center justify-between px-4 max-[480px]:px-3 py-3.5 max-[480px]:py-3 rounded-xl max-[480px]:rounded-lg text-[16px] max-[480px]:text-[15px] text-ink-2 transition-all duration-300 hover:bg-white/10 hover:text-ink active:scale-[0.98]"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {link.label}
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-muted">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-muted max-[480px]:w-4 max-[480px]:h-4">
                   <path d="M9 18l6-6-6-6" />
                 </svg>
               </a>
@@ -365,26 +365,26 @@ export function Nav() {
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-white/10 mb-4" />
+          <div className="h-px bg-white/10 mb-4 max-[480px]:mb-3" />
 
           {/* Status + Contact */}
-          <div className="flex items-center justify-between mb-4">
-            <span className="inline-flex items-center gap-2 px-3 py-[6px] pl-[10px] rounded-pill bg-whatsapp/10 text-[#BFEFCB] mono text-[11px] tracking-wider border border-whatsapp/25">
+          <div className="flex items-center justify-between mb-4 max-[480px]:mb-3">
+            <span className="inline-flex items-center gap-2 px-3 max-[480px]:px-2.5 py-[6px] pl-[10px] max-[480px]:pl-2 rounded-pill bg-whatsapp/10 text-[#BFEFCB] mono text-[11px] max-[480px]:text-[10px] tracking-wider border border-whatsapp/25">
               <span className="w-1.5 h-1.5 rounded-full bg-green shadow-[0_0_0_0_rgba(66,228,122,.7)] animate-pulse-dot" />
               Accepting clients
             </span>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 max-[480px]:gap-1.5">
             <Button variant="primary" onClick={() => { openQuote(); setMobileMenuOpen(false); }} className="w-full justify-center">
               Get Free Quote
             </Button>
             <a
               href="https://wa.me/919746220043"
-              className="flex items-center justify-center gap-2 px-5 py-3 rounded-pill bg-whatsapp text-[#00220C] text-[15px] font-medium transition-all duration-300 hover:-translate-y-px"
+              className="flex items-center justify-center gap-2 px-5 max-[480px]:px-4 py-3 max-[480px]:py-2.5 rounded-pill bg-whatsapp text-[#00220C] text-[15px] max-[480px]:text-[14px] font-medium transition-all duration-300 hover:-translate-y-px active:scale-[0.98]"
             >
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 max-[480px]:w-3.5 max-[480px]:h-3.5">
                 <path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20z" />
               </svg>
               Chat on WhatsApp
