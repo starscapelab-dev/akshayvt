@@ -27,7 +27,7 @@ export const projects = [
     tags: "Cybersecurity",
     tagColor: "accent-2",
     location: "🇦🇺  SYDNEY",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80",
     outcomes: [
       { label: "Inbound", value: "+312%" },
       { label: "CWV", value: "All green" },
@@ -44,7 +44,7 @@ export const projects = [
     tags: "Services · Local SEO",
     tagColor: "warm",
     location: "🇦🇺  SYDNEY",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1600&q=80",
     outcomes: [
       { label: "Local Rank", value: "Top 3" },
       { label: "Mobile", value: "98" },
@@ -61,7 +61,7 @@ export const projects = [
     tags: "SaaS · Marketing",
     tagColor: "green",
     location: "🇦🇪  DUBAI",
-    image: "https://images.unsplash.com/photo-1605514449459-5d68cdcb6e35?auto=format&fit=crop&w=2000&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80",
     outcomes: [
       { label: "Sign-ups", value: "+184%" },
       { label: "Stack", value: "Next.js · MDX · Vercel", mono: true },

@@ -93,14 +93,14 @@ export function Nav() {
         }`}
       >
         <div className="w-full mx-auto max-w-6xl px-4 max-[900px]:px-4 max-[480px]:px-3 flex justify-center">
-          <nav className={`pointer-events-auto justify-between inline-flex items-center gap-1 px-3 py-[10px] pr-3 rounded-full backdrop-blur-[22px] backdrop-saturate-[180%] border shadow-nav transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full max-w-none max-[900px]:w-full max-[900px]:justify-between max-[900px]:rounded-2xl max-[480px]:rounded-xl max-[480px]:py-2 max-[480px]:px-2 max-[480px]:pr-2 ${
+          <nav className={`pointer-events-auto justify-between inline-flex items-center gap-1 px-3 py-[10px] pr-3 rounded-full backdrop-blur-2xl backdrop-saturate-[200%] border shadow-[0_8px_32px_-8px_rgba(0,0,0,0.4),0_0_0_1px_rgba(255,255,255,0.06)_inset] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full max-w-none max-[900px]:w-full max-[900px]:justify-between max-[900px]:rounded-2xl max-[900px]:backdrop-blur-2xl max-[900px]:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.08)_inset,0_0_60px_-15px_rgba(111,168,255,0.15)] max-[480px]:rounded-xl max-[480px]:py-2.5 max-[480px]:px-3 max-[480px]:pr-2 ${
             isScrolled
-              ? "bg-[rgba(12,14,22,.92)] border-white/15 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]"
-              : "bg-gradient-to-b from-[rgba(20,22,30,.75)] to-[rgba(20,22,30,.55)] border-white/10"
+              ? "bg-[rgba(12,14,22,.65)] border-white/[0.12] shadow-[0_8px_40px_-8px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.08)_inset] max-[900px]:bg-[rgba(10,12,20,.7)] max-[900px]:border-white/15"
+              : "bg-gradient-to-b from-[rgba(20,22,30,.45)] to-[rgba(20,22,30,.35)] border-white/[0.08] max-[900px]:bg-[rgba(12,14,22,.5)] max-[900px]:border-white/10"
           }`}>
           {/* Logo */}
           <a href="/" className="flex items-center gap-[10px] px-2 text-[15px] font-medium tracking-tight">
-            <div className="w-7 h-7 rounded-lg bg-[radial-gradient(120%_80%_at_30%_20%,#ffffff_0%,rgba(255,255,255,.55)_30%,transparent_60%),linear-gradient(135deg,#6FA8FF,#B69BFF)] shadow-brand-mark grid place-items-center text-[#0A0E18] mono font-bold text-[13px] tracking-tight flex-none">
+            <div className="w-7 h-7 max-[480px]:w-8 max-[480px]:h-8 rounded-lg bg-[radial-gradient(120%_80%_at_30%_20%,#ffffff_0%,rgba(255,255,255,.55)_30%,transparent_60%),linear-gradient(135deg,#6FA8FF,#B69BFF)] shadow-brand-mark max-[900px]:shadow-[0_0_20px_-4px_rgba(111,168,255,0.5),0_2px_8px_rgba(0,0,0,0.3)] grid place-items-center text-[#0A0E18] mono font-bold text-[13px] max-[480px]:text-[14px] tracking-tight flex-none">
               A
             </div>
             <span className="max-[680px]:hidden">
@@ -130,7 +130,7 @@ export function Nav() {
               <div
                 onMouseEnter={() => clearMegaMenuTimer()}
                 onMouseLeave={() => scheduleMegaMenuClose()}
-                className={`absolute left-0 top-full mt-3 w-[760px] rounded-[28px] bg-[rgba(11,13,21,0.96)] backdrop-blur-[26px] backdrop-saturate-[180%] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.8)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                className={`absolute left-0 top-full mt-3 w-[760px] z-[100] rounded-[28px] bg-[#0b0d15] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   activeMegaMenu === "services"
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 -translate-y-2 pointer-events-none"
@@ -218,7 +218,7 @@ export function Nav() {
               <div
                 onMouseEnter={() => clearMegaMenuTimer()}
                 onMouseLeave={() => scheduleMegaMenuClose()}
-                className={`absolute left-0 top-full mt-3 w-[720px] rounded-[28px] bg-[rgba(11,13,21,0.96)] backdrop-blur-[26px] backdrop-saturate-[180%] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.8)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                className={`absolute left-0 top-full mt-3 w-[720px] z-[100] rounded-[28px] bg-[#0b0d15] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   activeMegaMenu === "locations"
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 -translate-y-2 pointer-events-none"
@@ -308,7 +308,7 @@ export function Nav() {
             </Button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="w-10 h-10 rounded-xl bg-white/8 border border-white/15 grid place-items-center text-ink transition-all duration-300 hover:bg-white/15"
+              className="w-10 h-10 max-[480px]:w-9 max-[480px]:h-9 rounded-xl max-[480px]:rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 grid place-items-center text-ink transition-all duration-300 hover:bg-white/20 active:scale-95 shadow-[0_0_0_1px_rgba(255,255,255,0.05)_inset]"
               aria-label="Toggle menu"
             >
               <div className="relative w-5 h-5">

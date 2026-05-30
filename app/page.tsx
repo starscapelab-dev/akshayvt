@@ -55,7 +55,7 @@ export default function HomePage() {
         className="relative min-h-[920px] max-[900px]:min-h-[auto] pt-[140px] max-[900px]:pt-[120px] pb-24 max-[600px]:pb-16 overflow-hidden isolate"
       >
         {/* Sticky parallax background with scroll-based scale effect */}
-        <HeroBackground imageUrl="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=2400&q=80" />
+        <HeroBackground imageUrl="https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&w=2400&q=80" />
 
         <div className="container">
           <div className="relative grid grid-cols-[1.15fr_.85fr] gap-10 max-[900px]:gap-8 items-end max-[1000px]:grid-cols-1">
@@ -310,8 +310,8 @@ export default function HomePage() {
 
           {/* CTA */}
           <div className="flex justify-center mt-9">
-            <Button variant="ghost" href="#contact" showChevron>
-              Explore all 30 services
+            <Button variant="ghost" href="/services" showChevron>
+              Explore all 36 services
             </Button>
           </div>
         </div>
@@ -517,22 +517,22 @@ export default function HomePage() {
             {projects.map((project) => (
               <article
                 key={project.id}
-                className="relative rounded-lg max-[600px]:rounded-xl overflow-hidden isolate min-h-[460px] max-[900px]:min-h-[380px] max-[600px]:min-h-[320px] flex flex-col justify-end p-7 max-[600px]:p-5 border border-white/[.08] group"
+                className="relative rounded-2xl max-[600px]:rounded-xl overflow-hidden isolate min-h-[460px] max-[900px]:min-h-[380px] max-[600px]:min-h-[320px] flex flex-col justify-end p-7 max-[600px]:p-5 border border-white/[.08] group cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:border-white/20 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)]"
                 style={{
                   gridColumn: `span ${project.span}`,
                 }}
               >
                 {/* Photo background */}
                 <div
-                  className="absolute inset-0 z-[-2] bg-cover bg-center transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+                  className="absolute inset-0 z-[-2] bg-cover bg-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
                   style={{ backgroundImage: `url(${project.image})` }}
                 />
                 {/* Dark overlay */}
                 <div
-                  className="absolute inset-0 z-[-1]"
+                  className="absolute inset-0 z-[-1] transition-opacity duration-500 group-hover:opacity-90"
                   style={{
                     background:
-                      "linear-gradient(180deg, rgba(6,7,10,.10) 0%, rgba(6,7,10,.55) 50%, rgba(6,7,10,.92) 100%)",
+                      "linear-gradient(180deg, rgba(6,7,10,.45) 0%, rgba(6,7,10,.65) 40%, rgba(6,7,10,.92) 100%)",
                   }}
                 />
 
@@ -558,15 +558,15 @@ export default function HomePage() {
                 </div>
 
                 {/* Content */}
-                <h3 className="serif font-normal text-[clamp(22px,3.2vw,42px)] leading-[1.06] tracking-tight m-0 mb-3 max-[600px]:mb-2 balance">
+                <h3 className="serif font-normal text-[clamp(22px,3.2vw,42px)] leading-[1.06] tracking-tight m-0 mb-3 max-[600px]:mb-2 balance transition-transform duration-500 ease-out group-hover:-translate-y-1">
                   {project.title} — <em className="italic opacity-78">{project.subtitle}</em>
                 </h3>
-                <p className="m-0 mb-[22px] max-[600px]:mb-4 text-[14.5px] max-[600px]:text-[13px] text-ink-2 max-w-[50ch]">
+                <p className="m-0 mb-[22px] max-[600px]:mb-4 text-[14.5px] max-[600px]:text-[13px] text-ink-2 max-w-[50ch] transition-all duration-500 ease-out group-hover:-translate-y-0.5 group-hover:text-ink/90">
                   {project.description}
                 </p>
 
                 {/* Outcomes */}
-                <div className="flex gap-[18px] max-[600px]:gap-3 flex-wrap px-[18px] max-[600px]:px-3 py-[14px] max-[600px]:py-3 rounded-2xl max-[600px]:rounded-xl bg-gradient-to-b from-black/32 to-black/12 backdrop-blur-[10px] backdrop-saturate-[160%] border border-white/10">
+                <div className="flex gap-[18px] max-[600px]:gap-3 flex-wrap px-[18px] max-[600px]:px-3 py-[14px] max-[600px]:py-3 rounded-2xl max-[600px]:rounded-xl bg-gradient-to-b from-black/32 to-black/12 backdrop-blur-[10px] backdrop-saturate-[160%] border border-white/10 transition-all duration-500 ease-out group-hover:border-white/20 group-hover:bg-gradient-to-b group-hover:from-black/40 group-hover:to-black/20">
                   {project.outcomes.map((outcome, i) => (
                     <div key={i} className="flex flex-col gap-[2px]">
                       <span className="mono text-[10px] max-[480px]:text-[9px] text-muted uppercase tracking-[.12em]">

@@ -195,7 +195,9 @@ export default function RootLayout({
         <AnimatedGradientBackground />
         <ScrollAnimations />
         <QuoteProvider>
-          {children}
+          <div className="overflow-x-hidden w-full max-w-[100vw]">
+            {children}
+          </div>
         </QuoteProvider>
       </body>
     </html>

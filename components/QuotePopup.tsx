@@ -138,7 +138,7 @@ export function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
 
       {/* Modal */}
       <div className="relative w-full max-w-[560px] animate-slideUp">
-        <div className="relative overflow-hidden rounded-[22px] bg-[#0c0e16] border border-white/15 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8),0_0_0_1px_rgba(255,255,255,0.05)_inset]">
+        <div className="relative overflow-hidden rounded-[22px] bg-[#0a0c14]/80 backdrop-blur-2xl border border-white/20 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.6),0_0_80px_-20px_rgba(111,168,255,0.15),0_0_0_1px_rgba(255,255,255,0.08)_inset]">
           {/* Close button */}
           <button
             onClick={onClose}
@@ -222,13 +222,12 @@ export function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
                           onClick={() => {
                             setFormData({ ...formData, projectType: type.value });
                           }}
-                          className={`text-left p-4 rounded-xl border transition-all duration-200 ${
+                          className={`text-left p-4 rounded-xl border backdrop-blur-sm transition-all duration-200 ${
                             formData.projectType === type.value
-                              ? "border-accent bg-accent/10"
-                              : "border-white/10 hover:border-white/20 hover:bg-white/5"
+                              ? "border-accent bg-accent/15"
+                              : "border-white/10 bg-white/[.03] hover:border-white/20 hover:bg-white/[.06]"
                           }`}
                         >
-                          <div className="text-2xl mb-2">{type.icon}</div>
                           <div className="font-medium text-[15px] mb-1">{type.label}</div>
                           <div className="text-[12px] text-muted">{type.description}</div>
                         </button>
@@ -243,10 +242,10 @@ export function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
                         <button
                           key={budget.value}
                           onClick={() => setFormData({ ...formData, budget: budget.value })}
-                          className={`w-full flex items-center justify-between p-4 rounded-xl border transition-all duration-200 ${
+                          className={`w-full flex items-center justify-between p-4 rounded-xl border backdrop-blur-sm transition-all duration-200 ${
                             formData.budget === budget.value
-                              ? "border-accent bg-accent/10"
-                              : "border-white/10 hover:border-white/20 hover:bg-white/5"
+                              ? "border-accent bg-accent/15"
+                              : "border-white/10 bg-white/[.03] hover:border-white/20 hover:bg-white/[.06]"
                           }`}
                         >
                           <span className="font-medium">{budget.label}</span>
@@ -263,10 +262,10 @@ export function QuotePopup({ isOpen, onClose }: QuotePopupProps) {
                         <button
                           key={timeline.value}
                           onClick={() => setFormData({ ...formData, timeline: timeline.value })}
-                          className={`text-left p-4 rounded-xl border transition-all duration-200 ${
+                          className={`text-left p-4 rounded-xl border backdrop-blur-sm transition-all duration-200 ${
                             formData.timeline === timeline.value
-                              ? "border-accent bg-accent/10"
-                              : "border-white/10 hover:border-white/20 hover:bg-white/5"
+                              ? "border-accent bg-accent/15"
+                              : "border-white/10 bg-white/[.03] hover:border-white/20 hover:bg-white/[.06]"
                           }`}
                         >
                           <div className="font-medium text-[15px] mb-1">{timeline.label}</div>

@@ -12,6 +12,8 @@ export function HeroBackground({ imageUrl, className = "" }: HeroBackgroundProps
   const imageRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const baseScaleRef = useRef(1.5); // Start at 1.5x scale
+  const mouseRef = useRef({ x: 0, y: 0 });
+  const targetMouseRef = useRef({ x: 0, y: 0 });
 
   // Initial zoom-out animation on load
   useEffect(() => {
@@ -44,37 +46,68 @@ export function HeroBackground({ imageUrl, className = "" }: HeroBackgroundProps
     };
   }, [imageUrl]);
 
-  // Scroll-based effects
+  // Mouse parallax effect
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current || !imageRef.current) return;
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      targetMouseRef.current = { x, y };
+    };
+
+    // Smooth interpolation for mouse movement
+    let animationId: number;
+    const smoothMouse = () => {
+      mouseRef.current.x += (targetMouseRef.current.x - mouseRef.current.x) * 0.08;
+      mouseRef.current.y += (targetMouseRef.current.y - mouseRef.current.y) * 0.08;
+      animationId = requestAnimationFrame(smoothMouse);
+    };
+    smoothMouse();
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(animationId);
+    };
+  }, []);
+
+  // Scroll-based effects combined with mouse parallax
+  useEffect(() => {
+    let rafId: number;
+
+    const updateTransform = () => {
+      if (!containerRef.current || !imageRef.current) {
+        rafId = requestAnimationFrame(updateTransform);
+        return;
+      }
 
       const scrollY = window.scrollY;
       const containerHeight = containerRef.current.offsetHeight;
       const scrollProgress = Math.min(scrollY / containerHeight, 1);
 
       // Keep scale at minimum 1.0 to always cover viewport
-      // Scale goes from baseScale down to 1.0 (not below)
       const minScale = 1.0;
       const finalScale = Math.max(baseScaleRef.current - scrollProgress * 0.5, minScale);
-      // Slight parallax movement
-      const translateY = scrollProgress * 30;
-      // Fade out as you scroll
-      const opacity = 0.5 - scrollProgress * 0.35;
 
-      imageRef.current.style.transform = `scale(${finalScale}) translateY(${translateY}px)`;
+      // Enhanced parallax movement - moves slower than scroll for depth
+      const parallaxY = scrollY * 0.4;
+
+      // Mouse-based subtle movement for 3D effect
+      const mouseX = mouseRef.current.x * 15;
+      const mouseY = mouseRef.current.y * 10;
+
+      // Fade out as you scroll
+      const opacity = 0.55 - scrollProgress * 0.4;
+
+      imageRef.current.style.transform = `scale(${finalScale}) translate3d(${mouseX}px, ${parallaxY + mouseY}px, 0)`;
       imageRef.current.style.opacity = String(Math.max(opacity, 0.08));
+
+      rafId = requestAnimationFrame(updateTransform);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Continuous update during initial animation
-    const animationInterval = setInterval(handleScroll, 16);
-    setTimeout(() => clearInterval(animationInterval), 2000);
+    rafId = requestAnimationFrame(updateTransform);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      clearInterval(animationInterval);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -92,7 +125,7 @@ export function HeroBackground({ imageUrl, className = "" }: HeroBackgroundProps
       {/* Fixed background image that sticks to viewport */}
       <div
         ref={imageRef}
-        className={`fixed top-0 left-0 w-screen h-screen z-[-1] will-change-transform transition-opacity duration-700 ${
+        className={`fixed inset-0 w-full h-full z-[-1] will-change-transform transition-opacity duration-700 overflow-hidden ${
           isLoaded ? "opacity-50" : "opacity-0"
         }`}
         style={{

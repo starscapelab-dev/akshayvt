@@ -19,7 +19,9 @@
       "Bash(taskkill:*)",
       "Bash(timeout /t 6 /nobreak)",
       "Bash(find:*)",
-      "Bash(set NODE_OPTIONS=--max-old-space-size=8192)"
+      "Bash(set NODE_OPTIONS=--max-old-space-size=8192)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
