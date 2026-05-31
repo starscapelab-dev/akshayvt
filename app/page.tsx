@@ -54,15 +54,18 @@ export default function HomePage() {
       {/* Hero Section */}
       <header
         id="top"
-        className="relative min-h-[920px] max-[900px]:min-h-[auto] pt-[140px] max-[900px]:pt-[120px] max-[600px]:pt-[100px] pb-24 max-[600px]:pb-12 overflow-hidden isolate"
+        className="relative min-h-[100vh] max-[900px]:min-h-[100vh] pt-[140px] max-[900px]:pt-[120px] max-[600px]:pt-[100px] pb-24 max-[600px]:pb-12 overflow-hidden isolate"
       >
         {/* Sticky parallax background with scroll-based scale effect */}
-        <HeroBackground imageUrl="https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&w=2400&q=80" />
+        <HeroBackground imageUrl="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?auto=format&fit=crop&w=2400&q=80" />
+
+        {/* Dark blue overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,20,50,0.75)] via-[rgba(10,20,50,0.65)] to-[rgba(6,7,10,0.85)] z-0 pointer-events-none" />
 
         <div className="container">
-          <div className="relative grid grid-cols-[1.15fr_.85fr] gap-10 max-[900px]:gap-8 items-end max-[1000px]:grid-cols-1 max-[600px]:text-center">
+          <div className="relative grid grid-cols-[1.15fr_.85fr] gap-10 max-[900px]:gap-8 items-end max-[1000px]:grid-cols-1 max-[600px]:text-center ">
             {/* Left column */}
-            <div className="max-[600px]:flex max-[600px]:flex-col max-[600px]:items-center">
+            <div className="max-[600px]:flex max-[600px]:flex-col max-[600px]:items-center py-14">
               {/* Eyebrow pill */}
               <div className="inline-flex items-center gap-2 max-[480px]:gap-1.5 px-4 max-[480px]:px-3 py-[10px] max-[480px]:py-2 rounded-pill bg-gradient-to-b from-white/12 to-white/5 backdrop-blur-[16px] border border-white/12 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.4)] mono text-[11.5px] max-[480px]:text-[10px] tracking-[.12em] text-ink-2 uppercase mb-7 max-[600px]:mb-6">
                 <span className="w-2 h-2 max-[480px]:w-1.5 max-[480px]:h-1.5 rounded-full bg-green shadow-[0_0_12px_#42E47A] animate-pulse flex-shrink-0" />
@@ -92,7 +95,7 @@ export default function HomePage() {
               </p>
 
               {/* CTAs */}
-              <div className="flex gap-3 flex-wrap max-[600px]:justify-center max-[480px]:flex-col max-[480px]:gap-2.5 max-[480px]:w-full max-[480px]:px-2 mb-12 max-[600px]:mb-8">
+              <div className="flex gap-3 flex-wrap max-[600px]:justify-center max-[480px]:flex-col max-[480px]:gap-2.5 max-[480px]:w-full max-[480px]:px-2 mb-12 max-[600px]:mb-8 pb-16">
                 <a
                   href="https://wa.me/919746220043?text=Hi%20Akshay,%20I'm%20interested%20in%20your%20web%20development%20services."
                   target="_blank"
@@ -108,7 +111,7 @@ export default function HomePage() {
               </div>
 
               {/* Trust stats */}
-              <Glass className="grid grid-cols-4 max-[600px]:grid-cols-2 gap-5 max-[600px]:gap-4 max-[480px]:gap-3 p-6 max-[600px]:p-5 max-[480px]:p-4 !bg-[rgba(10,12,20,0.92)] backdrop-blur-xl shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]">
+              <Glass className="grid grid-cols-4 max-[600px]:grid-cols-4 gap-5 max-[600px]:gap-4 max-[480px]:gap-3 p-6 max-[600px]:p-5 max-[480px]:p-4 !bg-[rgba(10,12,20,0.92)] backdrop-blur-xl shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]">
                 <div className="flex flex-col max-[600px]:items-center gap-1">
                   <span className="serif text-[32px] max-[600px]:text-[28px] max-[480px]:text-[26px] leading-none tracking-tight text-ink">6+</span>
                   <span className="text-[11px] max-[480px]:text-[10px] text-muted leading-[1.35] max-[600px]:text-center">
@@ -267,7 +270,7 @@ export default function HomePage() {
       {/* Services Section */}
       <section
         id="services"
-        className="relative pt-[clamp(72px,8.5vw,128px)] pb-[clamp(72px,8.5vw,128px)] bg-bg-2 border-t border-b border-white/[.06]"
+        className="relative pt-[clamp(96px,10vw,160px)] pb-[clamp(96px,10vw,160px)] bg-bg-2 border-t border-b border-white/[.06]"
       >
         {/* Background gradient */}
         <div
@@ -315,7 +318,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Me Section */}
-      <section id="about" className="relative pt-[clamp(72px,8.5vw,128px)] pb-[clamp(72px,8.5vw,128px)] overflow-hidden">
+      <section id="about" className="relative pt-[clamp(96px,10vw,160px)] pb-[clamp(96px,10vw,160px)] overflow-hidden">
         {/* Background photo */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center opacity-100"
@@ -399,7 +402,7 @@ export default function HomePage() {
       </section>
 
       {/* Process Section */}
-      <section className="relative pt-[clamp(72px,8.5vw,128px)] pb-[clamp(72px,8.5vw,128px)] bg-bg-2 border-t border-white/[.06]">
+      <section className="relative pt-[clamp(96px,10vw,160px)] pb-[clamp(96px,10vw,160px)] bg-bg-2 border-t border-white/[.06]">
         {/* Background gradient */}
         <div
           className="absolute inset-0 z-0 pointer-events-none"
@@ -490,7 +493,7 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="relative pt-[clamp(72px,8.5vw,128px)] pb-[clamp(72px,8.5vw,128px)] bg-bg">
+      <section id="projects" className="relative pt-[clamp(96px,10vw,160px)] pb-[clamp(96px,10vw,160px)] bg-bg">
         <div className="container relative z-[1]">
           {/* Section header */}
           <div className="flex gap-12 max-[900px]:gap-6 items-end justify-between mb-12 max-[900px]:mb-8 max-[900px]:flex-col max-[900px]:items-start" data-animate>
@@ -593,7 +596,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="relative pt-[clamp(72px,8.5vw,128px)] pb-[clamp(72px,8.5vw,128px)] overflow-hidden">
+      <section className="relative pt-[clamp(96px,10vw,160px)] pb-[clamp(96px,10vw,160px)] overflow-hidden">
         {/* Background photo */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
@@ -628,7 +631,7 @@ export default function HomePage() {
       </section>
 
       {/* Technology Logo Carousel */}
-      <section className="py-16 max-[600px]:py-10 overflow-hidden bg-bg-2">
+      <section className="py-24 max-[600px]:py-14 overflow-hidden bg-bg-2">
         <div className="container mb-10 max-[600px]:mb-6">
           <div className="text-center">
             <div className="eyebrow mb-[18px] max-[600px]:mb-3 justify-center">
@@ -682,7 +685,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="relative pt-[clamp(72px,8.5vw,128px)] pb-[clamp(72px,8.5vw,128px)] bg-bg-2">
+      <section id="faq" className="relative pt-[clamp(96px,10vw,160px)] pb-[clamp(96px,10vw,160px)] bg-bg-2">
         {/* Background gradient */}
         <div
           className="absolute inset-0 z-0 pointer-events-none"
@@ -719,7 +722,7 @@ export default function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="relative pt-[clamp(72px,8.5vw,128px)] pb-[clamp(72px,8.5vw,128px)]">
+      <section id="contact" className="relative pt-[clamp(96px,10vw,160px)] pb-[clamp(96px,10vw,160px)]">
         {/* Background gradient */}
         <div
           className="absolute inset-0 z-0 pointer-events-none"

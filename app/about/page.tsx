@@ -233,7 +233,7 @@ export default function AboutPage() {
       </header>
 
       {/* Story / Manifesto Section */}
-      <section className="bg-bg-2 py-[clamp(80px,9vw,140px)]">
+      <section className="bg-bg-2 py-[clamp(96px,11vw,160px)]">
         <div className="container">
           <div className="grid grid-cols-[280px_1fr] gap-16 max-[600px]:gap-10 items-start max-[900px]:grid-cols-1 max-[900px]:gap-8">
             {/* Aside */}
@@ -262,7 +262,7 @@ export default function AboutPage() {
       </section>
 
       {/* Principles Section - 6 principles */}
-      <section className="py-[clamp(80px,9vw,140px)]">
+      <section className="py-[clamp(96px,11vw,160px)]">
         <div className="container">
           <div className="flex gap-12 items-end justify-between mb-12 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6">
             <div className="max-w-[64ch]">
@@ -297,7 +297,7 @@ export default function AboutPage() {
       </section>
 
       {/* Skills Section - 4 columns with icons */}
-      <section className="relative bg-bg-2 py-[clamp(80px,9vw,140px)] overflow-hidden">
+      <section className="relative bg-bg-2 py-[clamp(96px,11vw,160px)] overflow-hidden">
         {/* Background */}
         <div
           className="absolute inset-0 z-0 pointer-events-none bg-cover bg-center"
@@ -349,7 +349,7 @@ export default function AboutPage() {
       </section>
 
       {/* Journey/Timeline Section */}
-      <section className="py-[clamp(80px,9vw,140px)]">
+      <section className="py-[clamp(96px,11vw,160px)]">
         <div className="container">
           <div className="flex gap-12 items-end justify-between mb-12 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6">
             <div className="max-w-[64ch]">
@@ -415,7 +415,7 @@ export default function AboutPage() {
       </section>
 
       {/* Working With Me Section */}
-      <section className="bg-bg-2 py-[clamp(80px,9vw,140px)]">
+      <section className="bg-bg-2 py-[clamp(96px,11vw,160px)]">
         <div className="container">
           <div className="flex gap-12 items-end justify-between mb-12 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6">
             <div className="max-w-[64ch]">
@@ -471,7 +471,7 @@ export default function AboutPage() {
       </section>
 
       {/* Technology Logo Carousel */}
-      <section className="py-16 overflow-hidden">
+      <section className="py-24 overflow-hidden">
         <div className="container mb-10">
           <div className="text-center">
             <div className="eyebrow mb-[18px] justify-center">
@@ -525,7 +525,7 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-40 overflow-hidden">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{

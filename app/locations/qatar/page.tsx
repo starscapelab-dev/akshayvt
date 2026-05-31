@@ -49,7 +49,7 @@ export default function QatarPage() {
       />
 
       {/* Intro Section */}
-      <section className="container py-20">
+      <section className="container py-28">
         <div className="grid grid-cols-[1.1fr_.9fr] gap-16 items-start max-[980px]:grid-cols-1">
           <div>
             <p className="serif text-[clamp(19px,2vw,23px)] leading-[1.55] text-ink tracking-tight mb-8">
@@ -193,7 +193,7 @@ export default function QatarPage() {
       </section>
 
       {/* Qatar Cities Grid */}
-      <section className="py-20 bg-bg-2">
+      <section className="py-28 bg-bg-2">
         <div className="container">
           <div className="flex gap-12 items-end justify-between mb-10 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6">
             <div className="max-w-[64ch]">
@@ -249,7 +249,7 @@ export default function QatarPage() {
       </section>
 
       {/* Services Section */}
-      <section className="container py-20">
+      <section className="container py-28">
         <div className="max-w-[900px] mx-auto">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4 inline-block">
@@ -302,7 +302,7 @@ export default function QatarPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-20">
+      <section className="relative py-28">
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{

@@ -37,8 +37,8 @@ export default function BlogPage() {
       />
 
       {/* Topics Filter */}
-      <section className="container py-12">
-        <div className="flex gap-2 flex-wrap p-[14px] rounded-pill bg-gradient-to-b from-white/6 to-white/2 border border-white/10 backdrop-blur-[14px] w-fit max-w-full overflow-x-auto">
+      <section className="container py-16">
+        <div className="flex gap-2 flex-wrap p-[14px] rounded-pill bg-gradient-to-b from-white/6 to-white/2 border border-white/10 backdrop-blur-[14px] w-fit max-w-full">
           {categories.map((category) => (
             <button
               key={category}

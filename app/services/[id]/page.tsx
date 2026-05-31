@@ -131,7 +131,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       </header>
 
       {/* What You Get */}
-      <section className="container py-20">
+      <section className="container py-28">
         <div className="grid grid-cols-[320px_1fr] gap-14 items-start max-[980px]:grid-cols-1 max-[980px]:gap-8">
           <div className="sticky top-[110px]">
             <div className="eyebrow mb-3">What's included</div>
@@ -168,7 +168,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       </section>
 
       {/* Process */}
-      <section className="bg-bg-2 py-20">
+      <section className="bg-bg-2 py-28">
         <div className="container">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4 inline-block">
@@ -197,7 +197,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       </section>
 
       {/* Get Quote CTA */}
-      <section className="container py-20">
+      <section className="container py-28">
         <div className="max-w-[800px] mx-auto">
           <Glass className="p-10 max-[640px]:p-6 text-center">
             <div className="eyebrow mb-4 inline-block">Ready to start?</div>
@@ -220,7 +220,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       </section>
 
       {/* FAQs */}
-      <section className="bg-bg-2 py-20">
+      <section className="bg-bg-2 py-28">
         <div className="container max-w-[900px]">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4 inline-block">Common questions</div>
@@ -251,7 +251,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-40 overflow-hidden">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{

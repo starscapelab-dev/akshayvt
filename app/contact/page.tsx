@@ -480,7 +480,7 @@ export default function ContactPage() {
       </section>
 
       {/* Inline FAQ Section */}
-      <section className="py-20 bg-bg-2 ">
+      <section className="py-28 bg-bg-2 ">
         <div className="container">
           <div className="flex gap-12 items-end justify-between mb-10 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6">
             <div className="max-w-[64ch]">
@@ -511,7 +511,7 @@ export default function ContactPage() {
       </section>
 
       {/* Trust Strip */}
-      <section className="relative py-[clamp(50px,6vw,80px)]">
+      <section className="relative py-[clamp(72px,8vw,112px)]">
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{

@@ -67,7 +67,7 @@ export default function PortfolioPage() {
       </header>
 
       {/* Filter Bar */}
-      <section className="container py-8 border-b border-white/[.06]">
+      <section className="container py-12 border-b border-white/[.06]">
         <div className="flex gap-2 flex-wrap">
           {(Object.keys(categories) as CategoryKey[]).map((key) => (
             <button
@@ -87,7 +87,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Projects Grid */}
-      <main className="container py-16">
+      <main className="container py-24">
         <div className="grid grid-cols-2 gap-6 max-[600px]:gap-4 max-[900px]:grid-cols-1">
           {filteredProjects.map((project) => (
             <a
@@ -169,7 +169,7 @@ export default function PortfolioPage() {
       </main>
 
       {/* CTA Section */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-40 overflow-hidden">
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{

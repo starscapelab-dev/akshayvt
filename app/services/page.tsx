@@ -569,7 +569,7 @@ export default function ServicesPage() {
       />
 
       {/* Service Categories */}
-      <main id="core" className="container py-20">
+      <main id="core" className="container py-28">
         {serviceCategories.map((category, index) => {
           const colors = accentColors[category.accentColor] || accentColors.accent;
           return (
@@ -654,7 +654,7 @@ export default function ServicesPage() {
       </main>
 
       {/* Final CTA */}
-      <section className="relative py-32 overflow-hidden">
+      <section className="relative py-40 overflow-hidden">
         {/* Background photo */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
