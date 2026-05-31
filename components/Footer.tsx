@@ -1,3 +1,7 @@
+"use client";
+
+import { ObfuscatedEmail } from "./ObfuscatedEmail";
+
 export function Footer() {
   return (
     <footer className="border-t border-white/[.06] pt-20 max-[600px]:pt-12 pb-10 max-[600px]:pb-6 bg-bg relative">
@@ -177,16 +181,13 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:info@akshayvt.com"
-                  className="text-ink-2 text-sm max-[600px]:text-[13px] transition-colors duration-200 hover:text-ink inline-flex items-center gap-2"
-                >
+                <ObfuscatedEmail className="text-ink-2 text-sm max-[600px]:text-[13px] transition-colors duration-200 hover:text-ink inline-flex items-center gap-2">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4 max-[600px]:w-3.5 max-[600px]:h-3.5 flex-shrink-0">
                     <rect x="3" y="5" width="18" height="14" rx="2" />
                     <path d="M3 7l9 6 9-6" />
                   </svg>
                   <span className="truncate">info@akshayvt.com</span>
-                </a>
+                </ObfuscatedEmail>
               </li>
               <li>
                 <a

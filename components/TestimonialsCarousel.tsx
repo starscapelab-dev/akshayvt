@@ -49,34 +49,30 @@ export function TestimonialsCarousel() {
 
       <div
         ref={carouselRef}
-        className="overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden"
+        className="overflow-x-auto scroll-smooth [&::-webkit-scrollbar]:hidden -mx-4 px-4"
         style={{ scrollbarWidth: "none" }}
       >
-        <div className="flex gap-[14px] max-[600px]:gap-3 snap-x snap-mandatory" aria-label="Client testimonials carousel">
+        <div className="flex gap-4 max-[600px]:gap-3 snap-x snap-mandatory w-max" aria-label="Client testimonials carousel">
           {testimonials.map((testimonial) => (
             <div
               data-testimonial-card
               key={testimonial.id}
-              className="snap-start flex-none w-[calc((100%-28px)/3)] max-[900px]:w-[calc((100%-14px)/2)] max-[600px]:w-[85vw] max-[480px]:w-[90vw]"
+              className="snap-start flex-none w-[380px] max-[900px]:w-[340px] max-[600px]:w-[300px] max-[480px]:w-[280px]"
             >
-              <Glass className="p-8 max-[600px]:p-6 px-[30px] max-[600px]:px-5 flex flex-col h-full">
-                <div className="text-warm mono text-sm max-[600px]:text-xs tracking-[.2em] mb-[22px] max-[600px]:mb-4">★★★★★</div>
+              <Glass className="!p-6 max-[600px]:!p-5 flex flex-col h-full" hover={false}>
+                <div className="text-warm mono text-sm max-[600px]:text-xs tracking-[.2em] mb-5 max-[600px]:mb-4">★★★★★</div>
                 <blockquote
-                  className={`m-0 mb-7 max-[600px]:mb-5 serif font-normal ${
-                    testimonial.large
-                      ? "text-[clamp(18px,1.8vw,26px)]"
-                      : "text-[clamp(16px,1.6vw,24px)]"
-                  } leading-[1.3] tracking-tight text-ink pretty`}
+                  className="m-0 mb-6 max-[600px]:mb-5 serif font-normal text-[17px] max-[600px]:text-[15px] leading-[1.45] tracking-tight text-ink"
                 >
                   "{testimonial.quote}"
                 </blockquote>
-                <cite className="mt-auto flex items-center gap-[14px] max-[600px]:gap-3 pt-[22px] max-[600px]:pt-4 border-t border-dashed border-white/12 not-italic">
-                  <span className="w-11 h-11 max-[600px]:w-10 max-[600px]:h-10 rounded-full bg-gradient-to-br from-white/14 to-white/4 border border-white/14 grid place-items-center text-ink font-medium text-[15px] max-[600px]:text-[14px]">
+                <cite className="mt-auto flex items-center gap-3 pt-5 max-[600px]:pt-4 border-t border-dashed border-white/12 not-italic">
+                  <span className="w-10 h-10 max-[600px]:w-9 max-[600px]:h-9 rounded-full bg-gradient-to-br from-white/14 to-white/4 border border-white/14 grid place-items-center text-ink font-medium text-[14px] max-[600px]:text-[13px] flex-shrink-0">
                     {testimonial.avatar}
                   </span>
-                  <span className="flex flex-col gap-1">
-                    <strong className="text-[15px] max-[600px]:text-[14px] font-medium">{testimonial.name}</strong>
-                    <small className="text-xs max-[600px]:text-[11px] text-muted">{testimonial.role}</small>
+                  <span className="flex flex-col gap-0.5 min-w-0">
+                    <strong className="text-[14px] max-[600px]:text-[13px] font-medium truncate">{testimonial.name}</strong>
+                    <small className="text-[11px] max-[600px]:text-[10px] text-muted truncate">{testimonial.role}</small>
                   </span>
                 </cite>
               </Glass>

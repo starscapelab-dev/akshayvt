@@ -8,9 +8,11 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { HeroBackground } from "@/components/HeroBackground";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { ObfuscatedEmail } from "@/components/ObfuscatedEmail";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { faqs } from "@/data/faq";
+import { MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 // Technology logos for the carousel
@@ -52,28 +54,27 @@ export default function HomePage() {
       {/* Hero Section */}
       <header
         id="top"
-        className="relative min-h-[920px] max-[900px]:min-h-[auto] pt-[140px] max-[900px]:pt-[120px] pb-24 max-[600px]:pb-16 overflow-hidden isolate"
+        className="relative min-h-[920px] max-[900px]:min-h-[auto] pt-[140px] max-[900px]:pt-[120px] max-[600px]:pt-[100px] pb-24 max-[600px]:pb-12 overflow-hidden isolate"
       >
         {/* Sticky parallax background with scroll-based scale effect */}
         <HeroBackground imageUrl="https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&w=2400&q=80" />
 
         <div className="container">
-          <div className="relative grid grid-cols-[1.15fr_.85fr] gap-10 max-[900px]:gap-8 items-end max-[1000px]:grid-cols-1">
+          <div className="relative grid grid-cols-[1.15fr_.85fr] gap-10 max-[900px]:gap-8 items-end max-[1000px]:grid-cols-1 max-[600px]:text-center">
             {/* Left column */}
-            <div>
+            <div className="max-[600px]:flex max-[600px]:flex-col max-[600px]:items-center">
               {/* Eyebrow pill */}
-              <div className="inline-flex items-center gap-2 max-[480px]:gap-1.5 px-4 max-[480px]:px-3 py-[10px] max-[480px]:py-2 rounded-pill bg-gradient-to-b from-white/10 to-white/4 backdrop-blur-[12px] border border-white/10 mono text-[11.5px] max-[480px]:text-[10px] tracking-[.12em] text-ink-2 uppercase mb-7 max-[600px]:mb-5 flex-wrap max-[480px]:flex-nowrap">
-                <span className="w-1.5 h-1.5 rounded-full bg-green shadow-[0_0_12px_#42E47A] flex-shrink-0" />
-                <span className="max-[380px]:hidden">Now booking · April / May</span>
-                <span className="hidden max-[380px]:inline">Booking now</span>
-                <span className="opacity-45 max-[480px]:hidden">|</span>
-                <span className="max-[480px]:hidden">UAE · India · Worldwide</span>
+              <div className="inline-flex items-center gap-2 max-[480px]:gap-1.5 px-4 max-[480px]:px-3 py-[10px] max-[480px]:py-2 rounded-pill bg-gradient-to-b from-white/12 to-white/5 backdrop-blur-[16px] border border-white/12 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.4)] mono text-[11.5px] max-[480px]:text-[10px] tracking-[.12em] text-ink-2 uppercase mb-7 max-[600px]:mb-6">
+                <span className="w-2 h-2 max-[480px]:w-1.5 max-[480px]:h-1.5 rounded-full bg-green shadow-[0_0_12px_#42E47A] animate-pulse flex-shrink-0" />
+                <span className="max-[480px]:hidden">Now booking · April / May</span>
+                <span className="hidden max-[480px]:inline">Available Now</span>
               </div>
 
               {/* Hero headline */}
-              <h1 className="serif font-normal text-[clamp(36px,7.8vw,108px)] leading-[.98] tracking-[-.022em] mb-[26px] max-[600px]:mb-5 balance animate-fadeInUp">
+              <h1 className="serif font-normal text-[clamp(38px,8vw,108px)] max-[480px]:text-[36px] leading-[.96] max-[600px]:leading-[1.02] tracking-[-.024em] mb-[26px] max-[600px]:mb-6 balance animate-fadeInUp">
                 Your website,
-                <br />
+                <br className="max-[600px]:hidden" />
+                <span className="max-[600px]:hidden"> </span>
                 <em className="italic bg-gradient-to-r from-[#B69BFF] via-[#6FA8FF] to-[#F4C58C] bg-clip-text text-transparent animate-gradient bg-[length:200%_200%]">
                   built right.
                 </em>
@@ -84,95 +85,91 @@ export default function HomePage() {
               </h1>
 
               {/* Lede */}
-              <p className="text-[clamp(15px,1.6vw,21px)] leading-[1.5] text-ink-2 max-w-[56ch] mb-9 max-[600px]:mb-6 pretty">
+              <p className="text-[clamp(15px,1.6vw,21px)] max-[480px]:text-[15px] leading-[1.55] max-[600px]:leading-[1.6] text-ink-2 max-w-[56ch] max-[600px]:max-w-[44ch] mb-9 max-[600px]:mb-7 pretty">
                 I'm a freelance web developer with <b className="text-ink">6+ years</b> shipping
                 React &amp; Next.js sites for small businesses, founders, and Gulf NRIs. Talk to
                 the person building your site — not an account manager.
               </p>
 
               {/* CTAs */}
-              <div className="flex gap-3 flex-wrap mb-12 max-[600px]:mb-8">
-                <Button variant="primary" href="#contact" showChevron>
-                  Get a Free Quote
-                </Button>
-                <Button variant="ghost" href="#projects">
+              <div className="flex gap-3 flex-wrap max-[600px]:justify-center max-[480px]:flex-col max-[480px]:gap-2.5 max-[480px]:w-full max-[480px]:px-2 mb-12 max-[600px]:mb-8">
+                <a
+                  href="https://wa.me/919746220043?text=Hi%20Akshay,%20I'm%20interested%20in%20your%20web%20development%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-[10px] max-[480px]:gap-2 rounded-pill border border-transparent font-medium tracking-tight whitespace-nowrap transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden active:scale-[0.97] px-[22px] max-[480px]:px-5 py-[14px] max-[480px]:py-3.5 text-[15px] max-[480px]:text-[14px] max-[480px]:w-full bg-whatsapp text-[#00220C] shadow-[0_8px_24px_-6px_rgba(37,211,102,0.5)] hover:shadow-[0_12px_32px_-6px_rgba(37,211,102,0.6)] hover:-translate-y-[3px] hover:scale-[1.02]"
+                >
+                  <MessageCircle className="w-[18px] h-[18px] max-[480px]:w-4 max-[480px]:h-4" />
+                  Chat on WhatsApp
+                </a>
+                <a href="#projects" className="inline-flex items-center justify-center gap-[10px] max-[480px]:gap-2 rounded-pill border font-medium tracking-tight whitespace-nowrap transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden active:scale-[0.97] px-[22px] max-[480px]:px-5 py-[14px] max-[480px]:py-3.5 text-[15px] max-[480px]:text-[14px] max-[480px]:w-full bg-gradient-to-b from-white/10 to-white/4 backdrop-blur-[14px] backdrop-saturate-[160%] text-ink border-white/16 shadow-[0_1px_0_rgba(255,255,255,.16)_inset] hover:bg-gradient-to-b hover:from-white/20 hover:to-white/8 hover:-translate-y-[3px] hover:border-white/25">
                   See My Work
-                </Button>
+                </a>
               </div>
 
               {/* Trust stats */}
-              <Glass className="grid grid-cols-4 max-[600px]:grid-cols-2 gap-4 max-[480px]:gap-3 p-5 max-[480px]:p-4 px-[26px] max-[480px]:px-4 !bg-[rgba(10,12,20,0.88)] backdrop-blur-xl">
-                <div className="flex items-center gap-[10px] max-[480px]:gap-2">
-                  <span className="serif text-[30px] max-[480px]:text-[24px] leading-none tracking-tight">6+</span>
-                  <span className="text-xs max-[480px]:text-[10px] text-muted leading-[1.3] max-w-[14ch]">
+              <Glass className="grid grid-cols-4 max-[600px]:grid-cols-2 gap-5 max-[600px]:gap-4 max-[480px]:gap-3 p-6 max-[600px]:p-5 max-[480px]:p-4 !bg-[rgba(10,12,20,0.92)] backdrop-blur-xl shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]">
+                <div className="flex flex-col max-[600px]:items-center gap-1">
+                  <span className="serif text-[32px] max-[600px]:text-[28px] max-[480px]:text-[26px] leading-none tracking-tight text-ink">6+</span>
+                  <span className="text-[11px] max-[480px]:text-[10px] text-muted leading-[1.35] max-[600px]:text-center">
                     Years building
-                    <br />
-                    for the web
                   </span>
                 </div>
-                <div className="flex items-center gap-[10px] max-[480px]:gap-2">
-                  <span className="serif text-[30px] max-[480px]:text-[24px] leading-none tracking-tight">50+</span>
-                  <span className="text-xs max-[480px]:text-[10px] text-muted leading-[1.3] max-w-[14ch]">
-                    Happy clients
-                    <br />
-                    shipped
+                <div className="flex flex-col max-[600px]:items-center gap-1">
+                  <span className="serif text-[32px] max-[600px]:text-[28px] max-[480px]:text-[26px] leading-none tracking-tight text-ink">50+</span>
+                  <span className="text-[11px] max-[480px]:text-[10px] text-muted leading-[1.35] max-[600px]:text-center">
+                    Projects shipped
                   </span>
                 </div>
-                <div className="flex items-center gap-[10px] max-[480px]:gap-2">
-                  <span className="serif text-[30px] max-[480px]:text-[24px] leading-none tracking-tight">4</span>
-                  <span className="text-xs max-[480px]:text-[10px] text-muted leading-[1.3] max-w-[14ch]">
+                <div className="flex flex-col max-[600px]:items-center gap-1">
+                  <span className="serif text-[32px] max-[600px]:text-[28px] max-[480px]:text-[26px] leading-none tracking-tight text-ink">4</span>
+                  <span className="text-[11px] max-[480px]:text-[10px] text-muted leading-[1.35] max-[600px]:text-center">
                     Countries
-                    <br />
-                    served
                   </span>
                 </div>
-                <div className="flex items-center gap-[10px] max-[480px]:gap-2">
-                  <span className="serif text-[30px] max-[480px]:text-[24px] leading-none tracking-tight">&lt;24h</span>
-                  <span className="text-xs max-[480px]:text-[10px] text-muted leading-[1.3] max-w-[14ch]">
-                    Average reply
-                    <br />
-                    time
+                <div className="flex flex-col max-[600px]:items-center gap-1">
+                  <span className="serif text-[32px] max-[600px]:text-[28px] max-[480px]:text-[26px] leading-none tracking-tight text-accent">&lt;24h</span>
+                  <span className="text-[11px] max-[480px]:text-[10px] text-muted leading-[1.35] max-[600px]:text-center">
+                    Response time
                   </span>
                 </div>
               </Glass>
             </div>
 
             {/* Right column - Card cluster */}
-            <div className="relative grid gap-[18px] max-[1000px]:gap-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1">
+            <div className="relative grid gap-[18px] max-[1000px]:gap-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1 max-[600px]:mt-4">
               {/* Profile card */}
-              <Glass className="p-[22px] max-[480px]:p-4 !bg-[rgba(10,12,20,0.88)] backdrop-blur-xl">
-                <div className="flex items-center gap-[14px] max-[480px]:gap-3 flex-wrap max-[380px]:flex-nowrap">
-                  <div className="relative w-[54px] h-[54px] max-[480px]:w-11 max-[480px]:h-11 rounded-full bg-[radial-gradient(120%_100%_at_30%_20%,#ffffff_0%,transparent_30%),linear-gradient(135deg,#2B3046_0%,#0F121C_100%)] border border-white/18 flex-none overflow-hidden">
-                    <div className="absolute inset-0 grid place-items-center serif text-[22px] max-[480px]:text-[18px] italic text-white/85">
+              <Glass className="p-[22px] max-[600px]:p-5 max-[480px]:p-4 !bg-[rgba(10,12,20,0.92)] backdrop-blur-xl shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]">
+                <div className="flex items-center gap-[14px] max-[480px]:gap-3">
+                  <div className="relative w-[54px] h-[54px] max-[600px]:w-12 max-[600px]:h-12 max-[480px]:w-11 max-[480px]:h-11 rounded-full bg-[radial-gradient(120%_100%_at_30%_20%,#ffffff_0%,transparent_30%),linear-gradient(135deg,#2B3046_0%,#0F121C_100%)] border border-white/18 flex-none overflow-hidden">
+                    <div className="absolute inset-0 grid place-items-center serif text-[22px] max-[600px]:text-[20px] max-[480px]:text-[18px] italic text-white/85">
                       AV
                     </div>
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="m-0 text-[17px] max-[480px]:text-[15px] font-medium tracking-tight">Akshay V T</h3>
+                    <h3 className="m-0 text-[17px] max-[600px]:text-[16px] max-[480px]:text-[15px] font-medium tracking-tight">Akshay V T</h3>
                     <div className="text-[12.5px] max-[480px]:text-[11px] text-muted mt-[2px]">
-                      Freelance Developer · Kerala, India 🇮🇳
+                      Freelance Developer · Kerala 🇮🇳
                     </div>
                   </div>
-                  <div className="ml-auto text-right max-[380px]:hidden">
+                  <div className="ml-auto text-right">
                     <div className="mono text-[11px] max-[480px]:text-[10px] text-muted tracking-wide">RATING</div>
-                    <div className="serif text-[22px] max-[480px]:text-[18px]">
+                    <div className="serif text-[22px] max-[600px]:text-[20px] max-[480px]:text-[18px]">
                       4.9 <span className="text-warm text-sm max-[480px]:text-xs">★★★★★</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-[6px] max-[480px]:gap-1.5 mt-[18px] max-[480px]:mt-3">
+                <div className="flex flex-wrap gap-[6px] max-[480px]:gap-1.5 mt-[18px] max-[600px]:mt-4 max-[480px]:mt-3 max-[600px]:justify-center">
                   <Chip>React</Chip>
                   <Chip>Next.js</Chip>
                   <Chip>TypeScript</Chip>
                   <Chip>Tailwind</Chip>
                   <Chip>Node</Chip>
-                  <Chip>Shopify</Chip>
                   <Chip>SEO</Chip>
-                  <Chip>AI APIs</Chip>
                 </div>
 
-                <div className="mt-5 max-[480px]:mt-3 pt-[18px] max-[480px]:pt-3 border-t border-dashed border-white/10 flex items-center justify-between gap-[10px]">
+                <div className="mt-5 max-[600px]:mt-4 max-[480px]:mt-3 pt-[18px] max-[600px]:pt-4 max-[480px]:pt-3 border-t border-dashed border-white/10 flex items-center justify-between gap-[10px]">
                   <span className="text-xs max-[480px]:text-[10px] text-muted">Last reply</span>
                   <span className="text-[13px] max-[480px]:text-[11px] text-[#BFEFCB] mono">● online · 4 min ago</span>
                 </div>
@@ -222,8 +219,8 @@ export default function HomePage() {
           </div>
 
           {/* City marquee */}
-          <div className="mt-20 max-[900px]:mt-12 max-[600px]:mt-8 relative">
-            <div className="text-center mono text-[11px] max-[480px]:text-[10px] tracking-[.18em] uppercase text-muted mb-6 max-[600px]:mb-4">
+          <div className="mt-20 max-[900px]:mt-14 max-[600px]:mt-10 relative">
+            <div className="text-center mono text-[11px] max-[480px]:text-[10px] tracking-[.18em] uppercase text-muted mb-6 max-[600px]:mb-5">
               Worked with founders &amp; teams across
             </div>
             <div
@@ -235,7 +232,7 @@ export default function HomePage() {
                   "linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%)",
               }}
             >
-              <div className="flex gap-[60px] max-[600px]:gap-10 flex-none animate-scroll">
+              <div className="flex gap-[60px] max-[600px]:gap-8 max-[480px]:gap-6 flex-none animate-scroll">
                 {[
                   "Dubai",
                   "Abu Dhabi",
@@ -256,7 +253,7 @@ export default function HomePage() {
                 ].map((city, i) => (
                   <span
                     key={i}
-                    className="serif italic text-[30px] max-[600px]:text-[22px] text-ink-2 opacity-70 after:content-['·'] after:ml-[60px] max-[600px]:after:ml-10 after:text-accent after:not-italic"
+                    className="serif italic text-[30px] max-[600px]:text-[24px] max-[480px]:text-[20px] text-ink-2 opacity-70 after:content-['·'] after:ml-[60px] max-[600px]:after:ml-8 max-[480px]:after:ml-6 after:text-accent after:not-italic"
                   >
                     {city}
                   </span>
@@ -759,7 +756,7 @@ export default function HomePage() {
                 >
                   <span className="w-12 h-12 max-[480px]:w-10 max-[480px]:h-10 rounded-xl max-[480px]:rounded-lg bg-whatsapp/20 border border-whatsapp/30 grid place-items-center text-whatsapp flex-none">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="max-[480px]:w-4 max-[480px]:h-4">
-                      <path d="M20.5 3.5A10.6 10.6 0 0 0 3.4 16.2L2 22l6-1.4a10.6 10.6 0 0 0 12.5-17.1zM12 20a8 8 0 0 1-4.2-1.2l-.3-.2-3.6.8.8-3.5-.2-.3A8 8 0 1 1 12 20zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1l-.8 1c-.2.2-.3.2-.5.1a6.6 6.6 0 0 1-3.2-2.8c-.2-.4 0-.4.2-.6l.4-.5.3-.5c0-.2 0-.4-.1-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-.9 2.4s1 2.8 1.2 3a8.4 8.4 0 0 0 3.6 3.1c1.3.5 1.9.5 2.5.4.4-.1 1.4-.6 1.5-1.1.2-.6.2-1 .1-1.1z" />
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
                   </span>
                   <div className="flex-1 min-w-0">
@@ -771,10 +768,7 @@ export default function HomePage() {
                   </span>
                 </a>
 
-                <a
-                  href="mailto:info@akshayvt.com"
-                  className="flex items-center gap-4 max-[480px]:gap-3 p-4 max-[480px]:p-3 rounded-2xl max-[480px]:rounded-xl bg-white/[.04] border border-white/8 transition-all duration-200 hover:bg-white/[.08] hover:border-white/12"
-                >
+                <ObfuscatedEmail className="flex items-center gap-4 max-[480px]:gap-3 p-4 max-[480px]:p-3 rounded-2xl max-[480px]:rounded-xl bg-white/[.04] border border-white/8 transition-all duration-200 hover:bg-white/[.08] hover:border-white/12">
                   <span className="w-12 h-12 max-[480px]:w-10 max-[480px]:h-10 rounded-xl max-[480px]:rounded-lg bg-white/[.08] border border-white/10 grid place-items-center text-ink flex-none">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="max-[480px]:w-4 max-[480px]:h-4">
                       <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -785,7 +779,7 @@ export default function HomePage() {
                     <div className="text-xs max-[480px]:text-[10px] text-muted mb-1">Email</div>
                     <div className="text-[15px] max-[480px]:text-[13px] font-medium truncate">info@akshayvt.com</div>
                   </div>
-                </a>
+                </ObfuscatedEmail>
 
                 <div className="flex items-center gap-4 max-[480px]:gap-3 p-4 max-[480px]:p-3 rounded-2xl max-[480px]:rounded-xl bg-white/[.04] border border-white/8">
                   <span className="w-12 h-12 max-[480px]:w-10 max-[480px]:h-10 rounded-xl max-[480px]:rounded-lg bg-white/[.08] border border-white/10 grid place-items-center text-ink flex-none">

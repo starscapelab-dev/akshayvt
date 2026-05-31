@@ -130,14 +130,19 @@ export function Nav() {
               <div
                 onMouseEnter={() => clearMegaMenuTimer()}
                 onMouseLeave={() => scheduleMegaMenuClose()}
-                className={`absolute left-0 top-full mt-3 w-[760px] z-[100] rounded-[28px] bg-[#0b0d15] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                style={{
+                  width: '760px',
+                  minWidth: '760px',
+                  transform: `translateY(${activeMegaMenu === "services" ? "0" : "-8px"})`
+                }}
+                className={`absolute left-0 top-full mt-3 z-[100] rounded-[28px] bg-[#0b0d15] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   activeMegaMenu === "services"
-                    ? "opacity-100 translate-y-0 pointer-events-auto"
-                    : "opacity-0 -translate-y-2 pointer-events-none"
+                    ? "opacity-100 pointer-events-auto"
+                    : "opacity-0 pointer-events-none"
                 }`}
               >
-                <div className="relative overflow-hidden rounded-[28px] p-4 before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_top_left,rgba(111,168,255,0.24),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(182,155,255,0.18),transparent_30%)] before:pointer-events-none">
-                  <div className="relative z-[1] grid grid-cols-[1.25fr_0.75fr] gap-4">
+                <div className="relative overflow-hidden rounded-[28px] p-5 before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_top_left,rgba(111,168,255,0.24),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(182,155,255,0.18),transparent_30%)] before:pointer-events-none">
+                  <div className="relative z-[1] grid grid-cols-[1fr_240px] gap-5">
                     <div className="rounded-3xl bg-white/5 p-3">
                       <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-2">
                         <div>
@@ -218,14 +223,20 @@ export function Nav() {
               <div
                 onMouseEnter={() => clearMegaMenuTimer()}
                 onMouseLeave={() => scheduleMegaMenuClose()}
-                className={`absolute left-0 top-full mt-3 w-[720px] z-[100] rounded-[28px] bg-[#0b0d15] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                style={{
+                  width: '760px',
+                  minWidth: '760px',
+                  left: '50%',
+                  transform: `translateX(-50%) translateY(${activeMegaMenu === "locations" ? "0" : "-8px"})`
+                }}
+                className={`absolute top-full mt-3 z-[100] rounded-[28px] bg-[#0b0d15] shadow-[0_24px_80px_-28px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                   activeMegaMenu === "locations"
-                    ? "opacity-100 translate-y-0 pointer-events-auto"
-                    : "opacity-0 -translate-y-2 pointer-events-none"
+                    ? "opacity-100 pointer-events-auto"
+                    : "opacity-0 pointer-events-none"
                 }`}
               >
-                <div className="relative overflow-hidden rounded-[28px] p-4 before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_top_left,rgba(244,197,140,0.22),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(111,168,255,0.16),transparent_30%)] before:pointer-events-none">
-                  <div className="relative z-[1] grid grid-cols-[0.8fr_0.4fr] gap-4">
+                <div className="relative overflow-hidden rounded-[28px] p-5 before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(circle_at_top_left,rgba(244,197,140,0.22),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(111,168,255,0.16),transparent_30%)] before:pointer-events-none">
+                  <div className="relative z-[1] grid grid-cols-[1fr_200px] gap-6">
                     <div className="rounded-3xl bg-white/5 p-3">
                       <div className="mb-3 flex items-center justify-between border-b border-white/10 pb-2">
                         <div>
@@ -235,42 +246,39 @@ export function Nav() {
                       
                       </div>
 
-                      <div className="grid grid-cols-3 gap-2">
+                      <div className="grid grid-cols-4 gap-2">
                         {locationMenuItems.map((location) => (
                           <a
                             key={location.slug}
                             href={`/locations/${location.slug}`}
-                            className="rounded-2xl bg-[rgba(255,255,255,0.04)] p-3 transition-all duration-300 hover:-translate-y-[1px] hover:bg-white/10"
+                            className="rounded-xl bg-[rgba(255,255,255,0.04)] p-2.5 transition-all duration-300 hover:-translate-y-[1px] hover:bg-white/10"
                           >
-                            <div className="flex items-start justify-between gap-2">
-                              <div>
-                                <p className="text-[13.5px] font-medium text-ink">{location.city}</p>
-                                <p className="mt-1 text-[11px] text-muted">{location.country}</p>
+                            <div className="flex items-center gap-2">
+                              <span className="text-lg">{location.flag}</span>
+                              <div className="min-w-0">
+                                <p className="text-[13px] font-medium text-ink truncate">{location.city}</p>
+                                <p className="text-[10px] text-muted truncate">{location.country}</p>
                               </div>
-                              <span className="text-base">{location.flag}</span>
                             </div>
-                           
                           </a>
                         ))}
                       </div>
                     </div>
 
                     <div className="flex flex-col gap-3 rounded-3xl bg-[rgba(255,255,255,0.10)] p-3">
-                      <div className="rounded-2xl bg-[rgba(255,255,255,0.10)] p-3">
-                        <p className="mono text-[10px] uppercase tracking-[0.24em] text-warm">Popular hubs</p>
-                        <div className="mt-2 grid gap-2">
-                          {locationMenuItems.slice(0, 4).map((location) => (
-                            <div key={location.slug} className="flex items-center justify-between rounded-xl bg-white/5 px-2.5 py-2 text-xs text-muted">
-                              <span className="font-medium text-ink">{location.city}</span>
-                              <span>{location.flag}</span>
-                            </div>
-                          ))}
+                      <a href="/locations/saudi-arabia" className="block rounded-2xl bg-gradient-to-br from-[#22c55e]/15 to-[#16a34a]/20 p-3 transition-all duration-200 hover:from-[#22c55e]/25 hover:to-[#16a34a]/30">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-lg">🇸🇦</span>
+                          <p className="mono text-[10px] uppercase tracking-[0.24em] text-green">Saudi Arabia Hub</p>
                         </div>
-                      </div>
+                        <p className="text-[13px] font-medium text-ink">6 cities served</p>
+                        <p className="mt-1 text-xs text-muted">Riyadh, Jeddah, Dammam, Khobar, Mecca & Medina</p>
+                        <div className="mt-2 mono text-[10px] text-green">View all Saudi locations →</div>
+                      </a>
 
                       <div className="rounded-2xl bg-gradient-to-br from-[#B69BFF]/18 to-[#6FA8FF]/20 p-3">
                         <p className="text-[13px] font-medium text-ink">Local presence, global standards</p>
-                        <p className="mt-1 text-xs text-muted">Remote-friendly delivery with region-specific strategy, timezone alignment, and multilingual communication.</p>
+                        <p className="mt-1 text-xs text-muted">Remote-friendly delivery with region-specific strategy and timezone alignment.</p>
                       </div>
                     </div>
                   </div>

@@ -29,11 +29,19 @@ const geistMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://akshayvt.com"),
   title: {
-    default: "Akshay V T | Freelance Web Developer | React & Next.js Expert",
+    default: "Akshay V T | Freelance React & Next.js Web Developer",
     template: "%s | Akshay V T",
   },
   description:
-    "Freelance web developer specializing in React & Next.js. 6+ years experience. Serving clients in Dubai, Kerala, Sydney & worldwide.",
+    "Freelance web developer specializing in React & Next.js. 6+ years building websites for businesses in Dubai, Kerala & worldwide.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   keywords: [
     "freelance web developer",
     "web developer dubai",
@@ -54,7 +62,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://akshayvt.com",
     siteName: "Akshay V T - Freelance Web Developer",
-    title: "Akshay V T | Freelance Web Developer | React & Next.js Expert",
+    title: "Akshay V T | Freelance React & Next.js Web Developer",
     description:
       "Freelance web developer with 6+ years experience. React, Next.js, e-commerce & SEO for businesses worldwide.",
     images: [
@@ -89,7 +97,11 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://akshayvt.com",
+    languages: {
+      "en": "https://akshayvt.com",
+      "x-default": "https://akshayvt.com",
+    },
   },
 };
 

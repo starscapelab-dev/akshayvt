@@ -6,6 +6,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { PageHero } from "@/components/PageHero";
 import { Glass } from "@/components/Glass";
 import { Button } from "@/components/Button";
+import { ObfuscatedEmail } from "@/components/ObfuscatedEmail";
 import { useState } from "react";
 
 // Note: metadata exported in layout.tsx since this is a client component
@@ -278,10 +279,7 @@ export default function ContactPage() {
                 </a>
 
                 {/* Email */}
-                <a
-                  href="mailto:info@akshayvt.com"
-                  className="flex items-center gap-[14px] p-[14px_16px] rounded-2xl bg-gradient-to-b from-white/[.06] to-white/[.02] border border-white/8 transition-all duration-200 hover:from-white/10 hover:to-white/[.03] hover:-translate-y-px hover:border-white/[.16]"
-                >
+                <ObfuscatedEmail className="flex items-center gap-[14px] p-[14px_16px] rounded-2xl bg-gradient-to-b from-white/[.06] to-white/[.02] border border-white/8 transition-all duration-200 hover:from-white/10 hover:to-white/[.03] hover:-translate-y-px hover:border-white/[.16]">
                   <span className="w-10 h-10 rounded-xl bg-gradient-to-b from-white/[.12] to-white/[.03] border border-white/12 grid place-items-center text-ink flex-none">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-[18px] h-[18px]">
                       <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -294,7 +292,7 @@ export default function ContactPage() {
                     </div>
                     <div className="text-[15px] text-ink tracking-tight">info@akshayvt.com</div>
                   </div>
-                </a>
+                </ObfuscatedEmail>
 
                 {/* Calendar */}
                 <a

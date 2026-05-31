@@ -38,8 +38,58 @@ export default function LocationsPage() {
         backgroundImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2400&q=80"
       />
 
+      {/* Saudi Arabia Featured Hub */}
+      <section className="container pt-20 pb-10">
+        <a href="/locations/saudi-arabia" className="group block">
+          <Glass className="p-0 overflow-hidden">
+            <div className="grid grid-cols-[1fr_1.2fr] max-[820px]:grid-cols-1">
+              <div
+                className="min-h-[280px] max-[820px]:min-h-[200px] bg-cover bg-center transition-transform duration-[1.2s] group-hover:scale-[1.02]"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=2400&q=80')" }}
+              />
+              <div className="p-8 max-[600px]:p-6 flex flex-col justify-center">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-2xl">🇸🇦</span>
+                  <span className="px-3 py-1 rounded-pill bg-green/20 border border-green/30 text-[11px] font-medium text-[#BFEFCB] uppercase tracking-wider">
+                    Featured Region
+                  </span>
+                </div>
+                <h2 className="serif text-[clamp(32px,4vw,48px)] leading-[1.05] tracking-tight m-0 mb-4">
+                  Saudi Arabia <em className="italic text-accent">Hub</em>
+                </h2>
+                <p className="text-[15.5px] text-ink-2 leading-[1.55] m-0 mb-5">
+                  Supporting Vision 2030's digital transformation. Professional web development across Riyadh, Jeddah, Dammam, Khobar, Mecca & Medina.
+                </p>
+                <div className="flex gap-6 mb-5">
+                  <div>
+                    <div className="serif text-[28px] leading-none tracking-tight text-ink">6</div>
+                    <div className="mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">Cities</div>
+                  </div>
+                  <div>
+                    <div className="serif text-[28px] leading-none tracking-tight text-ink">56+</div>
+                    <div className="mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">Clients</div>
+                  </div>
+                  <div>
+                    <div className="serif text-[28px] leading-none tracking-tight text-ink">131+</div>
+                    <div className="mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">Projects</div>
+                  </div>
+                </div>
+                <div className="mono text-[12px] text-accent group-hover:translate-x-1 transition-transform">
+                  Explore Saudi Arabia locations →
+                </div>
+              </div>
+            </div>
+          </Glass>
+        </a>
+      </section>
+
       {/* Locations Grid */}
-      <section className="container py-20">
+      <section className="container py-10 pb-20">
+        <div className="mb-8">
+          <h2 className="serif text-[clamp(28px,3vw,36px)] leading-[1.05] tracking-tight m-0">
+            All <em className="italic text-accent">locations.</em>
+          </h2>
+        </div>
         <div className="grid grid-cols-2 gap-[14px] max-[600px]:gap-3 max-[820px]:grid-cols-1">
           {locations.map((location) => (
             <a
