@@ -82,7 +82,7 @@ export default function ContactPage() {
           </>
         }
         lede="Free consultation. No commitment. WhatsApp, email, or the form — your pick. I reply within 24 hours, usually within 3."
-        backgroundImage="https://images.unsplash.com/photo-1546484959-f9a381d1330d?auto=format&fit=crop&w=2400&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2400&q=80"
       />
 
       {/* Contact Grid */}
@@ -365,10 +365,10 @@ export default function ContactPage() {
             </Glass>
 
             {/* Map Card */}
-            <Glass className="p-0 relative min-h-[260px] overflow-hidden">
+            <Glass className="p-5 max-[600px]:p-4 relative min-h-[220px] max-[600px]:min-h-[180px]">
               {/* Map background with radial gradients */}
               <div
-                className="absolute inset-0"
+                className="absolute inset-0 rounded-[inherit]"
                 style={{
                   background: `
                     radial-gradient(circle at 28% 60%, rgba(111,168,255,.35) 0 8px, transparent 9px),
@@ -383,7 +383,7 @@ export default function ContactPage() {
               />
               {/* Grid overlay */}
               <div
-                className="absolute inset-0 opacity-50"
+                className="absolute inset-0 opacity-50 rounded-[inherit]"
                 style={{
                   backgroundImage: `
                     linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
@@ -392,29 +392,25 @@ export default function ContactPage() {
                   backgroundSize: "32px 32px",
                 }}
               />
-              {/* Map label */}
-              <span className="absolute top-[18px] left-[18px] mono text-[11px] text-ink-2 uppercase tracking-[.12em] px-3 py-1.5 rounded-pill bg-bg/50 backdrop-blur-sm border border-white/10 z-[2]">
-                Where I work from
-              </span>
-              {/* Map pins */}
-              <span
-                className="absolute px-[10px] py-[6px] rounded-pill bg-bg/70 border border-white/14 backdrop-blur-[12px] mono text-[11px] tracking-[.04em] text-ink whitespace-nowrap z-[2]"
-                style={{ top: "35%", left: "60%", transform: "translate(-50%, -50%)" }}
-              >
-                Dubai · clients
-              </span>
-              <span
-                className="absolute px-[10px] py-[6px] rounded-pill bg-bg/70 border border-white/14 backdrop-blur-[12px] mono text-[11px] tracking-[.04em] text-ink whitespace-nowrap z-[2]"
-                style={{ top: "56%", left: "26%", transform: "translate(-50%, -50%)" }}
-              >
-                Kerala · home base
-              </span>
-              <span
-                className="absolute px-[10px] py-[6px] rounded-pill bg-bg/70 border border-white/14 backdrop-blur-[12px] mono text-[11px] tracking-[.04em] text-ink whitespace-nowrap z-[2]"
-                style={{ top: "72%", left: "78%", transform: "translate(-50%, -50%)" }}
-              >
-                Sydney · clients
-              </span>
+              {/* Content */}
+              <div className="relative z-[2]">
+                {/* Map label */}
+                <span className="inline-block mono text-[11px] max-[480px]:text-[10px] text-ink-2 uppercase tracking-[.12em] px-3 py-1.5 rounded-pill bg-bg/50 backdrop-blur-sm border border-white/10 mb-6 max-[600px]:mb-4">
+                  Where I work from
+                </span>
+                {/* Location pills */}
+                <div className="flex flex-wrap gap-2 max-[480px]:gap-1.5">
+                  <span className="px-3 max-[480px]:px-2.5 py-2 max-[480px]:py-1.5 rounded-pill bg-accent/20 border border-accent/30 backdrop-blur-sm mono text-[12px] max-[480px]:text-[11px] tracking-[.02em] text-ink">
+                    🇮🇳 Kerala · home base
+                  </span>
+                  <span className="px-3 max-[480px]:px-2.5 py-2 max-[480px]:py-1.5 rounded-pill bg-warm/20 border border-warm/30 backdrop-blur-sm mono text-[12px] max-[480px]:text-[11px] tracking-[.02em] text-ink">
+                    🇦🇪 Dubai · clients
+                  </span>
+                  <span className="px-3 max-[480px]:px-2.5 py-2 max-[480px]:py-1.5 rounded-pill bg-[#B69BFF]/20 border border-[#B69BFF]/30 backdrop-blur-sm mono text-[12px] max-[480px]:text-[11px] tracking-[.02em] text-ink">
+                    🇦🇺 Sydney · clients
+                  </span>
+                </div>
+              </div>
             </Glass>
           </div>
         </div>
