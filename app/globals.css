@@ -1120,3 +1120,65 @@ button,
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE SECTION SPACING - PREMIUM FEEL
+   ═══════════════════════════════════════════════════════════ */
+
+/* Enhanced section spacing on mobile for better visual hierarchy */
+@media (max-width: 900px) {
+  section {
+    padding-top: clamp(64px, 12vw, 100px) !important;
+    padding-bottom: clamp(64px, 12vw, 100px) !important;
+  }
+
+  /* Smaller screens need more breathing room */
+  @media (max-width: 600px) {
+    section {
+      padding-top: clamp(56px, 14vw, 80px) !important;
+      padding-bottom: clamp(56px, 14vw, 80px) !important;
+    }
+  }
+
+  /* Compact sections (logo strips, etc.) */
+  section.py-16,
+  section[class*="py-16"] {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  /* Better heading spacing on mobile */
+  h1, h2, h3 {
+    margin-bottom: 1.25em;
+  }
+
+  /* Improved card grid gaps */
+  .grid {
+    gap: 16px;
+  }
+
+  /* Better content card padding */
+  .glass, [class*="Glass"] {
+    padding: 20px;
+  }
+}
+
+/* Extra small screens - even more spacing for readability */
+@media (max-width: 480px) {
+  section {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  /* Tighter but readable grid gaps */
+  .grid {
+    gap: 12px;
+  }
+
+  /* Container padding adjustment */
+  .container,
+  .container-narrow {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

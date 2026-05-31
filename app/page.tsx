@@ -101,7 +101,7 @@ export default function HomePage() {
               </div>
 
               {/* Trust stats */}
-              <Glass className="grid grid-cols-4 max-[600px]:grid-cols-2 gap-4 max-[480px]:gap-3 p-5 max-[480px]:p-4 px-[26px] max-[480px]:px-4">
+              <Glass className="grid grid-cols-4 max-[600px]:grid-cols-2 gap-4 max-[480px]:gap-3 p-5 max-[480px]:p-4 px-[26px] max-[480px]:px-4 !bg-[rgba(10,12,20,0.88)] backdrop-blur-xl">
                 <div className="flex items-center gap-[10px] max-[480px]:gap-2">
                   <span className="serif text-[30px] max-[480px]:text-[24px] leading-none tracking-tight">6+</span>
                   <span className="text-xs max-[480px]:text-[10px] text-muted leading-[1.3] max-w-[14ch]">
@@ -140,7 +140,7 @@ export default function HomePage() {
             {/* Right column - Card cluster */}
             <div className="relative grid gap-[18px] max-[1000px]:gap-4 max-[1000px]:grid-cols-2 max-[600px]:grid-cols-1">
               {/* Profile card */}
-              <Glass className="p-[22px] max-[480px]:p-4">
+              <Glass className="p-[22px] max-[480px]:p-4 !bg-[rgba(10,12,20,0.88)] backdrop-blur-xl">
                 <div className="flex items-center gap-[14px] max-[480px]:gap-3 flex-wrap max-[380px]:flex-nowrap">
                   <div className="relative w-[54px] h-[54px] max-[480px]:w-11 max-[480px]:h-11 rounded-full bg-[radial-gradient(120%_100%_at_30%_20%,#ffffff_0%,transparent_30%),linear-gradient(135deg,#2B3046_0%,#0F121C_100%)] border border-white/18 flex-none overflow-hidden">
                     <div className="absolute inset-0 grid place-items-center serif text-[22px] max-[480px]:text-[18px] italic text-white/85">
@@ -179,7 +179,7 @@ export default function HomePage() {
               </Glass>
 
               {/* Code snippet card */}
-              <Glass className="p-[18px] max-[480px]:p-3 px-5 max-[480px]:px-3 mono text-xs max-[480px]:text-[10px] text-ink-2 leading-[1.7] max-[600px]:hidden">
+              <Glass className="p-[18px] max-[480px]:p-3 px-5 max-[480px]:px-3 mono text-xs max-[480px]:text-[10px] text-ink-2 leading-[1.7] max-[600px]:hidden !bg-[rgba(10,12,20,0.88)] backdrop-blur-xl">
                 <div className="flex gap-[14px]">
                   <span className="text-muted-2">01</span>
                   <span>
