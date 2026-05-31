@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: "primary" | "ghost" | "whatsapp";
+  variant?: "primary" | "ghost" | "whatsapp" | "outline";
   size?: "default" | "sm";
   href?: string;
   showChevron?: boolean;
@@ -54,6 +54,11 @@ export function Button({
       "shadow-btn-whatsapp",
       "hover:-translate-y-[3px] hover:scale-[1.02]",
       "hover:shadow-[0_20px_50px_-10px_rgba(37,211,102,.6),0_0_0_1px_rgba(255,255,255,.3)_inset]"
+    ),
+    outline: cn(
+      "bg-transparent text-ink border-white/20",
+      "hover:bg-white/5 hover:border-white/30",
+      "hover:-translate-y-[2px]"
     ),
   };
 

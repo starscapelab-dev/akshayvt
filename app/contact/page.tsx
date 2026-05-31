@@ -8,6 +8,8 @@ import { Glass } from "@/components/Glass";
 import { Button } from "@/components/Button";
 import { ObfuscatedEmail } from "@/components/ObfuscatedEmail";
 import { useState } from "react";
+import { submitContactForm } from "@/app/actions/contact";
+import { useRouter } from "next/navigation";
 
 // Note: metadata exported in layout.tsx since this is a client component
 
@@ -59,8 +61,21 @@ const inlineFaqs = [
 ];
 
 export default function ContactPage() {
+  const router = useRouter();
   const [selectedServices, setSelectedServices] = useState<string[]>(["New website"]);
   const [selectedBudget, setSelectedBudget] = useState("$5k — $15k");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Form fields state
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    timeline: "ASAP — within 2 weeks",
+    source: "Referral from a client",
+    message: "",
+  });
 
   const toggleService = (service: string) => {
     setSelectedServices((prev) =>
@@ -68,6 +83,30 @@ export default function ContactPage() {
         ? prev.filter((s) => s !== service)
         : [...prev, service]
     );
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const result = await submitContactForm({
+        ...formData,
+        services: selectedServices,
+        budget: selectedBudget,
+      });
+
+      if (result.success) {
+        router.push("/thank-you");
+      } else {
+        alert("There was an error submitting your form. Please try again or contact me via WhatsApp.");
+        setIsSubmitting(false);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an error submitting your form. Please try again or contact me via WhatsApp.");
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -98,7 +137,7 @@ export default function ContactPage() {
               A few sentences is plenty. The more specific you are, the better the first reply.
             </p>
 
-            <form className="flex flex-col gap-[14px]" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col gap-[14px]" onSubmit={handleSubmit}>
               {/* Name + Email */}
               <div className="grid grid-cols-2 gap-[14px] max-[600px]:grid-cols-1">
                 <div className="flex flex-col p-[12px_18px] rounded-[14px] bg-gradient-to-b from-white/[.05] to-white/[.015] border border-white/10 transition-all duration-200 hover:from-white/[.07] hover:to-white/[.02] focus-within:border-accent focus-within:from-[rgba(111,168,255,.06)] focus-within:to-[rgba(111,168,255,.01)]">
@@ -107,8 +146,11 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     placeholder="Ayesha Rahman"
                     required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full tracking-tight placeholder:text-muted-2"
                   />
                 </div>
@@ -118,8 +160,11 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     placeholder="ayesha@company.ae"
                     required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full tracking-tight placeholder:text-muted-2"
                   />
                 </div>
@@ -133,7 +178,10 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="+971 50 000 0000"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full tracking-tight placeholder:text-muted-2"
                   />
                 </div>
@@ -143,7 +191,10 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
+                    name="company"
                     placeholder="Company name"
+                    value={formData.company}
+                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full tracking-tight placeholder:text-muted-2"
                   />
                 </div>
@@ -178,7 +229,12 @@ export default function ContactPage() {
                   <label className="mono text-[10.5px] text-muted uppercase tracking-[.14em]">
                     Timeline
                   </label>
-                  <select className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full appearance-none cursor-pointer pr-5 bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2012%2012%22%20fill=%22%238089A0%22%3E%3Cpath%20d=%22M3%204.5L6%208l3-3.5z%22/%3E%3C/svg%3E')] bg-no-repeat bg-[right_0_center]">
+                  <select
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                    className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full appearance-none cursor-pointer pr-5 bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2012%2012%22%20fill=%22%238089A0%22%3E%3Cpath%20d=%22M3%204.5L6%208l3-3.5z%22/%3E%3C/svg%3E')] bg-no-repeat bg-[right_0_center]"
+                  >
                     <option>ASAP — within 2 weeks</option>
                     <option>Within a month</option>
                     <option>1–3 months</option>
@@ -190,7 +246,12 @@ export default function ContactPage() {
                   <label className="mono text-[10.5px] text-muted uppercase tracking-[.14em]">
                     How you heard about me
                   </label>
-                  <select className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full appearance-none cursor-pointer pr-5 bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2012%2012%22%20fill=%22%238089A0%22%3E%3Cpath%20d=%22M3%204.5L6%208l3-3.5z%22/%3E%3C/svg%3E')] bg-no-repeat bg-[right_0_center]">
+                  <select
+                    name="source"
+                    value={formData.source}
+                    onChange={(e) => setFormData({ ...formData, source: e.target.value })}
+                    className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full appearance-none cursor-pointer pr-5 bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2012%2012%22%20fill=%22%238089A0%22%3E%3Cpath%20d=%22M3%204.5L6%208l3-3.5z%22/%3E%3C/svg%3E')] bg-no-repeat bg-[right_0_center]"
+                  >
                     <option>Referral from a client</option>
                     <option>Google search</option>
                     <option>LinkedIn</option>
@@ -230,8 +291,12 @@ export default function ContactPage() {
                   Tell me about your project
                 </label>
                 <textarea
+                  name="message"
                   rows={5}
                   placeholder="A few sentences about your business, the website, what you're hoping to achieve — and anything that's keeping you up at night."
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="bg-transparent border-0 outline-none text-ink text-[15.5px] pt-[6px] w-full resize-none tracking-tight placeholder:text-muted-2"
                 />
               </div>
@@ -241,8 +306,8 @@ export default function ContactPage() {
                 <p className="mono text-xs text-muted m-0 max-w-[36ch] leading-[1.5] tracking-[.04em]">
                   I read every message myself · No newsletters, no sales calls · GDPR-friendly
                 </p>
-                <Button variant="primary" type="submit" showChevron>
-                  Send message
+                <Button variant="primary" type="submit" showChevron disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send message"}
                 </Button>
               </div>
             </form>
