@@ -588,7 +588,7 @@ export default function HomePage() {
 
           {/* CTA */}
           <div className="text-center mt-12">
-            <Button variant="ghost" href="#contact">
+            <Button variant="ghost" href="/services">
               Want results like these? Let's talk →
             </Button>
           </div>
