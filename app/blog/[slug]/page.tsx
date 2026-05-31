@@ -510,7 +510,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="py-20 bg-bg-2 border-t border-b border-line-soft">
+        <section className="py-20 bg-bg-2 ">
           <div className="container">
             <div className="flex gap-12 items-end justify-between mb-10 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6">
               <div className="max-w-[64ch]">

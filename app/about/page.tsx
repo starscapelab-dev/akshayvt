@@ -233,7 +233,7 @@ export default function AboutPage() {
       </header>
 
       {/* Story / Manifesto Section */}
-      <section className="bg-bg-2 border-t border-b border-line-soft py-[clamp(80px,9vw,140px)]">
+      <section className="bg-bg-2 py-[clamp(80px,9vw,140px)]">
         <div className="container">
           <div className="grid grid-cols-[280px_1fr] gap-16 max-[600px]:gap-10 items-start max-[900px]:grid-cols-1 max-[900px]:gap-8">
             {/* Aside */}
@@ -297,7 +297,7 @@ export default function AboutPage() {
       </section>
 
       {/* Skills Section - 4 columns with icons */}
-      <section className="relative bg-bg-2 border-t border-b border-line-soft py-[clamp(80px,9vw,140px)] overflow-hidden">
+      <section className="relative bg-bg-2 py-[clamp(80px,9vw,140px)] overflow-hidden">
         {/* Background */}
         <div
           className="absolute inset-0 z-0 pointer-events-none bg-cover bg-center"
@@ -415,7 +415,7 @@ export default function AboutPage() {
       </section>
 
       {/* Working With Me Section */}
-      <section className="bg-bg-2 border-t border-line-soft py-[clamp(80px,9vw,140px)]">
+      <section className="bg-bg-2 py-[clamp(80px,9vw,140px)]">
         <div className="container">
           <div className="flex gap-12 items-end justify-between mb-12 max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-6">
             <div className="max-w-[64ch]">

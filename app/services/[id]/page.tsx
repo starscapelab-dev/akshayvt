@@ -168,7 +168,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       </section>
 
       {/* Process */}
-      <section className="bg-bg-2 border-t border-b border-line-soft py-20">
+      <section className="bg-bg-2 py-20">
         <div className="container">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4 inline-block">
@@ -220,7 +220,7 @@ export default function ServiceDetailPage({ params }: { params: { id: string } }
       </section>
 
       {/* FAQs */}
-      <section className="bg-bg-2 border-t border-line-soft py-20">
+      <section className="bg-bg-2 py-20">
         <div className="container max-w-[900px]">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4 inline-block">Common questions</div>

@@ -107,7 +107,7 @@ export default function LocationsPage() {
       </section>
 
       {/* Global Coverage Section */}
-      <section className="py-20 bg-bg-2 border-t border-b border-line-soft">
+      <section className="py-20 bg-bg-2 ">
         <div className="container">
           <div className="grid grid-cols-[1fr_1.2fr] gap-16 max-[600px]:gap-10 items-center max-[900px]:grid-cols-1">
             <div>
