@@ -172,20 +172,74 @@ const jsonLd = {
       },
       areaServed: [
         { "@type": "Country", name: "United Arab Emirates" },
+        { "@type": "Country", name: "Saudi Arabia" },
         { "@type": "Country", name: "India" },
         { "@type": "Country", name: "Australia" },
         { "@type": "Country", name: "Qatar" },
       ],
       priceRange: "$$",
-      serviceType: [
-        "Web Development",
-        "React Development",
-        "Next.js Development",
-        "E-Commerce Development",
-        "Website Design",
-        "SEO Optimization",
-        "Website Maintenance",
-      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Web Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Web Development",
+              description: "Custom website development using React and Next.js"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "React Development",
+              description: "Modern React applications with TypeScript"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Next.js Development",
+              description: "Server-rendered Next.js applications"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "E-Commerce Development",
+              description: "Shopify and WooCommerce online stores"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Website Design",
+              description: "UI/UX design and responsive web design"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "SEO Optimization",
+              description: "Technical SEO and performance optimization"
+            }
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Website Maintenance",
+              description: "Ongoing support and maintenance services"
+            }
+          }
+        ]
+      },
     },
   ],
 };
