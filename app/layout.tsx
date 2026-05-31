@@ -27,7 +27,7 @@ const geistMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://akshayvt.com"),
+  metadataBase: new URL("https://www.akshayvt.com"),
   title: {
     default: "Akshay V T | Freelance React & Next.js Web Developer",
     template: "%s | Akshay V T",
@@ -54,13 +54,13 @@ export const metadata: Metadata = {
     "web design",
     "seo optimization",
   ],
-  authors: [{ name: "Akshay V T", url: "https://akshayvt.com" }],
+  authors: [{ name: "Akshay V T", url: "https://www.akshayvt.com" }],
   creator: "Akshay V T",
   publisher: "Akshay V T",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://akshayvt.com",
+    url: "https://www.akshayvt.com",
     siteName: "Akshay V T - Freelance Web Developer",
     title: "Akshay V T | Freelance React & Next.js Web Developer",
     description:
@@ -97,10 +97,10 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://akshayvt.com",
+    canonical: "https://www.akshayvt.com",
     languages: {
-      "en": "https://akshayvt.com",
-      "x-default": "https://akshayvt.com",
+      "en": "https://www.akshayvt.com",
+      "x-default": "https://www.akshayvt.com",
     },
   },
 };
@@ -110,21 +110,21 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://akshayvt.com/#website",
-      url: "https://akshayvt.com",
+      "@id": "https://www.akshayvt.com/#website",
+      url: "https://www.akshayvt.com",
       name: "Akshay V T - Freelance Web Developer",
       description:
         "A freelancer you can trust. All your web needs. One developer. Direct communication.",
       publisher: {
-        "@id": "https://akshayvt.com/#person",
+        "@id": "https://www.akshayvt.com/#person",
       },
     },
     {
       "@type": "Person",
-      "@id": "https://akshayvt.com/#person",
+      "@id": "https://www.akshayvt.com/#person",
       name: "Akshay V T",
-      url: "https://akshayvt.com",
-      image: "https://akshayvt.com/akshay-vt.jpg",
+      url: "https://www.akshayvt.com",
+      image: "https://www.akshayvt.com/akshay-vt.jpg",
       sameAs: [
         "https://linkedin.com/in/akshayvt",
         "https://github.com/akshayvt",
@@ -156,11 +156,11 @@ const jsonLd = {
     },
     {
       "@type": "ProfessionalService",
-      "@id": "https://akshayvt.com/#service",
+      "@id": "https://www.akshayvt.com/#service",
       name: "Akshay V T - Web Development Services",
-      url: "https://akshayvt.com",
-      logo: "https://akshayvt.com/logo.png",
-      image: "https://akshayvt.com/og-image.jpg",
+      url: "https://www.akshayvt.com",
+      logo: "https://www.akshayvt.com/logo.png",
+      image: "https://www.akshayvt.com/og-image.jpg",
       description:
         "Professional web development services including React, Next.js, e-commerce, and SEO optimization for businesses worldwide.",
       email: "info@akshayvt.com",
