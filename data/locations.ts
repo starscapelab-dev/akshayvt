@@ -366,6 +366,318 @@ export const locations: LocationData[] = [
       ],
       process: "We discuss your business and the visitors you serve. I research how your target audience searches and what they need to see. Development focuses on clear communication, easy contact methods, and proper language support. Launch includes SEO setup and analytics to track your results."
     }
+  },
+
+  // New Saudi Arabia location
+  {
+    slug: "dhahran",
+    city: "Dhahran",
+    country: "Saudi Arabia",
+    flag: "🇸🇦",
+    tagline: "Premium web development for Dhahran's corporate and tech ecosystem.",
+    description: "Dhahran is home to Saudi Aramco and a thriving corporate ecosystem. I build enterprise-grade websites for businesses operating in this demanding market — professional, secure, and built to enterprise standards. From company profile sites to complex web applications, I deliver quality that matches Dhahran's high expectations.",
+    heroImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Arabia Standard Time",
+    timezoneOffset: "UTC+3",
+    clientTypes: ["Aramco contractors", "Engineering companies", "IT service providers", "Corporate enterprises", "Consultancies", "Training institutes", "Professional services"],
+    services: ["Enterprise websites", "Corporate web applications", "Contractor profile sites", "Secure client portals", "B2B platforms", "Technical documentation sites"],
+    testimonial: {
+      quote: "Working with enterprise clients demands a certain standard. Akshay understood that immediately and delivered a website that meets the stringent requirements of our Aramco-certified business. Professional from start to finish.",
+      name: "Saeed A.",
+      role: "Managing Director, Engineering Contractor · Dhahran"
+    },
+    stats: {
+      clients: "7+",
+      projects: "16+",
+      years: "3+"
+    },
+    content: {
+      intro: "Dhahran businesses operate at the highest standards — your website needs to reflect that. Whether you're an Aramco contractor, an engineering firm, or a corporate service provider, I build websites that communicate professionalism, competence, and reliability. These aren't flashy marketing sites — they're serious business tools built for serious businesses.",
+      whyMe: [
+        "Enterprise-level quality and security standards appropriate for corporate environments.",
+        "Understanding of B2B sales cycles and what decision-makers look for in contractor websites.",
+        "Clean, professional design that prioritizes credibility over trends.",
+        "Technical expertise with modern frameworks and secure development practices.",
+        "Reliable communication and project management — no surprises, no excuses."
+      ],
+      process: "We start by understanding your business requirements, compliance needs, and target audience. I propose a solution that balances technical sophistication with practical usability. Development follows structured milestones with regular reviews. Launch includes full documentation and training if needed."
+    }
+  },
+
+  // Qatar locations
+  {
+    slug: "lusail",
+    city: "Lusail",
+    country: "Qatar",
+    flag: "🇶🇦",
+    tagline: "Cutting-edge web development for Lusail's smart city vision.",
+    description: "Lusail represents Qatar's future — a smart, sustainable city built from the ground up. Businesses here expect the same forward-thinking approach in their digital presence. I build modern, high-performance websites for Lusail companies using the latest technologies: Next.js, React, and cloud-native architectures.",
+    heroImage: "https://images.unsplash.com/photo-1514984879728-be0aff75a6e8?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Arabia Standard Time",
+    timezoneOffset: "UTC+3",
+    clientTypes: ["Tech startups", "Real estate developers", "Smart city services", "Innovation companies", "Sustainability firms", "Modern enterprises", "SaaS businesses"],
+    services: ["Startup websites", "SaaS landing pages", "Real estate platforms", "Web applications", "Progressive web apps", "API integrations"],
+    testimonial: {
+      quote: "Lusail businesses need cutting-edge solutions, not outdated templates. Akshay delivered a blazing-fast Next.js site that perfectly represents our tech-forward brand. Exactly what we needed.",
+      name: "Nasser M.",
+      role: "Founder, PropTech Startup · Lusail"
+    },
+    stats: {
+      clients: "4+",
+      projects: "9+",
+      years: "2+"
+    },
+    content: {
+      intro: "Lusail is Qatar's innovation hub — a city designed for the future. Your business operates here because you're forward-thinking, and your website should demonstrate that same vision. I specialize in modern web development using the same technologies as top tech companies worldwide, delivering sites that are fast, scalable, and built to impress.",
+      whyMe: [
+        "Expertise in modern tech stacks — Next.js 14, React 18, TypeScript, Tailwind CSS, and cloud deployments.",
+        "Performance obsession — Core Web Vitals optimization, sub-second page loads, and smooth interactions.",
+        "Understanding of tech startup and SaaS business models and what investors/customers expect to see.",
+        "Mobile-first, responsive design that works flawlessly on any device.",
+        "Direct communication with an actual developer, not a project manager reading from a script."
+      ],
+      process: "We discuss your product, market, and technical requirements. I propose a modern architecture that balances cutting-edge capabilities with practical maintenance. Development is iterative with weekly demos. Launch includes performance monitoring, analytics setup, and optional ongoing optimization."
+    }
+  },
+  {
+    slug: "al-rayyan",
+    city: "Al Rayyan",
+    country: "Qatar",
+    flag: "🇶🇦",
+    tagline: "Professional web development for Al Rayyan's diverse business community.",
+    description: "Al Rayyan is Qatar's largest municipality by area and home to a diverse business landscape. From sports facilities to family businesses, education centers to retail, I help Al Rayyan companies establish strong online presences with bilingual websites that convert visitors into customers.",
+    heroImage: "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Arabia Standard Time",
+    timezoneOffset: "UTC+3",
+    clientTypes: ["Sports clubs & facilities", "Education centers", "Family businesses", "Healthcare providers", "Retail stores", "Restaurants", "Local services"],
+    services: ["Business websites", "Sports club sites", "Educational platforms", "Booking systems", "E-commerce stores", "Multi-language sites"],
+    testimonial: {
+      quote: "Our sports academy needed a website that appeals to both Arabic and expat families. Akshay created a beautiful bilingual site with easy registration and clear information. Inquiries have increased noticeably.",
+      name: "Omar F.",
+      role: "Director, Sports Academy · Al Rayyan"
+    },
+    stats: {
+      clients: "3+",
+      projects: "7+",
+      years: "2+"
+    },
+    content: {
+      intro: "Al Rayyan businesses serve Qatar's most diverse community — local families, expats, and visitors all mix here. Your website needs to speak to this varied audience effectively. I build bilingual websites for Al Rayyan companies that communicate clearly in both Arabic and English, work perfectly on mobile, and drive real business results.",
+      whyMe: [
+        "Experience serving Al Rayyan's diverse demographics — proper Arabic-English bilingual implementation.",
+        "Mobile-first design for Qatar's smartphone-dominant market.",
+        "Understanding of family-oriented businesses and how to present services that appeal to parents.",
+        "Local SEO for Al Rayyan and surrounding areas to capture nearby searches.",
+        "Fair pricing appropriate for local businesses without agency overhead."
+      ],
+      process: "We start by understanding who you serve and what makes your business different. I build a site that communicates your value clearly in both languages. Development includes proper bilingual SEO, contact forms, and WhatsApp integration for easy inquiries. Launch comes with training so you can update content yourself."
+    }
+  },
+  {
+    slug: "al-wakrah",
+    city: "Al Wakrah",
+    country: "Qatar",
+    flag: "🇶🇦",
+    tagline: "Quality web development for Al Wakrah's growing business sector.",
+    description: "Al Wakrah is growing rapidly as Qatar expands south from Doha. New businesses are opening, and established ones are modernizing. I help Al Wakrah companies build professional websites that establish credibility and attract customers from across Qatar's southern region.",
+    heroImage: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Arabia Standard Time",
+    timezoneOffset: "UTC+3",
+    clientTypes: ["Local businesses", "Healthcare clinics", "Restaurants", "Retail stores", "Professional services", "Construction companies", "Family enterprises"],
+    services: ["Local business websites", "Restaurant & cafe sites", "Professional service sites", "Healthcare websites", "Business directories", "Mobile-optimized sites"],
+    testimonial: {
+      quote: "As a new medical center in Al Wakrah, we needed to establish credibility fast. Akshay built us a professional website that patients trust. Clean design, easy appointment booking, and excellent support.",
+      name: "Dr. Layla S.",
+      role: "Director, Medical Center · Al Wakrah"
+    },
+    stats: {
+      clients: "3+",
+      projects: "6+",
+      years: "2+"
+    },
+    content: {
+      intro: "Al Wakrah is one of Qatar's fastest-growing areas, and businesses here need digital presence that matches the city's momentum. Whether you're opening a new clinic, restaurant, or service business, I'll build you a website that attracts local customers and establishes your credibility in this competitive market.",
+      whyMe: [
+        "Focus on local business needs — clear contact information, Google Maps integration, easy mobile access.",
+        "Bilingual Arabic-English sites that serve Al Wakrah's mixed demographics.",
+        "Fast delivery appropriate for businesses that need to launch quickly.",
+        "Affordable pricing calibrated for local SMBs, not enterprise budgets.",
+        "Post-launch support to help you update content and respond to customer needs."
+      ],
+      process: "We discuss your business, competitors, and target customers. I build a straightforward, professional site that communicates what you do and how to reach you. No unnecessary complexity — just a website that works. Launch includes basic SEO and Google Business integration."
+    }
+  },
+
+  // Oman locations
+  {
+    slug: "muscat",
+    city: "Muscat",
+    country: "Oman",
+    flag: "🇴🇲",
+    tagline: "Expert web development for Muscat's thriving business community.",
+    description: "Muscat is Oman's commercial heart, where tradition meets modernity. I work with businesses across the capital — from trading companies in Ruwi to hospitality brands in Shatti Al Qurum — building professional websites that drive growth and establish digital credibility in Oman's competitive market.",
+    heroImage: "https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Gulf Standard Time",
+    timezoneOffset: "UTC+4",
+    clientTypes: ["Trading companies", "Hospitality & tourism", "Professional services", "Retail businesses", "Healthcare providers", "Real estate", "Import/export companies"],
+    services: ["Corporate websites", "E-commerce platforms", "Hotel & tourism sites", "Business directories", "Professional portfolios", "SEO & local search"],
+    testimonial: {
+      quote: "Finding a reliable web developer in the region is challenging. Akshay delivered our trading company website on time, on budget, and with excellent quality. Highly recommend for Muscat businesses.",
+      name: "Ahmed Al-Balushi",
+      role: "Managing Director, Trading Company · Muscat"
+    },
+    stats: {
+      clients: "6+",
+      projects: "13+",
+      years: "3+"
+    },
+    content: {
+      intro: "Muscat businesses operate in a sophisticated market where professionalism and trust matter. Your website is often the first impression potential clients have of your company — it needs to communicate competence, reliability, and quality. I specialize in building websites for Muscat companies that establish credibility and generate business.",
+      whyMe: [
+        "Understanding of Oman's business culture and communication expectations.",
+        "Experience across Muscat's key sectors — trading, hospitality, professional services, and retail.",
+        "Bilingual Arabic-English websites with proper cultural adaptation, not just translation.",
+        "Same timezone region (only 30 minutes difference) — we work the same business hours.",
+        "Fixed pricing with clear contracts. No hidden costs or scope creep."
+      ],
+      process: "We begin with a discovery call to understand your business, market position, and goals. I deliver a detailed proposal within 48 hours with transparent pricing. Development happens iteratively with weekly progress updates. You review on a staging site before launch, and I provide 30 days of priority support post-launch."
+    }
+  },
+  {
+    slug: "seeb",
+    city: "Seeb",
+    country: "Oman",
+    flag: "🇴🇲",
+    tagline: "Affordable web development for Seeb's local business community.",
+    description: "Seeb is home to Muscat's airport and a thriving local business scene. I help Seeb businesses — from family restaurants to service providers — establish professional online presence without agency overhead. Quality web development at fair prices for companies that need results, not corporate complexity.",
+    heroImage: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Gulf Standard Time",
+    timezoneOffset: "UTC+4",
+    clientTypes: ["Family businesses", "Restaurants & cafes", "Local services", "Retail shops", "Healthcare clinics", "Educational centers", "Transportation services"],
+    services: ["Small business websites", "Restaurant sites", "Service provider sites", "Appointment booking", "Business listings", "Mobile-first sites"],
+    testimonial: {
+      quote: "Our restaurant needed a simple, professional website with our menu and contact details. Akshay delivered exactly that at a fair price. Easy to work with and responds quickly on WhatsApp.",
+      name: "Hassan Al-Lawati",
+      role: "Owner, Restaurant · Seeb"
+    },
+    stats: {
+      clients: "4+",
+      projects: "8+",
+      years: "2+"
+    },
+    content: {
+      intro: "Seeb businesses don't need complicated corporate websites — you need straightforward, professional sites that show customers what you offer and how to reach you. I build practical websites for local Seeb companies that work on mobile, load fast, and don't require a manual to update.",
+      whyMe: [
+        "Straightforward approach focused on local business needs — clear menus, contact forms, Google Maps.",
+        "Affordable pricing appropriate for family businesses and local SMBs.",
+        "Fast delivery — most sites launch within 2-3 weeks.",
+        "Bilingual support for Arabic and English-speaking customers.",
+        "Post-launch training so you can update content yourself without ongoing developer costs."
+      ],
+      process: "We have a quick call or WhatsApp conversation about what you need. I send a simple proposal with fixed pricing. Build takes 2-3 weeks with one or two review checkpoints. Launch includes basic training on updating content. Ongoing support available if needed but not required."
+    }
+  },
+  {
+    slug: "sohar",
+    city: "Sohar",
+    country: "Oman",
+    flag: "🇴🇲",
+    tagline: "Professional web development for Sohar's industrial and business sectors.",
+    description: "Sohar is Oman's industrial powerhouse, home to major manufacturing, logistics, and port operations. I work with Sohar-based companies that need professional B2B websites — industrial service providers, logistics companies, and engineering firms serving the industrial complex and beyond.",
+    heroImage: "https://images.unsplash.com/photo-1565008576549-57569a49371d?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Gulf Standard Time",
+    timezoneOffset: "UTC+4",
+    clientTypes: ["Industrial services", "Logistics companies", "Manufacturing", "Engineering firms", "Port-related businesses", "B2B service providers", "Construction companies"],
+    services: ["Industrial company websites", "B2B service sites", "Logistics platforms", "Company profile sites", "Technical catalogs", "Client portals"],
+    testimonial: {
+      quote: "As a logistics provider serving Sohar Port, we needed a professional website that communicates competence to enterprise clients. Akshay delivered a site that has directly contributed to winning new contracts. Excellent work.",
+      name: "Khalid Al-Harthy",
+      role: "CEO, Logistics Company · Sohar"
+    },
+    stats: {
+      clients: "5+",
+      projects: "11+",
+      years: "3+"
+    },
+    content: {
+      intro: "Sohar businesses operate in demanding B2B environments where professionalism is non-negotiable. Your website needs to communicate capability, reliability, and scale to decision-makers evaluating contractors and service providers. I build industrial-focused websites for Sohar companies that win business and establish credibility.",
+      whyMe: [
+        "Experience with B2B and industrial sector websites — I understand what procurement teams and project managers look for.",
+        "Professional, credibility-focused design that speaks to enterprise clients, not consumers.",
+        "Clear presentation of services, capabilities, certifications, and past projects.",
+        "SEO strategy for B2B keywords that decision-makers actually search for.",
+        "Reliable communication and project delivery — critical for businesses operating on tight schedules."
+      ],
+      process: "We discuss your target clients, sales process, and competitive differentiation. I build a site designed to convert visitors into qualified leads with clear CTAs, capability presentations, and contact forms. Development includes case studies, service catalogs, and certification showcases relevant to your industry."
+    }
+  },
+  {
+    slug: "salalah",
+    city: "Salalah",
+    country: "Oman",
+    flag: "🇴🇲",
+    tagline: "Tourism-focused web development for Salalah's hospitality sector.",
+    description: "Salalah is Oman's tourism jewel, attracting visitors year-round and especially during Khareef season. I help Salalah's hospitality businesses — hotels, tour operators, restaurants, and attractions — build websites that convert browsers into bookings with multi-language support and mobile-first design.",
+    heroImage: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Gulf Standard Time",
+    timezoneOffset: "UTC+4",
+    clientTypes: ["Hotels & resorts", "Tour operators", "Restaurants", "Tourist attractions", "Car rental services", "Travel agencies", "Adventure tourism"],
+    services: ["Hotel booking websites", "Tour operator platforms", "Restaurant sites", "Multi-language tourism sites", "Booking systems", "Attraction websites"],
+    testimonial: {
+      quote: "Our resort needed a website that showcases Salalah's beauty and makes bookings easy for international tourists. Akshay delivered a stunning site in three languages with integrated booking. Direct impact on our occupancy rates.",
+      name: "Fatima Al-Kathiri",
+      role: "General Manager, Beach Resort · Salalah"
+    },
+    stats: {
+      clients: "4+",
+      projects: "9+",
+      years: "2+"
+    },
+    content: {
+      intro: "Salalah's tourism industry thrives on attracting visitors from across the Gulf and beyond. Your website is often their first encounter with your business — it needs to inspire them with beautiful imagery, inform them with clear details, and convert them with easy booking processes. I specialize in tourism-focused websites for Salalah businesses.",
+      whyMe: [
+        "Tourism industry expertise — hotel websites, tour booking platforms, and attraction showcases.",
+        "Multi-language support for Arabic, English, and other languages to reach international visitors.",
+        "Mobile-first design for tourists browsing on their phones while planning trips.",
+        "Integration with booking systems, WhatsApp, and Google Maps for easy conversions.",
+        "SEO for tourism keywords and seasonal events like Khareef to capture search traffic."
+      ],
+      process: "We discuss your target visitors, booking process, and competitive landscape. I build a visually appealing site that showcases your offerings with professional photography support advice, clear pricing, and easy booking flows. Launch includes tourism SEO and integration with your reservation systems."
+    }
+  },
+  {
+    slug: "duqm",
+    city: "Duqm",
+    country: "Oman",
+    flag: "🇴🇲",
+    tagline: "Corporate web development for Duqm's emerging industrial hub.",
+    description: "Duqm is rapidly developing as Oman's special economic zone, attracting industrial, logistics, and energy companies. Businesses operating here need professional digital presence that matches the scale of their operations. I build enterprise-grade websites for Duqm companies serving B2B markets.",
+    heroImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Gulf Standard Time",
+    timezoneOffset: "UTC+4",
+    clientTypes: ["Industrial companies", "Energy sector", "Logistics providers", "Construction firms", "Engineering companies", "Port services", "Economic zone businesses"],
+    services: ["Corporate websites", "Industrial company sites", "B2B platforms", "Contractor profiles", "Service catalogs", "Secure client portals"],
+    testimonial: {
+      quote: "Operating in Duqm's special economic zone means competing with international companies. Akshay built us a website that stands alongside major contractors — professional, comprehensive, and technically sound. Essential for winning tenders.",
+      name: "Abdullah Al-Rashdi",
+      role: "Director, Engineering Contractor · Duqm"
+    },
+    stats: {
+      clients: "3+",
+      projects: "7+",
+      years: "2+"
+    },
+    content: {
+      intro: "Duqm is positioning itself as Oman's industrial future, and businesses here operate at scale. Your website needs to reflect that ambition and professionalism — whether you're bidding for large contracts, attracting international partners, or establishing credentials in a competitive market. I build enterprise-focused websites for Duqm companies that communicate capability and reliability.",
+      whyMe: [
+        "Enterprise-level design and development appropriate for B2B and industrial sectors.",
+        "Understanding of tender processes and what evaluation committees look for in contractor websites.",
+        "Professional presentation of capabilities, certifications, past projects, and technical expertise.",
+        "Secure, scalable architecture suitable for companies operating in regulated environments.",
+        "Clear communication and documented processes — critical for large-scale projects."
+      ],
+      process: "We begin by understanding your business, target clients, and competitive positioning. I develop a site structure designed for B2B lead generation and credibility building. Development includes capability statements, project portfolios, certification showcases, and secure contact systems. Launch comes with full documentation and optional training."
+    }
   }
 ];
 

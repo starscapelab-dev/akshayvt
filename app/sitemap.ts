@@ -5,8 +5,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Location pages
   const locations = [
-    'dubai', 'kerala', 'sydney', 'doha', 'riyadh',
-    'jeddah', 'dammam', 'khobar', 'mecca', 'medina'
+    // UAE
+    'dubai',
+    // India
+    'kerala',
+    // Australia
+    'sydney',
+    // Qatar
+    'doha', 'lusail', 'al-rayyan', 'al-wakrah',
+    // Saudi Arabia
+    'riyadh', 'jeddah', 'dammam', 'khobar', 'dhahran', 'mecca', 'medina',
+    // Oman
+    'muscat', 'seeb', 'sohar', 'salalah', 'duqm'
   ]
 
   const locationPages = locations.map(city => ({
@@ -55,6 +65,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Location pages
     { url: `${baseUrl}/locations`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/locations/saudi-arabia`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/locations/qatar`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/locations/oman`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     ...locationPages,
 
     // SEO landing pages
