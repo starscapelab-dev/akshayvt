@@ -1122,63 +1122,253 @@ button,
 }
 
 /* ═══════════════════════════════════════════════════════════
-   MOBILE SECTION SPACING - PREMIUM FEEL
+   MOBILE DESIGN - PREMIUM FEEL & BETTER SPACING
    ═══════════════════════════════════════════════════════════ */
 
-/* Enhanced section spacing on mobile for better visual hierarchy */
+/* Tablet breakpoint (max-width: 900px) */
 @media (max-width: 900px) {
+  /* Section spacing - generous vertical rhythm */
   section {
-    padding-top: clamp(64px, 12vw, 100px) !important;
-    padding-bottom: clamp(64px, 12vw, 100px) !important;
+    padding-top: 72px !important;
+    padding-bottom: 72px !important;
   }
 
-  /* Smaller screens need more breathing room */
-  @media (max-width: 600px) {
-    section {
-      padding-top: clamp(56px, 14vw, 80px) !important;
-      padding-bottom: clamp(56px, 14vw, 80px) !important;
-    }
+  /* Better typography scale */
+  h1 {
+    font-size: clamp(32px, 8vw, 48px) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 20px !important;
+  }
+
+  h2 {
+    font-size: clamp(28px, 6vw, 40px) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 16px !important;
+  }
+
+  h3 {
+    font-size: clamp(20px, 4vw, 28px) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Paragraph spacing */
+  p {
+    margin-bottom: 16px;
+    line-height: 1.65;
+  }
+
+  /* Better button sizing */
+  .btn, button[class*="Button"] {
+    padding: 14px 24px !important;
+    font-size: 15px !important;
+  }
+
+  /* Card improvements */
+  .glass, [class*="Glass"] {
+    padding: 24px !important;
+    border-radius: 20px !important;
+  }
+
+  /* Grid improvements */
+  .grid {
+    gap: 20px !important;
+  }
+
+  /* Container breathing room */
+  .container,
+  .container-narrow {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Eyebrow text */
+  .eyebrow {
+    font-size: 10px !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Better flex gaps */
+  .flex {
+    gap: 16px;
+  }
+}
+
+/* Mobile breakpoint (max-width: 600px) */
+@media (max-width: 600px) {
+  /* Section spacing - clean and breathable */
+  section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* Tighter but readable typography */
+  h1 {
+    font-size: clamp(28px, 9vw, 36px) !important;
+    margin-bottom: 16px !important;
+  }
+
+  h2 {
+    font-size: clamp(24px, 7vw, 32px) !important;
+    margin-bottom: 14px !important;
+  }
+
+  h3 {
+    font-size: clamp(18px, 5vw, 24px) !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Card adjustments */
+  .glass, [class*="Glass"] {
+    padding: 20px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Grid gaps */
+  .grid {
+    gap: 16px !important;
+  }
+
+  /* Container padding */
+  .container,
+  .container-narrow {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   /* Compact sections (logo strips, etc.) */
   section.py-16,
   section[class*="py-16"] {
-    padding-top: 48px !important;
-    padding-bottom: 48px !important;
-  }
-
-  /* Better heading spacing on mobile */
-  h1, h2, h3 {
-    margin-bottom: 1.25em;
-  }
-
-  /* Improved card grid gaps */
-  .grid {
-    gap: 16px;
-  }
-
-  /* Better content card padding */
-  .glass, [class*="Glass"] {
-    padding: 20px;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
   }
 }
 
-/* Extra small screens - even more spacing for readability */
+/* Extra small screens (max-width: 480px) */
 @media (max-width: 480px) {
+  /* Compact section spacing */
   section {
     padding-top: 48px !important;
     padding-bottom: 48px !important;
   }
 
-  /* Tighter but readable grid gaps */
-  .grid {
-    gap: 12px;
+  /* Tighter typography */
+  h1 {
+    font-size: clamp(26px, 8vw, 32px) !important;
+    margin-bottom: 14px !important;
   }
 
-  /* Container padding adjustment */
+  h2 {
+    font-size: clamp(22px, 6.5vw, 28px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Smaller cards */
+  .glass, [class*="Glass"] {
+    padding: 16px !important;
+    border-radius: 14px !important;
+  }
+
+  /* Tighter grids */
+  .grid {
+    gap: 12px !important;
+  }
+
+  /* Container edge padding */
   .container,
   .container-narrow {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Better button sizing for thumbs */
+  .btn, button[class*="Button"] {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+
+  /* Compact logo strips */
+  section.py-16,
+  section[class*="py-16"] {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+
+  /* Eyebrow adjustments */
+  .eyebrow {
+    font-size: 9px !important;
+    letter-spacing: 0.12em !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE SPECIFIC COMPONENT FIXES
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 600px) {
+  /* Hero section adjustments */
+  header[id="top"] {
+    padding-top: 100px !important;
+    padding-bottom: 48px !important;
+    min-height: auto !important;
+  }
+
+  /* Service cards */
+  [class*="ServiceCard"] {
+    padding: 20px !important;
+  }
+
+  /* FAQ items */
+  details {
+    padding: 16px !important;
+  }
+
+  details summary {
+    font-size: 15px !important;
+    padding-right: 32px !important;
+  }
+
+  /* Testimonial cards */
+  [class*="testimonial"], [class*="Testimonial"] {
+    padding: 20px !important;
+  }
+
+  /* Footer spacing */
+  footer {
+    padding-top: 48px !important;
+    padding-bottom: 32px !important;
+  }
+
+  /* Form elements */
+  input, textarea, select {
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Chip/tag elements */
+  [class*="Chip"], .chip {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra compact hero */
+  header[id="top"] {
+    padding-top: 90px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Smaller form elements */
+  input, textarea, select {
+    padding: 12px 14px !important;
+  }
+
+  /* Compact chips */
+  [class*="Chip"], .chip {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
   }
 }
