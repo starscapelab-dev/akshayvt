@@ -16,7 +16,6 @@ export const aboutContent = {
   ],
 
   story: {
-    number: "§01",
     title: "Why I work this way.",
     content: [
       "The first website I built was for my uncle's small shop in Kerala. It took me a weekend, looked terrible, and made him stop fielding the same five questions on the phone every morning. That was the moment I understood what a website is actually *for*.",
@@ -31,37 +30,31 @@ export const aboutContent = {
 
   principles: [
     {
-      number: "01",
       title: "Reply, even when there's no good answer.",
       description:
         "The worst freelancer behaviour isn't bad work — it's silence. I'd rather send a \"still thinking, no update yet\" message than make someone wonder if I exist.",
     },
     {
-      number: "02",
       title: "Pick the boring stack.",
       description:
         "React, Next.js, Tailwind, Postgres. Nothing exciting. Boring tech means your site will still be maintainable in five years when I'm long out of the picture.",
     },
     {
-      number: "03",
       title: "SEO isn't a phase, it's architecture.",
       description:
         "I refuse to build a site that needs \"SEO done to it\" afterwards. Schema, semantic HTML, Core Web Vitals — these are decisions at line one, not week six.",
     },
     {
-      number: "04",
       title: "Build less, finish more.",
       description:
         "Half of every brief is wishful thinking. I'll always argue for shipping the version that solves the actual problem, not the imagined one — and adding the rest later.",
     },
     {
-      number: "05",
       title: "Your code, your account.",
       description:
         "I deploy under your accounts, hand over credentials, and document the setup. If you ever want to take it elsewhere, the only thing you'll need from me is permission to use my name as a reference.",
     },
     {
-      number: "06",
       title: "Charge fairly, refund without fuss.",
       description:
         "If a project isn't working — wrong fit, scope changed, life happened — I refund the unworked portion. Trust costs more than money to rebuild.",

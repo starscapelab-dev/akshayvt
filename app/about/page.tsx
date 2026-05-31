@@ -238,9 +238,6 @@ export default function AboutPage() {
           <div className="grid grid-cols-[280px_1fr] gap-16 max-[600px]:gap-10 items-start max-[900px]:grid-cols-1 max-[900px]:gap-8">
             {/* Aside */}
             <div className="sticky top-[110px]">
-              <div className="serif italic text-[96px] leading-[.9] tracking-[-.03em] text-accent m-0 mb-[14px]">
-                {story.number}
-              </div>
               <h2 className="serif text-[clamp(34px,4vw,52px)] leading-[1.0] tracking-[-.02em] m-0">
                 Why I work <em className="italic text-accent">this way.</em>
               </h2>
@@ -285,9 +282,6 @@ export default function AboutPage() {
           <div className="grid grid-cols-3 gap-[14px] max-[600px]:gap-3 max-[900px]:grid-cols-1">
             {principles.map((principle, i) => (
               <Glass key={i} className="px-7 max-[600px]:px-5 py-[30px] max-[600px]:py-6 flex flex-col">
-                <div className="mono text-[11px] text-muted tracking-[.14em] uppercase mb-7">
-                  Principle {principle.number}
-                </div>
                 <h3 className="serif text-[28px] leading-[1.08] tracking-[-.018em] m-0 mb-[14px]" style={{ textWrap: 'balance' }}>
                   {principle.title.split(/(\s\S+\.)$/).map((part, j) =>
                     j === 1 ? <em key={j} className="italic text-accent">{part}</em> : part
