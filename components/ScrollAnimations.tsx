@@ -35,8 +35,8 @@ export function ScrollAnimations() {
       autoAnimateSelectors.forEach((selector) => {
         const elements = document.querySelectorAll(selector);
         elements.forEach((el, index) => {
-          // Don't re-animate already animated elements
-          if (!el.hasAttribute("data-auto-animated")) {
+          // Don't re-animate already animated elements or elements with data-no-animate
+          if (!el.hasAttribute("data-auto-animated") && !el.hasAttribute("data-no-animate")) {
             el.setAttribute("data-auto-animated", "true");
 
             // Add staggered animation delay based on position

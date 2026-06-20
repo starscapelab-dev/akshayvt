@@ -1,22 +1,41 @@
-"use client";
-
-import { useState } from "react";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Glass } from "@/components/Glass";
 import { Button } from "@/components/Button";
-import { projects, categories } from "@/data/portfolio";
+import { projects } from "@/data/portfolio";
+import type { Metadata } from "next";
 
-type CategoryKey = "all" | "nextjs" | "custom" | "shopify" | "australia";
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "50+ web projects shipped. Custom websites, Shopify stores, and web apps for clients in UAE, India, Australia, and beyond.",
+  openGraph: {
+    title: "Portfolio | Akshay V T | Freelance Web Developer",
+    description:
+      "50+ web projects shipped. Custom websites, Shopify stores, and web apps worldwide.",
+    url: "https://www.akshayvt.com/portfolio",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Portfolio - Akshay V T Freelance Web Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio | Akshay V T | Freelance Web Developer",
+    description: "50+ web projects shipped. Custom websites, Shopify stores, and web apps worldwide.",
+    images: ["/opengraph-image"],
+  },
+  alternates: {
+    canonical: "/portfolio",
+  },
+};
 
 export default function PortfolioPage() {
-  const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
-
-  const filteredProjects = activeCategory === "all"
-    ? projects
-    : projects.filter(p => p.category === activeCategory);
-
   return (
     <>
       <Nav />
@@ -66,30 +85,10 @@ export default function PortfolioPage() {
         </div>
       </header>
 
-      {/* Filter Bar */}
-      <section className="container py-12 border-b border-white/[.06]">
-        <div className="flex gap-2 flex-wrap">
-          {(Object.keys(categories) as CategoryKey[]).map((key) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(key)}
-              className={`px-5 py-[10px] rounded-pill text-[13.5px] font-medium transition-all duration-300 ${
-                activeCategory === key
-                  ? "bg-gradient-to-b from-white to-[#d9e2f5] text-bg shadow-btn-primary"
-                  : "bg-white/6 border border-white/10 text-ink-2 hover:bg-white/10 hover:text-ink"
-              }`}
-            >
-              {categories[key].label}
-              <span className="ml-2 opacity-60">({categories[key].count})</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
       {/* Projects Grid */}
       <main className="container py-24">
-        <div className="grid grid-cols-2 gap-6 max-[600px]:gap-4 max-[900px]:grid-cols-1">
-          {filteredProjects.map((project) => (
+        <div className="grid grid-cols-2 gap-6 max-[600px]:gap-4 max-[900px]:grid-cols-1" data-no-animate>
+          {projects.map((project) => (
             <a
               key={project.slug}
               href={project.url}
@@ -119,13 +118,6 @@ export default function PortfolioPage() {
                       </span>
                     </div>
                   )}
-
-                  {/* Category badge */}
-                  <div className="absolute top-4 right-4">
-                    <span className="px-3 py-1.5 rounded-pill bg-black/60 backdrop-blur-sm border border-white/10 text-ink-2 mono text-[10px] uppercase tracking-wider">
-                      {project.category === "nextjs" ? "Next.js" : project.category === "shopify" ? "Shopify" : project.category === "australia" ? "Australia" : "Custom"}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Content */}
