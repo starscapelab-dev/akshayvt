@@ -34,12 +34,26 @@ const techLogos = [
 export const metadata: Metadata = {
   title: "Akshay V T | Freelance Web Developer | React & Next.js Expert",
   description:
-    "Freelance web developer with 6+ years experience. React, Next.js, e-commerce & SEO. Serving Dubai, Kerala, Sydney & worldwide.",
+    "Freelance web developer with 6+ years experience. React, Next.js, e-commerce & SEO. Serving Dubai, Kerala, Sydney, Canada & worldwide.",
   openGraph: {
     title: "Akshay V T | Freelance Web Developer | React & Next.js Expert",
     description:
       "Freelance web developer with 6+ years experience. React, Next.js, e-commerce & SEO.",
-    url: "https://akshayvt.com",
+    url: "https://www.akshayvt.com",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Akshay V T - Freelance Web Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Akshay V T | Freelance Web Developer | React & Next.js Expert",
+    description: "Freelance web developer with 6+ years experience. React, Next.js, e-commerce & SEO.",
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "/",
@@ -125,7 +139,7 @@ export default function HomePage() {
                   </span>
                 </div>
                 <div className="flex flex-col max-[600px]:items-center gap-1">
-                  <span className="serif text-[32px] max-[600px]:text-[28px] max-[480px]:text-[26px] leading-none tracking-tight text-ink">4</span>
+                  <span className="serif text-[32px] max-[600px]:text-[28px] max-[480px]:text-[26px] leading-none tracking-tight text-ink">5</span>
                   <span className="text-[11px] max-[480px]:text-[10px] text-muted leading-[1.35] max-[600px]:text-center">
                     Countries
                   </span>
@@ -241,6 +255,7 @@ export default function HomePage() {
                   "Abu Dhabi",
                   "Doha",
                   "Sydney",
+                  "Toronto",
                   "Kochi",
                   "Bangalore",
                   "Sharjah",
@@ -249,6 +264,7 @@ export default function HomePage() {
                   "Abu Dhabi",
                   "Doha",
                   "Sydney",
+                  "Toronto",
                   "Kochi",
                   "Bangalore",
                   "Sharjah",

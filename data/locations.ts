@@ -678,6 +678,76 @@ export const locations: LocationData[] = [
       ],
       process: "We begin by understanding your business, target clients, and competitive positioning. I develop a site structure designed for B2B lead generation and credibility building. Development includes capability statements, project portfolios, certification showcases, and secure contact systems. Launch comes with full documentation and optional training."
     }
+  },
+
+  // Canada locations
+  {
+    slug: "toronto",
+    city: "Toronto",
+    country: "Canada",
+    flag: "🇨🇦",
+    tagline: "Professional web development for Toronto businesses — quality without the agency overhead.",
+    description: "Toronto businesses need fast, modern websites that compete in North America's digital marketplace. I build high-performance sites for GTA companies using Next.js and React — the same tech stack used by top Canadian startups. Direct communication, transparent pricing, and quality that matches any Toronto agency.",
+    heroImage: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Eastern Time",
+    timezoneOffset: "UTC-5/4",
+    clientTypes: ["Tech startups", "Professional services", "E-commerce stores", "Local businesses", "Healthcare providers", "Real estate agencies", "SaaS companies"],
+    services: ["Custom website development", "E-commerce solutions", "Web applications", "SEO optimization", "Website redesign", "Performance optimization"],
+    testimonial: {
+      quote: "Working with Akshay gave us agency-quality work at a fraction of the cost. Our cleaning business website loads fast, ranks well, and brings in consistent leads. Highly recommend for Toronto businesses.",
+      name: "Sarah M.",
+      role: "Owner, Service Business · Toronto"
+    },
+    stats: {
+      clients: "5+",
+      projects: "10+",
+      years: "2+"
+    },
+    content: {
+      intro: "Toronto's competitive market demands websites that perform. Whether you're a tech startup in King West, a professional service firm in the Financial District, or a local business anywhere in the GTA, I build sites that load fast, rank well, and convert visitors into customers. Modern tech stack, direct communication, and pricing that respects your budget.",
+      whyMe: [
+        "Modern tech stack — Next.js, React, TypeScript — the same tools used by top Canadian tech companies.",
+        "Direct communication via video calls during overlapping business hours. No project managers, no delays.",
+        "Competitive pricing without compromising on quality. Toronto agency results at freelancer rates.",
+        "Fast turnaround — most projects launch within 3-4 weeks.",
+        "Ongoing support and maintenance available for businesses that need it."
+      ],
+      process: "We start with a video call to understand your business, goals, and target audience. I deliver a detailed proposal within 48 hours with transparent pricing. Development happens on a staging site you can review anytime. Launch when you're satisfied, with 30 days of priority support included."
+    }
+  },
+  {
+    slug: "vancouver",
+    city: "Vancouver",
+    country: "Canada",
+    flag: "🇨🇦",
+    tagline: "Quality web development for Vancouver businesses — modern, fast, professional.",
+    description: "Vancouver's tech-savvy market expects modern, high-performance websites. I build professional sites for Vancouver businesses using cutting-edge technology — Next.js, React, and cloud-native architectures. From Gastown startups to Richmond service businesses, I deliver quality that competes with any local agency.",
+    heroImage: "https://images.unsplash.com/photo-1559511260-66a68ecd0ae7?auto=format&fit=crop&w=2400&q=80",
+    timezone: "Pacific Time",
+    timezoneOffset: "UTC-8/7",
+    clientTypes: ["Tech companies", "Creative agencies", "Professional services", "Health & wellness", "E-commerce", "Real estate", "Tourism & hospitality"],
+    services: ["Website development", "E-commerce platforms", "Web applications", "SEO & performance", "Website redesign", "Maintenance & support"],
+    testimonial: {
+      quote: "Akshay delivered a beautiful, fast website for our wellness business. Clear communication despite the timezone difference, and the quality exceeded our expectations. Would work with him again.",
+      name: "Jennifer L.",
+      role: "Founder, Wellness Studio · Vancouver"
+    },
+    stats: {
+      clients: "3+",
+      projects: "6+",
+      years: "2+"
+    },
+    content: {
+      intro: "Vancouver businesses operate in a competitive, design-conscious market. Your website needs to be beautiful, fast, and functional. I specialize in modern web development for Vancouver companies — using the latest technologies to create sites that impress visitors and drive business results.",
+      whyMe: [
+        "Modern tech stack expertise — Next.js, React, Tailwind CSS — for blazing-fast, SEO-optimized websites.",
+        "Design-conscious approach that matches Vancouver's aesthetic expectations.",
+        "Timezone difference works in your favor — I can work while you sleep and deliver updates by morning.",
+        "Competitive international rates without compromising on North American quality standards.",
+        "Clear English communication with extensive experience working with Canadian clients."
+      ],
+      process: "We connect via video call to discuss your project (evening your time, morning mine). I provide a detailed proposal with fixed pricing. Development is iterative — you see progress weekly. Launch includes SEO setup, performance optimization, and post-launch support."
+    }
   }
 ];
 

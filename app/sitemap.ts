@@ -16,7 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Saudi Arabia
     'riyadh', 'jeddah', 'dammam', 'khobar', 'dhahran', 'mecca', 'medina',
     // Oman
-    'muscat', 'seeb', 'sohar', 'salalah', 'duqm'
+    'muscat', 'seeb', 'sohar', 'salalah', 'duqm',
+    // Canada
+    'toronto', 'vancouver'
   ]
 
   const locationPages = locations.map(city => ({
@@ -67,6 +69,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/locations/saudi-arabia`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/locations/qatar`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/locations/oman`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/locations/canada`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     ...locationPages,
 
     // SEO landing pages
