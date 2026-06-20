@@ -2275,6 +2275,71 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         a: "Usually yes — I need server/hosting access to view logs and make fixes. I can diagnose some issues externally, but fixes require access."
       }
     ]
+  },
+
+  "037": {
+    id: "037",
+    title: "Tech Strategy & Consulting",
+    tagline: "Prevent expensive mistakes before a single line of code is written.",
+    description: "Not ready to build yet? I help founders and teams make the right technical decisions upfront — from choosing between Next.js, WordPress, or Shopify, to reviewing existing architecture, auditing code performance, and creating technical roadmaps. Clear, jargon-free advice that saves you thousands in wrong turns.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2400&q=80",
+    tags: ["Consulting", "Tech Strategy", "Architecture", "Code Review"],
+    whatYouGet: [
+      "Architecture & Tech Stack Audits — choose the right framework for your goals",
+      "Code & Performance Reviews — actionable checklist for your developers",
+      "Technical Roadmaps — clear implementation plan with priorities",
+      "Core Web Vitals analysis and optimization recommendations",
+      "Third-party API and integration strategy",
+      "Hosting, security, and scaling guidance",
+      "1-page summary PDF with all recommendations",
+      "Follow-up Q&A support"
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Discovery Call",
+        description: "We discuss your business goals, technical challenges, budget, and timeline to understand what you're trying to achieve."
+      },
+      {
+        step: "02",
+        title: "Analysis & Review",
+        description: "I review your existing code, architecture, or requirements depending on where you are in your journey."
+      },
+      {
+        step: "03",
+        title: "Strategy Session",
+        description: "60-minute deep-dive video call where I walk you through my recommendations and answer all your questions."
+      },
+      {
+        step: "04",
+        title: "Deliverables",
+        description: "You receive a clear summary document with tech stack recommendations, architecture diagram, and actionable next steps."
+      }
+    ],
+    techStack: [
+      { category: "Frameworks", items: ["Next.js", "React", "WordPress", "Shopify"] },
+      { category: "Analysis", items: ["Core Web Vitals", "Lighthouse", "Code review"] },
+      { category: "Architecture", items: ["System design", "API strategy", "Database selection"] },
+      { category: "Infrastructure", items: ["Hosting", "CDN", "Security", "Scaling"] }
+    ],
+    faqs: [
+      {
+        q: "Who is this service for?",
+        a: "Founders choosing tech stacks, businesses with existing teams who want an outside expert opinion, or anyone about to invest significant money in development and wants to validate their approach first."
+      },
+      {
+        q: "How is this different from your free consultation?",
+        a: "The free consultation is for scoping projects I might build. This paid service is dedicated strategic advice — even if you never hire me to build anything. You get my full attention and documented recommendations."
+      },
+      {
+        q: "What if I want you to build it after consulting?",
+        a: "Many clients do. The consulting fee can be credited toward development if we proceed within 30 days. The roadmap we create together becomes the blueprint for the build."
+      },
+      {
+        q: "Can you review code from my existing developers?",
+        a: "Yes. I can audit your repository, analyze performance, identify issues, and give your team a prioritized checklist of improvements."
+      }
+    ]
   }
 };
 

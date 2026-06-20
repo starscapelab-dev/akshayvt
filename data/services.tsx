@@ -147,4 +147,18 @@ export const services = [
       </svg>
     ),
   },
+  {
+    id: "13",
+    title: "Tech Strategy & Consulting",
+    description: "Architecture audits, tech stack reviews, and roadmaps before you write a single line of code.",
+    href: "/services/037",
+    featured: true,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 8v4l3 3" />
+        <path d="M12 3v2M12 19v2M3 12h2M19 12h2" />
+      </svg>
+    ),
+  },
 ];

@@ -89,7 +89,7 @@ export default function HomePage() {
 
               {/* Lede */}
               <p className="text-[clamp(15px,1.6vw,21px)] max-[480px]:text-[15px] leading-[1.55] max-[600px]:leading-[1.6] text-ink-2 max-w-[56ch] max-[600px]:max-w-[44ch] mb-9 max-[600px]:mb-7 pretty">
-                I'm a freelance web developer with <b className="text-ink">6+ years</b> shipping
+                I'm a freelance web developer and consultant with <b className="text-ink">6+ years</b> shipping
                 React &amp; Next.js sites for small businesses, founders, and Gulf NRIs. Talk to
                 the person building your site — not an account manager.
               </p>

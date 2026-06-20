@@ -8,7 +8,7 @@ import { Glass } from "@/components/Glass";
 import { Button } from "@/components/Button";
 import { projects, categories } from "@/data/portfolio";
 
-type CategoryKey = "all" | "custom" | "shopify" | "australia";
+type CategoryKey = "all" | "nextjs" | "custom" | "shopify" | "australia";
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
@@ -123,7 +123,7 @@ export default function PortfolioPage() {
                   {/* Category badge */}
                   <div className="absolute top-4 right-4">
                     <span className="px-3 py-1.5 rounded-pill bg-black/60 backdrop-blur-sm border border-white/10 text-ink-2 mono text-[10px] uppercase tracking-wider">
-                      {project.category === "shopify" ? "Shopify" : project.category === "australia" ? "Australia" : "Custom"}
+                      {project.category === "nextjs" ? "Next.js" : project.category === "shopify" ? "Shopify" : project.category === "australia" ? "Australia" : "Custom"}
                     </span>
                   </div>
                 </div>
